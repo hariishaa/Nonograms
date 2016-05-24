@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="Nonograms.View.NonogramPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Nonograms.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Nonograms.CustomControls"
+    mc:Ignorable="d"
+    DataContext="{Binding Path=NonogramPage, Source={StaticResource ViewModelLocator}}">
+    <Grid x:Name="LayoutRoot" Background="CadetBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <controls:NonogramControl LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" Field="{Binding Field, Mode=TwoWay}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}"/>
+        <StackPanel Grid.Column="1" Margin="20">
+            <Button Content="CheckMode" VerticalAlignment="Top" Command="{Binding CheckModeCommand}" Margin="20"/>
+            <Button Content="TagMode" VerticalAlignment="Top" Command="{Binding TagTypeCommand}" Margin="20"/>
+            <Button Content="Clear" VerticalAlignment="Top" Command="{Binding ClearCommand}" Margin="20"/>
+        </StackPanel>
+    </Grid>
+</Page>

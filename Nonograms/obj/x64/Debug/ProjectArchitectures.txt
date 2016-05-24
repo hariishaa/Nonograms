@@ -1,0 +1,2 @@
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\Nonograms.Portable.csproj;neutral
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Nonograms.csproj;x64
