@@ -17,7 +17,7 @@ namespace Nonograms.ViewModel
 
         public ViewModelLocator() : base()
         {
-            //SimpleIoc.Default.Register<IDialogService, DialogService>();
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             if (ViewModelBase.IsInDesignModeStatic)
             {

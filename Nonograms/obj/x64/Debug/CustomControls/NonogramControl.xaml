@@ -7,7 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <UserControl.Resources>
-        <local:BrushToBinaryConverter x:Key="BrushToBinaryConverter"/>
         <Style x:Key="GridBaseStyle" TargetType="Grid">
             <Setter Property="BorderBrush" Value="Gray"/>
         </Style>
@@ -117,11 +116,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Rectangle Fill="LightGray" Grid.RowSpan="7" Opacity="0.8"/>
             <local:CellControl State="Tagged" Grid.Row="0" Grid.Column="0" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,0]" TagType="{x:Bind TagType}"/>
             <local:CellControl State="Tagged" TagType="X" Grid.Row="0" Grid.Column="1" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,1]"/>
             <local:CellControl State="Empty" Grid.Row="0" Grid.Column="2" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,2]"/>
             <local:CellControl State="Checked" Grid.Row="0" Grid.Column="3" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,3]"/>-->
-            
+
+
             <!--<Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource MiniGrid}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

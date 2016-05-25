@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
-  <Roots.Interfaces>
-    <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
-  </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="NonogramPage" />
     <RootPropertyPathName Name="ClearCommand" />
@@ -81,7 +78,6 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Nonograms.CustomControls.CellControl" />
-    <RootType FullName="Nonograms.CustomControls.BrushToBinaryConverter" />
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />

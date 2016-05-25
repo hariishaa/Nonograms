@@ -57,21 +57,16 @@ namespace Nonograms.CustomControls
         private static void OnTagTypePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             CellControl nc = d as CellControl;
-            nc.OnTagTypePropertyChanged(e);
-        }
-
-        private void OnTagTypePropertyChanged(DependencyPropertyChangedEventArgs e)
-        {
             switch ((TagTypes)e.NewValue)
             {
                 case TagTypes.X:
-                    Dot.Visibility = Visibility.Collapsed;
-                    X.Visibility = Visibility.Visible;
+                    nc.Dot.Visibility = Visibility.Collapsed;
+                    nc.X.Visibility = Visibility.Visible;
                     break;
                 case TagTypes.Dot:
                 default:
-                    Dot.Visibility = Visibility.Visible;
-                    X.Visibility = Visibility.Collapsed;
+                    nc.Dot.Visibility = Visibility.Visible;
+                    nc.X.Visibility = Visibility.Collapsed;
                     break;
             }
         }

@@ -59,11 +59,7 @@ namespace Nonograms.CustomControls
         private static void OnLeftSideValuesPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             NonogramControl nc = d as NonogramControl;
-            nc.OnLeftSideValuesPropertyChanged(e);
-        }
-        private void OnLeftSideValuesPropertyChanged(DependencyPropertyChangedEventArgs e)
-        {
-            BuildLeftSide((int[][])e.NewValue);
+            nc.BuildLeftSide((int[][])e.NewValue);
         }
         public int[][] LeftSideValues
         {
@@ -82,11 +78,7 @@ namespace Nonograms.CustomControls
         private static void OnTopSideValuesPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             NonogramControl nc = d as NonogramControl;
-            nc.OnTopSideValuesPropertyChanged(e);
-        }
-        private void OnTopSideValuesPropertyChanged(DependencyPropertyChangedEventArgs e)
-        {
-            BuildTopSide((int[][])e.NewValue);
+            nc.BuildTopSide((int[][])e.NewValue);
         }
         public int[][] TopSideValues
         {
@@ -104,11 +96,6 @@ namespace Nonograms.CustomControls
         public static readonly DependencyProperty FieldProperty = DependencyProperty.Register("Field", typeof(int[,]), typeof(NonogramControl), new PropertyMetadata(default(int[,]), OnFieldPropertyChanged));
         private static void OnFieldPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            NonogramControl nc = d as NonogramControl;
-            nc.OnFieldPropertyChanged(e);
-        }
-        private void OnFieldPropertyChanged(DependencyPropertyChangedEventArgs e)
-        {
             //BindableField = ConvertFieldToBindable(Field);
 
             // фигня?
@@ -119,8 +106,8 @@ namespace Nonograms.CustomControls
             //{
             //    BuildFieldGrid(newField.GetLength(0), newField.GetLength(1));
             //}
-
-            BuildFieldGrid(((int[,])e.NewValue).GetLength(0), ((int[,])e.NewValue).GetLength(1));
+            NonogramControl nc = d as NonogramControl;
+            nc.BuildFieldGrid(((int[,])e.NewValue).GetLength(0), ((int[,])e.NewValue).GetLength(1));
         }
         public int[,] Field
         {
@@ -212,7 +199,7 @@ namespace Nonograms.CustomControls
                 {
                     TextBlock tb = new TextBlock { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, TextAlignment = TextAlignment.Center, Text = arr[j].ToString() };
                     Grid.SetRow(tb, i);
-                    Grid.SetColumn(tb, j);
+                    Grid.SetColumn(tb, maxLength - arr.Length + j);
                     LeftSideGrid.Children.Add(tb);
                 }
             }
@@ -239,14 +226,14 @@ namespace Nonograms.CustomControls
                 TopSideGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             }
             // заполняем грид значениями
-            for (int i = 0; i < topSideValues.Length; i++)
+            for (int j = 0; j < topSideValues.Length; j++)
             {
-                var arr = topSideValues[i];
-                for (int j = 0; j < arr.Length; j++)
+                var arr = topSideValues[j];
+                for (int i = 0; i < arr.Length ; i++)
                 {
-                    TextBlock tb = new TextBlock { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, TextAlignment = TextAlignment.Center, Text = arr[j].ToString() };
-                    Grid.SetRow(tb, maxHeight - j - 1);
-                    Grid.SetColumn(tb, i);
+                    TextBlock tb = new TextBlock { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, TextAlignment = TextAlignment.Center, Text = arr[i].ToString() };
+                    Grid.SetRow(tb, maxHeight - arr.Length + i);
+                    Grid.SetColumn(tb, j);
                     TopSideGrid.Children.Add(tb);
                 }
             }
@@ -285,9 +272,6 @@ namespace Nonograms.CustomControls
             }
         }
         #endregion
-        // удалить
-        public int MyProperty { get; set; } = 1;
-
         #region ControlEvents
         private void CellControl_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
@@ -400,7 +384,7 @@ namespace Nonograms.CustomControls
             // стираем контур
             FieldGrid.Children.Remove(_outlineRectangle);
             // проверяем решение
-            CheckSolution(Field);
+            CheckSolution(Field, LeftSideValues, TopSideValues);
         }
         #endregion
 
@@ -432,19 +416,22 @@ namespace Nonograms.CustomControls
         }
 
         #region CheckSolutionMethods
-        public void CheckSolution(int[,] field)
+        public void CheckSolution(int[,] field, int[][] leftSideValues, int[][] topSideValues)
         {
-            bool top = CheckTopSideSolution(field);
-            bool left = CheckLeftSideSolution(field);
+            if (CheckLeftSideSolution(field, leftSideValues) && CheckTopSideSolution(field))
+            {
+                IsSolved = true;
+            }
         }
 
         private bool CheckTopSideSolution(int[,] field)
         {
-            int[][] topSideSolution = new int[field.GetLength(1)][];
-            int tempSum = 0;
+            bool isRight = true;
+            int tempSum;
+            List<int> columnSolution = new List<int>();
             for (int j = 0; j < field.GetLength(1); j++)
             {
-                List<int> tempList = new List<int>();
+                columnSolution.Clear();
                 tempSum = 0;
                 for (int i = 0; i < field.GetLength(0); i++)
                 {
@@ -452,7 +439,7 @@ namespace Nonograms.CustomControls
                     {
                         if (tempSum > 0)
                         {
-                            tempList.Add(tempSum);
+                            columnSolution.Add(tempSum);
                             tempSum = 0;
                         }
                     }
@@ -463,22 +450,28 @@ namespace Nonograms.CustomControls
                 }
                 if (tempSum > 0)
                 {
-                    tempList.Add(tempSum);
+                    columnSolution.Add(tempSum);
                 }
-                topSideSolution[j] = tempList.ToArray();
+                if (!columnSolution.SequenceEqual(TopSideValues[j]))
+                {
+                    isRight = false;
+                }
+                else
+                {
+                    // выделять столбец серым
+                }
             }
-            // доделать!!!
-            var x = CompareJaggedArrays(topSideSolution, TopSideValues);
-            return x;
+            return isRight;
         }
 
-        private bool CheckLeftSideSolution(int[,] field)
+        private bool CheckLeftSideSolution(int[,] field, int[][] leftSideValues)
         {
-            int[][] leftSideSolution = new int[field.GetLength(0)][];
-            int tempSum = 0;
+            bool isRight = true;
+            int tempSum;
+            List<int> rowSolution = new List<int>();
             for (int i = 0; i < field.GetLength(0); i++)
             {
-                List<int> tempList = new List<int>();
+                rowSolution.Clear();
                 tempSum = 0;
                 for (int j = 0; j < field.GetLength(1); j++)
                 {
@@ -486,7 +479,7 @@ namespace Nonograms.CustomControls
                     {
                         if (tempSum > 0)
                         {
-                            tempList.Add(tempSum);
+                            rowSolution.Add(tempSum);
                             tempSum = 0;
                         }
                     }
@@ -497,30 +490,18 @@ namespace Nonograms.CustomControls
                 }
                 if (tempSum > 0)
                 {
-                    tempList.Add(tempSum);
+                    rowSolution.Add(tempSum);
                 }
-                leftSideSolution[i] = tempList.ToArray();
-            }
-            return CompareJaggedArrays(leftSideSolution, LeftSideValues);
-        }
-
-        private bool CompareJaggedArrays(int[][] arr1, int[][] arr2)
-        {
-            if (arr1.Length == arr2.Length)
-            {
-                for (int i = 0; i < arr1.Length; i++)
+                if (!rowSolution.SequenceEqual(leftSideValues[i]))
                 {
-                    if (!arr1[i].SequenceEqual(arr2[i]))
-                    {
-                        return false;
-                    }
+                    isRight = false;
                 }
-                return true;
+                else
+                {
+                    // выделять ряд серым
+                }
             }
-            else
-            {
-                return false;
-            }
+            return isRight;
         }
         #endregion
     }

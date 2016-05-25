@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Views;
+using Microsoft.Practices.ServiceLocation;
 using Nonograms.Portable.Enums;
 using Nonograms.Portable.Model;
 using System;
@@ -23,6 +25,7 @@ namespace Nonograms.Portable.ViewModel
             {
                 _isSolved = value;
                 RaisePropertyChanged();
+                ShowDialogCommand.Execute(_isSolved);
             }
         }
 
@@ -135,6 +138,19 @@ namespace Nonograms.Portable.ViewModel
                 {
                     Field = new int[_nonogramInfo.RowsNumber, _nonogramInfo.ColumnsNumber];
                 }));
+            }
+        }
+
+        RelayCommand<bool> _showDialogCommand;
+        public RelayCommand<bool> ShowDialogCommand
+        {
+            get
+            {
+                return _showDialogCommand ?? (_showDialogCommand = new RelayCommand<bool>(async (p) =>
+                {
+                    var dialog = ServiceLocator.Current.GetInstance<IDialogService>();
+                    await dialog.ShowMessage("You won!", "Victory!!!", "Got it!", () => ClearCommand.Execute(null));
+                }, p => p));
             }
         }
 

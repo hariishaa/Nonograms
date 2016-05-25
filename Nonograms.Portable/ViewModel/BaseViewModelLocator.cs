@@ -14,8 +14,7 @@ namespace Nonograms.Portable.ViewModel
     {
         public BaseViewModelLocator()
         {
-            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);       
-
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<NonogramPageViewModel>();
         }
 
