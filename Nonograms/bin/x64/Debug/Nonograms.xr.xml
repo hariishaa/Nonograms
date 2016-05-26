@@ -26,11 +26,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="Background" />
       <RootProperty Name="Child" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Children" />
@@ -87,10 +82,15 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Style" />
-      <RootProperty Name="StrokeThickness" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Shape">
       <RootProperty Name="Stroke" />
+      <RootProperty Name="Fill" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.UIElement">
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="IsHitTestVisible" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Setter">

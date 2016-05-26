@@ -240,22 +240,24 @@ namespace Nonograms.CustomControls
         }
         private void BuildFieldGrid(int rows, int columns)
         {
-            // удаляем старое поле
-            FieldGrid.Children.Clear();
-            FieldGrid.RowDefinitions.Clear();
-            FieldGrid.ColumnDefinitions.Clear();
+            //// удаляем старое поле
+            //FieldGrid.Children.Clear();
+            //FieldGrid.RowDefinitions.Clear();
+            //FieldGrid.ColumnDefinitions.Clear();
             // строим новое поле
             for (int i = 0; i < rows; i++)
             {
                 FieldGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             }
+            Grid.SetRowSpan(LeftSideGrid, rows);
             for (int j = 0; j < columns; j++)
             {
                 FieldGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             }
-            for (int i = 0; i < rows; i++)
+            Grid.SetColumnSpan(TopSideGrid, columns);
+            for (int i = 1; i <= rows; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (int j = 1; j <= columns; j++)
                 {
                     //Style = (Style)Resources["Cell"]
                     CellControl cell = new CellControl();
@@ -263,8 +265,7 @@ namespace Nonograms.CustomControls
                     Grid.SetColumn(cell, j);
                     cell.PointerPressed += CellControl_PointerPressed;
                     cell.PointerEntered += CellControl_PointerEntered;
-                    cell.Tag = string.Format("[{0},{1}]", i, j);
-                    //cell.TagType = TagType;
+                    cell.Tag = string.Format("[{0},{1}]", i - 1, j - 1);
                     Binding tagTypeBinding = new Binding { Source = this, Path = new PropertyPath("TagType") };
                     cell.SetBinding(CellControl.TagTypeProperty, tagTypeBinding);
                     FieldGrid.Children.Add(cell);
@@ -276,16 +277,21 @@ namespace Nonograms.CustomControls
         private void CellControl_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             // задаем начальные координаты контура
-            _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 4, Fill = new SolidColorBrush(Colors.BlueViolet), Opacity = 0.5 };
+            _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 4, Fill = new SolidColorBrush(Colors.BlueViolet), Opacity = 0.5, IsHitTestVisible = false };
             CellControl currentCell = sender as CellControl;
-            _beginPoint = _endPoint = new Point(Grid.GetColumn(currentCell), Grid.GetRow(currentCell));
-            int column = (int)_beginPoint.X, row = (int)_beginPoint.Y;
+            int column = Grid.GetColumn(currentCell), row = Grid.GetRow(currentCell);
+            _beginPoint = _endPoint = new Point(column, row);
             Grid.SetColumn(_outlineRectangle, column);
             Grid.SetRow(_outlineRectangle, row);
             FieldGrid.Children.Add(_outlineRectangle);
 
+            Grid.SetRow(HorizontalAimRectangle, row);
+            Grid.SetColumn(VerticalAimRectangle, column);
+            HorizontalAimRectangle.Visibility = Visibility.Visible;
+            VerticalAimRectangle.Visibility = Visibility.Visible;
+
             // закрашиваем или стираем квадраты
-            if (Field[row, column] == 0)
+            if (Field[row - 1, column - 1] == 0)
             {
                 _checkMode = CheckMode;
             }
@@ -303,6 +309,10 @@ namespace Nonograms.CustomControls
                 CellControl currentCell = sender as CellControl;
                 _endPoint = new Point(Grid.GetColumn(currentCell), Grid.GetRow(currentCell));
                 int rowSpan = Grid.GetRowSpan(_outlineRectangle), columnSpan = Grid.GetColumnSpan(_outlineRectangle);
+
+                Grid.SetRow(HorizontalAimRectangle, (int)_endPoint.Y);
+                Grid.SetColumn(VerticalAimRectangle, (int)_endPoint.X);
+
                 if (rowSpan == 1 && columnSpan == 1)
                 {
                     // чтобы избежать ситуации 2х2
@@ -383,6 +393,10 @@ namespace Nonograms.CustomControls
             UpdateField(_outlineRectangle, _checkMode);
             // стираем контур
             FieldGrid.Children.Remove(_outlineRectangle);
+
+            VerticalAimRectangle.Visibility = Visibility.Collapsed;
+            HorizontalAimRectangle.Visibility = Visibility.Collapsed;
+
             // проверяем решение
             CheckSolution(Field, LeftSideValues, TopSideValues);
         }
@@ -390,7 +404,7 @@ namespace Nonograms.CustomControls
 
         private void UpdateField(Rectangle outline, CheckModes checkMode)
         {
-            int beginX = Grid.GetColumn(outline), beginY = Grid.GetRow(outline);
+            int beginX = Grid.GetColumn(outline) - 1, beginY = Grid.GetRow(outline) - 1;
             int columns = Grid.GetColumnSpan(outline), rows = Grid.GetRowSpan(outline);
             int[,] field = Field; // костыль??? ещё и не работающий
             CellControl cell;
