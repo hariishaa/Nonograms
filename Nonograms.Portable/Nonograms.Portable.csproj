@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Model\ExtensionMethods.cs" />
     <Compile Include="Model\NonogramInfo.cs" />
     <Compile Include="Model\NonogramsRepository.cs" />
     <Compile Include="Model\Observable2DArray.cs" />

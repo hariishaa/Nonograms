@@ -10,61 +10,55 @@
         <Style x:Key="GridBaseStyle" TargetType="Grid">
             <Setter Property="BorderBrush" Value="Gray"/>
         </Style>
-        <Style x:Key="BaseFieldGrid" TargetType="Grid">
+        <Style x:Key="FieldGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="Margin" Value="10,10,0,0" />
-            <Setter Property="Height" Value="500" />
-            <Setter Property="Width" Value="500" />
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-        </Style>
-        <Style x:Key="FieldGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
-            <Setter Property="Height" Value="400"/>
-            <Setter Property="Width" Value="400"/>
+            <!--<Setter Property="Height" Value="500" />
+            <Setter Property="Width" Value="500" />-->
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
         <Style x:Key="CornerGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <Setter Property="BorderThickness" Value="2,2,0,0"/>
+            <Setter Property="Background" Value="LightCoral"/>
         </Style>
-        <Style x:Key="LeftSideGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <!--<Setter Property="Width" Value="100" />-->
-            <Setter Property="BorderThickness" Value="2,2,0,2"/>
+        <Style x:Key="SideGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
+            <Setter Property="Background" Value="LightBlue"/>
         </Style>
-        <Style x:Key="TopSideGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <!--<Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Stretch" />-->
-            <!--<Setter Property="Height" Value="100" />-->
-            <Setter Property="BorderThickness" Value="2,2,2,0"/>
+        <Style x:Key="LeftSideGrid" TargetType="Grid" BasedOn="{StaticResource SideGrid}">
+            <Setter Property="Grid.Row" Value="1"/>
+            <Setter Property="Grid.RowSpan" Value="50"/>
         </Style>
-        <Style x:Key="MiniGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <!--<Setter Property="BorderThickness" Value="2"/>-->
-            <Setter Property="Grid.RowSpan" Value="2"/>
-            <Setter Property="Grid.ColumnSpan" Value="2"/>
+        <Style x:Key="TopSideGrid" TargetType="Grid" BasedOn="{StaticResource SideGrid}">
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="Grid.ColumnSpan" Value="50"/>
         </Style>
-        <Style x:Key="BarBaseStyle" TargetType="Rectangle">
+        <Style x:Key="NumberTextBlock" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextLineBounds" Value="Tight"/>
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+        <Style x:Key="LineBaseStyle" TargetType="Rectangle">
             <Setter Property="Stroke" Value="Gray" />
         </Style>
-        <!--<Style TargetType="Border">
-            <Setter Property="BorderThickness" Value=""
-        </Style>-->
-        <Style x:Key="HorizontalBar" TargetType="Rectangle" BasedOn="{StaticResource BarBaseStyle}">
-            <Setter Property="Grid.ColumnSpan" Value="2"/>
+        <Style x:Key="HorizontalLine" TargetType="Rectangle" BasedOn="{StaticResource LineBaseStyle}">
             <Setter Property="Height" Value="1"/>
-            <!--<Setter Property="StrokeThickness" Value="1"/>-->
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="Grid.Row" Value="1"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Grid.ColumnSpan" Value="50"/>
         </Style>
-        <Style x:Key="VerticalBar" TargetType="Rectangle" BasedOn="{StaticResource BarBaseStyle}">
-            <Setter Property="Grid.RowSpan" Value="2"/>
-            <Setter Property="Width" Value="1" />
+        <Style x:Key="BoldHorizontalLine" TargetType="Rectangle" BasedOn="{StaticResource HorizontalLine}">
+            <Setter Property="StrokeThickness" Value="4"/>
+        </Style>
+            <Style x:Key="VerticalLine" TargetType="Rectangle" BasedOn="{StaticResource LineBaseStyle}">
+            <Setter Property="Width" Value="1"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Stretch" />
-            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Grid.RowSpan" Value="50"/>
+        </Style>
+        <Style x:Key="BoldVerticalLine" TargetType="Rectangle" BasedOn="{StaticResource VerticalLine}">
+            <Setter Property="StrokeThickness" Value="4"/>
         </Style>
         <Style x:Key="AimRectangle" TargetType="Rectangle">
             <Setter Property="Fill" Value="Orange"/>
@@ -81,55 +75,58 @@
             <Setter Property="Grid.ColumnSpan" Value="50"/>
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="FieldGrid" Style="{StaticResource BaseFieldGrid}" Tapped="BaseFieldGrid_Tapped" PointerEntered="FieldGrid_PointerEntered" PointerExited="FieldGrid_PointerExited" PointerReleased="FieldGrid_PointerReleased">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid x:Name="CornerGrid" Grid.Row="0" Grid.Column="0" Style="{StaticResource CornerGrid}" Background="LightCoral"/>
-        <Grid x:Name="LeftSideGrid" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Style="{StaticResource LeftSideGrid}" Background="LightBlue">
+    <Viewbox>
+        <Grid x:Name="FieldGrid" Style="{StaticResource FieldGrid}" Tapped="BaseFieldGrid_Tapped" PointerEntered="FieldGrid_PointerEntered" PointerExited="FieldGrid_PointerExited" PointerReleased="FieldGrid_PointerReleased">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <!--<RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>-->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!--<ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>-->
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="CornerGrid" Style="{StaticResource CornerGrid}"/>
+            <Grid x:Name="LeftSideGrid" Style="{StaticResource LeftSideGrid}">
+                <!--<Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="0" Style="{StaticResource NumberTextBlock}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="0" Style="{StaticResource NumberTextBlock}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="0" Style="{StaticResource NumberTextBlock}"/>-->
+            </Grid>
+            <Grid x:Name="TopSideGrid" Style="{StaticResource TopSideGrid}">
+                <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-            <Border Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderThickness="2" BorderBrush="Yellow" Height="2"/>
-            <Rectangle Grid.Row="1" Style="{StaticResource HorizontalBar}"/>
-            <Rectangle Grid.Row="2" Style="{StaticResource HorizontalBar}" StrokeThickness="2"/>
-            <Rectangle Grid.Row="3" Style="{StaticResource HorizontalBar}"/>
-        </Grid>
-        <Grid x:Name="TopSideGrid" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource TopSideGrid}" Background="LightBlue">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-        </Grid>
-        <local:CellControl State="Tagged" Grid.Row="1" Grid.Column="1" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,0]" TagType="{x:Bind TagType}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="0" Style="{StaticResource NumberTextBlock}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="0" Style="{StaticResource NumberTextBlock}"/>-->
+            </Grid>
+            <!--<local:CellControl State="Tagged" Grid.Row="1" Grid.Column="1" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,0]" TagType="{x:Bind TagType}"/>
         <local:CellControl State="Tagged" TagType="X" Grid.Row="1" Grid.Column="2" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,1]"/>
         <local:CellControl State="Empty" Grid.Row="1" Grid.Column="3" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,2]"/>
         <local:CellControl State="Checked" Grid.Row="1" Grid.Column="4" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[0,3]"/>
@@ -145,7 +142,17 @@
         <local:CellControl Grid.Row="4" Grid.Column="2" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[3,1]"/>
         <local:CellControl Grid.Row="4" Grid.Column="3" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[3,2]"/>
         <local:CellControl Grid.Row="4" Grid.Column="4" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[3,3]"/>
-        <Rectangle x:Name="HorizontalAimRectangle" Style="{StaticResource HorizontalAimRectangle}"/>
-        <Rectangle x:Name="VerticalAimRectangle" Style="{StaticResource VerticalAimRectangle}"/>
-    </Grid>
+            <local:CellControl Grid.Row="5" Grid.Column="1" PointerPressed="CellControl_PointerPressed" PointerEntered="CellControl_PointerEntered" Tag="[4,0]"/>
+            <Rectangle Grid.Row="1" Style="{StaticResource HorizontalLine}" StrokeThickness="2"/>
+        <Rectangle Grid.Row="2" Style="{StaticResource HorizontalLine}"/>
+        <Rectangle Grid.Row="3" Style="{StaticResource HorizontalLine}" StrokeThickness="2"/>
+        <Rectangle Grid.Row="4" Style="{StaticResource HorizontalLine}"/>
+        <Rectangle Grid.Column="1" Style="{StaticResource VerticalLine}" StrokeThickness="2"/>
+        <Rectangle Grid.Column="2" Style="{StaticResource VerticalLine}"/>
+        <Rectangle Grid.Column="3" Style="{StaticResource VerticalLine}" StrokeThickness="2"/>
+        <Rectangle Grid.Column="4" Style="{StaticResource VerticalLine}"/>-->
+            <Rectangle x:Name="HorizontalAimRectangle" Style="{StaticResource HorizontalAimRectangle}" Canvas.ZIndex="1"/>
+            <Rectangle x:Name="VerticalAimRectangle" Style="{StaticResource VerticalAimRectangle}" Canvas.ZIndex="2"/>
+        </Grid>
+    </Viewbox>
 </UserControl>

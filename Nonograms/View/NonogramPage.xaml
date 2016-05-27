@@ -13,11 +13,12 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <controls:NonogramControl LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" Field="{Binding Field, Mode=TwoWay}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}"/>
+        <controls:NonogramControl LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" Field="{Binding Field, Mode=TwoWay}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}" Width="300"/>
         <StackPanel Grid.Column="1" Margin="20">
-            <Button Content="CheckMode" VerticalAlignment="Top" Command="{Binding CheckModeCommand}" Margin="20"/>
-            <Button Content="TagMode" VerticalAlignment="Top" Command="{Binding TagTypeCommand}" Margin="20"/>
-            <Button Content="Clear" VerticalAlignment="Top" Command="{Binding ClearCommand}" Margin="20"/>
+            <Button Content="CheckMode" Command="{Binding CheckModeCommand}" Margin="20"/>
+            <Button Content="TagMode" Command="{Binding TagTypeCommand}" Margin="20"/>
+            <Button Content="PreviousStep" Command="{Binding PreviousStepCommand}" Margin="20"/>
+            <Button Content="Clear" Command="{Binding ClearCommand}" Margin="20"/>
         </StackPanel>
     </Grid>
 </Page>

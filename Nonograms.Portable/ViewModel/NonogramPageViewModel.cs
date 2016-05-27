@@ -40,7 +40,7 @@ namespace Nonograms.Portable.ViewModel
             {
                 _field = value;
                 RaisePropertyChanged();
-                AddToHistory(_field);
+                _history.Push(_field);
             }
         }
 
@@ -129,6 +129,19 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
+        RelayCommand _previousStepCommand;
+        public RelayCommand PreviousStepCommand
+        {
+            get
+            {
+                return _previousStepCommand ?? (_previousStepCommand = new RelayCommand(() =>
+                {
+
+                    Field = (int[,])_history.Pop().Clone();
+                }));
+            }
+        }
+
         RelayCommand _clearCommand;
         public RelayCommand ClearCommand
         {
@@ -149,7 +162,8 @@ namespace Nonograms.Portable.ViewModel
                 return _showDialogCommand ?? (_showDialogCommand = new RelayCommand<bool>(async (p) =>
                 {
                     var dialog = ServiceLocator.Current.GetInstance<IDialogService>();
-                    await dialog.ShowMessage("You won!", "Victory!!!", "Got it!", () => ClearCommand.Execute(null));
+                    //await dialog.ShowMessage("You won!", "Victory!!!", "Got it!", () => ClearCommand.Execute(null));
+                    await dialog.ShowMessage("You won!", "Victory!!!");
                 }, p => p));
             }
         }
@@ -178,11 +192,6 @@ namespace Nonograms.Portable.ViewModel
             {
                 // add code
             }
-        }
-
-        private void AddToHistory(int[,] field)
-        {
-            _history.Push(field);
         }
     }
 }

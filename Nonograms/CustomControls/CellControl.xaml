@@ -6,9 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="200"
-    d:DesignWidth="200">
-    <Border x:Name="CellBorder" Background="White">
+    d:DesignHeight="100"
+    d:DesignWidth="100">
+    <Border x:Name="CellBorder" Background="White" Width="100" Height="100">
         <Grid x:Name="TagGrid">
             <Viewbox Stretch="Uniform">
                 <Ellipse x:Name="Dot" Stroke="Black" Fill="Black" Width="60" Height="60" Margin="60"/>

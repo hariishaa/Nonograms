@@ -1,4 +1,5 @@
 ﻿using Nonograms.Portable.Enums;
+using Nonograms.Portable.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -98,17 +99,25 @@ namespace Nonograms.CustomControls
         {
             //BindableField = ConvertFieldToBindable(Field);
 
-            // фигня?
-            //int[,] oldField = ((int[,])e.OldValue);
-            //int[,] newField = ((int[,])e.NewValue);
-            //// чтобы построить FieldGrid один раз - при первом связывании свойства Field или при изменении его размеров
-            //if (oldField == null || oldField.Length != newField.Length)
-            //{
-            //    BuildFieldGrid(newField.GetLength(0), newField.GetLength(1));
-            //}
             NonogramControl nc = d as NonogramControl;
-            nc.BuildFieldGrid(((int[,])e.NewValue).GetLength(0), ((int[,])e.NewValue).GetLength(1));
+            int[,] oldField = ((int[,])e.OldValue);
+            int[,] newField = ((int[,])e.NewValue);
+            // чтобы построить FieldGrid один раз - при первом связывании свойства Field
+            if (oldField == null)
+            {
+                nc.BuildFieldGrid(newField.GetLength(0), newField.GetLength(1));
+            }
+            else if (!newField.AreValuesEqual(oldField))
+            {
+                nc.UpdateField(newField);
+            }
+            // чтобы можно было заново решить кроссворд, например, очистив поле
+            if (nc.IsSolved)
+            {
+                nc.IsSolved = false;
+            }
         }
+
         public int[,] Field
         {
             get
@@ -197,7 +206,7 @@ namespace Nonograms.CustomControls
                 var arr = leftSideValues[i];
                 for (int j = 0; j < arr.Length; j++)
                 {
-                    TextBlock tb = new TextBlock { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, TextAlignment = TextAlignment.Center, Text = arr[j].ToString() };
+                    TextBlock tb = new TextBlock { Style = (Style)Resources["NumberTextBlock"], Text = arr[j].ToString() };
                     Grid.SetRow(tb, i);
                     Grid.SetColumn(tb, maxLength - arr.Length + j);
                     LeftSideGrid.Children.Add(tb);
@@ -231,7 +240,7 @@ namespace Nonograms.CustomControls
                 var arr = topSideValues[j];
                 for (int i = 0; i < arr.Length ; i++)
                 {
-                    TextBlock tb = new TextBlock { HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center, TextAlignment = TextAlignment.Center, Text = arr[i].ToString() };
+                    TextBlock tb = new TextBlock { Style = (Style)Resources["NumberTextBlock"], Text = arr[i].ToString() };
                     Grid.SetRow(tb, maxHeight - arr.Length + i);
                     Grid.SetColumn(tb, j);
                     TopSideGrid.Children.Add(tb);
@@ -259,7 +268,6 @@ namespace Nonograms.CustomControls
             {
                 for (int j = 1; j <= columns; j++)
                 {
-                    //Style = (Style)Resources["Cell"]
                     CellControl cell = new CellControl();
                     Grid.SetRow(cell, i);
                     Grid.SetColumn(cell, j);
@@ -271,6 +279,24 @@ namespace Nonograms.CustomControls
                     FieldGrid.Children.Add(cell);
                 }
             }
+            // строим разделяющие линии
+            for (int i = 1; i <= rows; i++)
+            {
+                Rectangle horizontalLine = i % 5 == 1 ? new Rectangle { Style = (Style)Resources["BoldHorizontalLine"] } : new Rectangle { Style = (Style)Resources["HorizontalLine"] };
+                Grid.SetRow(horizontalLine, i);
+                FieldGrid.Children.Add(horizontalLine);
+            }
+            for (int j = 1; j <= columns; j++)
+            {
+                Rectangle verticalLine = j % 5 == 1 ? new Rectangle { Style = (Style)Resources["BoldVerticalLine"] } : new Rectangle { Style = (Style)Resources["VerticalLine"] };
+                Grid.SetColumn(verticalLine, j);
+                FieldGrid.Children.Add(verticalLine);
+            }
+            // строим "прицел"
+            //Rectangle AimRectangle = new Rectangle { Name = "HorizontalAimRectangle", Style = (Style)Resources["HorizontalAimRectangle"] };
+            //FieldGrid.Children.Add(AimRectangle);
+            //AimRectangle = new Rectangle { Name = "VerticalAimRectangle", Style = (Style)Resources["VerticalAimRectangle"] };
+            //FieldGrid.Children.Add(AimRectangle);
         }
         #endregion
         #region ControlEvents
@@ -284,6 +310,7 @@ namespace Nonograms.CustomControls
             Grid.SetColumn(_outlineRectangle, column);
             Grid.SetRow(_outlineRectangle, row);
             FieldGrid.Children.Add(_outlineRectangle);
+
 
             Grid.SetRow(HorizontalAimRectangle, row);
             Grid.SetColumn(VerticalAimRectangle, column);
@@ -304,7 +331,7 @@ namespace Nonograms.CustomControls
         private void CellControl_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             // рисуем контур
-            if (e.Pointer.IsInContact)
+            if (_outlineRectangle != null && e.Pointer.IsInContact)
             {
                 CellControl currentCell = sender as CellControl;
                 _endPoint = new Point(Grid.GetColumn(currentCell), Grid.GetRow(currentCell));
@@ -406,7 +433,7 @@ namespace Nonograms.CustomControls
         {
             int beginX = Grid.GetColumn(outline) - 1, beginY = Grid.GetRow(outline) - 1;
             int columns = Grid.GetColumnSpan(outline), rows = Grid.GetRowSpan(outline);
-            int[,] field = Field; // костыль??? ещё и не работающий
+            int[,] field = (int[,])Field.Clone();
             CellControl cell;
             if (rows > columns)
             {
@@ -426,7 +453,33 @@ namespace Nonograms.CustomControls
                     cell.State = (CellStates)_checkMode;
                 }
             }
-            Field = field; // не срабатывает set!!!
+            Field = field;
+        }
+
+        private int[,] lol(int[,] field)
+        {
+            int[,] lolArr = new int[field.GetLength(0), field.GetLength(1)];
+            for (int i = 0; i < field.GetLength(0); i++)
+            {
+                for (int j = 0; j < field.GetLength(1); j++)
+                {
+                    lolArr[i, j] = field[i, j];
+                }
+            }
+            return lolArr;
+        }
+
+        private void UpdateField(int[,] newField)
+        {
+            CellControl cell;
+            for (int i = 0; i < newField.GetLength(0); i++)
+            {
+                for (int j = 0; j < newField.GetLength(1); j++)
+                {
+                    cell = FieldGrid.Children.Where(child => child.GetType() == typeof(CellControl) && ((FrameworkElement)child).Tag.ToString() == string.Format("[{0},{1}]", i, j)).Select(child => (CellControl)child).First();
+                    cell.State = (CellStates)newField[i, j];
+                }
+            }
         }
 
         #region CheckSolutionMethods

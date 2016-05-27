@@ -22,7 +22,29 @@ namespace Nonograms.CustomControls
     public sealed partial class CellControl : UserControl
     {
 
-        public static readonly DependencyProperty StateProperty = DependencyProperty.Register("State", typeof(CellStates), typeof(CellControl), new PropertyMetadata(default(CellStates)));
+        public static readonly DependencyProperty StateProperty = DependencyProperty.Register("State", typeof(CellStates), typeof(CellControl), new PropertyMetadata(default(CellStates), OnStatePropertyChanged));
+
+        private static void OnStatePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            CellControl nc = d as CellControl;
+            switch ((CellStates)e.NewValue)
+            {
+                case CellStates.Checked:
+                    nc.CellBorder.Background = new SolidColorBrush(Colors.Black);
+                    nc.TagGrid.Visibility = Visibility.Collapsed;
+                    break;
+                case CellStates.Tagged:
+                    nc.CellBorder.Background = new SolidColorBrush(Colors.White);
+                    nc.TagGrid.Visibility = Visibility.Visible;
+                    break;
+                case CellStates.Empty:
+                default:
+                    nc.CellBorder.Background = new SolidColorBrush(Colors.White);
+                    nc.TagGrid.Visibility = Visibility.Collapsed;
+                    break;
+            }
+        }
+
         public CellStates State
         {
             get
@@ -32,23 +54,6 @@ namespace Nonograms.CustomControls
             set
             {
                 SetValue(StateProperty, value);
-                // ИЗМЕНИТЬ по аналогии с TagType
-                switch (value)
-                {
-                    case CellStates.Checked:
-                        CellBorder.Background = new SolidColorBrush(Colors.Black);
-                        TagGrid.Visibility = Visibility.Collapsed;
-                        break;
-                    case CellStates.Tagged:
-                        CellBorder.Background = new SolidColorBrush(Colors.White);
-                        TagGrid.Visibility = Visibility.Visible;
-                        break;
-                    case CellStates.Empty:
-                    default:
-                        CellBorder.Background = new SolidColorBrush(Colors.White);
-                        TagGrid.Visibility = Visibility.Collapsed;
-                        break;
-                }
             }
         }
 
