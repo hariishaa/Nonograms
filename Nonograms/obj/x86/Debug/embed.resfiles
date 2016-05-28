@@ -1,2 +1,4 @@
 App.xbf
+CustomControls\CellControl.xbf
+CustomControls\NonogramControl.xbf
 View\NonogramPage.xbf

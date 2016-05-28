@@ -132,15 +132,53 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "Nonograms.View.NonogramPage";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[22];
+            _typeNameTable[0] = "Nonograms.ViewModel.ViewModelLocator";
+            _typeNameTable[1] = "Nonograms.Portable.ViewModel.BaseViewModelLocator";
+            _typeNameTable[2] = "Object";
+            _typeNameTable[3] = "Nonograms.Portable.ViewModel.NonogramPageViewModel";
+            _typeNameTable[4] = "GalaSoft.MvvmLight.ViewModelBase";
+            _typeNameTable[5] = "GalaSoft.MvvmLight.ObservableObject";
+            _typeNameTable[6] = "Nonograms.CustomControls.CellControl";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[8] = "Nonograms.Portable.Enums.CellStates";
+            _typeNameTable[9] = "System.Enum";
+            _typeNameTable[10] = "System.ValueType";
+            _typeNameTable[11] = "Nonograms.Portable.Enums.TagTypes";
+            _typeNameTable[12] = "Nonograms.CustomControls.NonogramControl";
+            _typeNameTable[13] = "Nonograms.Portable.Enums.CheckModes";
+            _typeNameTable[14] = "Int32[][]";
+            _typeNameTable[15] = "System.Array";
+            _typeNameTable[16] = "Int32[]";
+            _typeNameTable[17] = "Int32";
+            _typeNameTable[18] = "Int32[,]";
+            _typeNameTable[19] = "Boolean";
+            _typeNameTable[20] = "Nonograms.View.NonogramPage";
+            _typeNameTable[21] = "Windows.UI.Xaml.Controls.Page";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::Nonograms.View.NonogramPage);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[22];
+            _typeTable[0] = typeof(global::Nonograms.ViewModel.ViewModelLocator);
+            _typeTable[1] = typeof(global::Nonograms.Portable.ViewModel.BaseViewModelLocator);
+            _typeTable[2] = typeof(global::System.Object);
+            _typeTable[3] = typeof(global::Nonograms.Portable.ViewModel.NonogramPageViewModel);
+            _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
+            _typeTable[5] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
+            _typeTable[6] = typeof(global::Nonograms.CustomControls.CellControl);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[8] = typeof(global::Nonograms.Portable.Enums.CellStates);
+            _typeTable[9] = typeof(global::System.Enum);
+            _typeTable[10] = typeof(global::System.ValueType);
+            _typeTable[11] = typeof(global::Nonograms.Portable.Enums.TagTypes);
+            _typeTable[12] = typeof(global::Nonograms.CustomControls.NonogramControl);
+            _typeTable[13] = typeof(global::Nonograms.Portable.Enums.CheckModes);
+            _typeTable[14] = typeof(global::System.Int32[][]);
+            _typeTable[15] = typeof(global::System.Array);
+            _typeTable[16] = typeof(global::System.Int32[]);
+            _typeTable[17] = typeof(global::System.Int32);
+            _typeTable[18] = typeof(global::System.Int32[,]);
+            _typeTable[19] = typeof(global::System.Boolean);
+            _typeTable[20] = typeof(global::Nonograms.View.NonogramPage);
+            _typeTable[21] = typeof(global::Windows.UI.Xaml.Controls.Page);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -175,7 +213,13 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
+        private object Activate_0_ViewModelLocator() { return new global::Nonograms.ViewModel.ViewModelLocator(); }
+        private object Activate_1_BaseViewModelLocator() { return new global::Nonograms.Portable.ViewModel.BaseViewModelLocator(); }
+        private object Activate_3_NonogramPageViewModel() { return new global::Nonograms.Portable.ViewModel.NonogramPageViewModel(); }
+        private object Activate_5_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
+        private object Activate_6_CellControl() { return new global::Nonograms.CustomControls.CellControl(); }
+        private object Activate_12_NonogramControl() { return new global::Nonograms.CustomControls.NonogramControl(); }
+        private object Activate_20_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -187,18 +231,139 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Nonograms.View.NonogramPage
-                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_NonogramPage;
+            case 0:   //  Nonograms.ViewModel.ViewModelLocator
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator"));
+                userType.Activator = Activate_0_ViewModelLocator;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Nonograms.Portable.ViewModel.BaseViewModelLocator
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_1_BaseViewModelLocator;
+                userType.AddMemberName("NonogramPage");
+                xamlType = userType;
+                break;
+
+            case 2:   //  Object
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 3:   //  Nonograms.Portable.ViewModel.NonogramPageViewModel
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 4:   //  GalaSoft.MvvmLight.ViewModelBase
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ObservableObject"));
+                xamlType = userType;
+                break;
+
+            case 5:   //  GalaSoft.MvvmLight.ObservableObject
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_5_ObservableObject;
+                xamlType = userType;
+                break;
+
+            case 6:   //  Nonograms.CustomControls.CellControl
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_6_CellControl;
+                userType.AddMemberName("State");
+                userType.AddMemberName("TagType");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Nonograms.Portable.Enums.CellStates
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Tagged", global::Nonograms.Portable.Enums.CellStates.Tagged);
+                userType.AddEnumValue("Empty", global::Nonograms.Portable.Enums.CellStates.Empty);
+                userType.AddEnumValue("Checked", global::Nonograms.Portable.Enums.CellStates.Checked);
+                xamlType = userType;
+                break;
+
+            case 9:   //  System.Enum
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                xamlType = userType;
+                break;
+
+            case 10:   //  System.ValueType
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 11:   //  Nonograms.Portable.Enums.TagTypes
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Dot", global::Nonograms.Portable.Enums.TagTypes.Dot);
+                userType.AddEnumValue("X", global::Nonograms.Portable.Enums.TagTypes.X);
+                xamlType = userType;
+                break;
+
+            case 12:   //  Nonograms.CustomControls.NonogramControl
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_12_NonogramControl;
+                userType.AddMemberName("CheckMode");
+                userType.AddMemberName("TagType");
+                userType.AddMemberName("LeftSideValues");
+                userType.AddMemberName("TopSideValues");
+                userType.AddMemberName("Field");
+                userType.AddMemberName("IsSolved");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  Nonograms.Portable.Enums.CheckModes
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Tag", global::Nonograms.Portable.Enums.CheckModes.Tag);
+                userType.AddEnumValue("Check", global::Nonograms.Portable.Enums.CheckModes.Check);
+                xamlType = userType;
+                break;
+
+            case 14:   //  Int32[][]
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 15:   //  System.Array
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Length");
+                userType.AddMemberName("Rank");
+                xamlType = userType;
+                break;
+
+            case 16:   //  Int32[]
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+                xamlType = userType;
+                break;
+
+            case 17:   //  Int32
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 18:   //  Int32[,]
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 19:   //  Boolean
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 20:   //  Nonograms.View.NonogramPage
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_20_NonogramPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 21:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -206,11 +371,183 @@ namespace Nonograms.Nonograms_XamlTypeInfo
         }
 
 
+        private object get_0_BaseViewModelLocator_NonogramPage(object instance)
+        {
+            var that = (global::Nonograms.Portable.ViewModel.BaseViewModelLocator)instance;
+            return that.NonogramPage;
+        }
+        private object get_1_CellControl_State(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.CellControl)instance;
+            return that.State;
+        }
+        private void set_1_CellControl_State(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.CellControl)instance;
+            that.State = (global::Nonograms.Portable.Enums.CellStates)Value;
+        }
+        private object get_2_CellControl_TagType(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.CellControl)instance;
+            return that.TagType;
+        }
+        private void set_2_CellControl_TagType(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.CellControl)instance;
+            that.TagType = (global::Nonograms.Portable.Enums.TagTypes)Value;
+        }
+        private object get_3_NonogramControl_CheckMode(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.CheckMode;
+        }
+        private void set_3_NonogramControl_CheckMode(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.CheckMode = (global::Nonograms.Portable.Enums.CheckModes)Value;
+        }
+        private object get_4_NonogramControl_TagType(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.TagType;
+        }
+        private void set_4_NonogramControl_TagType(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.TagType = (global::Nonograms.Portable.Enums.TagTypes)Value;
+        }
+        private object get_5_NonogramControl_LeftSideValues(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.LeftSideValues;
+        }
+        private void set_5_NonogramControl_LeftSideValues(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.LeftSideValues = (global::System.Int32[][])Value;
+        }
+        private object get_6_Array_Length(object instance)
+        {
+            var that = (global::System.Array)instance;
+            return that.Length;
+        }
+        private object get_7_Array_Rank(object instance)
+        {
+            var that = (global::System.Array)instance;
+            return that.Rank;
+        }
+        private object get_8_NonogramControl_TopSideValues(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.TopSideValues;
+        }
+        private void set_8_NonogramControl_TopSideValues(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.TopSideValues = (global::System.Int32[][])Value;
+        }
+        private object get_9_NonogramControl_Field(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.Field;
+        }
+        private void set_9_NonogramControl_Field(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.Field = (global::System.Int32[,])Value;
+        }
+        private object get_10_NonogramControl_IsSolved(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.IsSolved;
+        }
+        private void set_10_NonogramControl_IsSolved(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.IsSolved = (global::System.Boolean)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Nonograms.Nonograms_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Nonograms.Portable.ViewModel.BaseViewModelLocator.NonogramPage":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "NonogramPage", "Nonograms.Portable.ViewModel.NonogramPageViewModel");
+                xamlMember.Getter = get_0_BaseViewModelLocator_NonogramPage;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Nonograms.CustomControls.CellControl.State":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.CellControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "State", "Nonograms.Portable.Enums.CellStates");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_1_CellControl_State;
+                xamlMember.Setter = set_1_CellControl_State;
+                break;
+            case "Nonograms.CustomControls.CellControl.TagType":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.CellControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "TagType", "Nonograms.Portable.Enums.TagTypes");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_CellControl_TagType;
+                xamlMember.Setter = set_2_CellControl_TagType;
+                break;
+            case "Nonograms.CustomControls.NonogramControl.CheckMode":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "CheckMode", "Nonograms.Portable.Enums.CheckModes");
+                xamlMember.Getter = get_3_NonogramControl_CheckMode;
+                xamlMember.Setter = set_3_NonogramControl_CheckMode;
+                break;
+            case "Nonograms.CustomControls.NonogramControl.TagType":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "TagType", "Nonograms.Portable.Enums.TagTypes");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_NonogramControl_TagType;
+                xamlMember.Setter = set_4_NonogramControl_TagType;
+                break;
+            case "Nonograms.CustomControls.NonogramControl.LeftSideValues":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "LeftSideValues", "Int32[][]");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_NonogramControl_LeftSideValues;
+                xamlMember.Setter = set_5_NonogramControl_LeftSideValues;
+                break;
+            case "System.Array.Length":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("System.Array");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Length", "Int32");
+                xamlMember.Getter = get_6_Array_Length;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "System.Array.Rank":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("System.Array");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Rank", "Int32");
+                xamlMember.Getter = get_7_Array_Rank;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Nonograms.CustomControls.NonogramControl.TopSideValues":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "TopSideValues", "Int32[][]");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_NonogramControl_TopSideValues;
+                xamlMember.Setter = set_8_NonogramControl_TopSideValues;
+                break;
+            case "Nonograms.CustomControls.NonogramControl.Field":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Field", "Int32[,]");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_NonogramControl_Field;
+                xamlMember.Setter = set_9_NonogramControl_Field;
+                break;
+            case "Nonograms.CustomControls.NonogramControl.IsSolved":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "IsSolved", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_NonogramControl_IsSolved;
+                xamlMember.Setter = set_10_NonogramControl_IsSolved;
+                break;
+            }
             return xamlMember;
         }
     }

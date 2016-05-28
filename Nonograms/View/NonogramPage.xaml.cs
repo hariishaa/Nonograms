@@ -30,5 +30,11 @@ namespace Nonograms.View
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var bounds = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;
+            var b = Window.Current.Bounds;
+        }
     }
 }

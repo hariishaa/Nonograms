@@ -107,10 +107,11 @@ namespace Nonograms.CustomControls
             {
                 nc.BuildFieldGrid(newField.GetLength(0), newField.GetLength(1));
             }
-            else if (!newField.AreValuesEqual(oldField))
-            {
-                nc.UpdateField(newField);
-            }
+            // ТОРМОЗИТ ВСЁ
+            //else if (!newField.AreValuesEqual(oldField))
+            //{
+            //    nc.UpdateField(newField);
+            //}
             // чтобы можно было заново решить кроссворд, например, очистив поле
             if (nc.IsSolved)
             {
@@ -425,7 +426,7 @@ namespace Nonograms.CustomControls
             HorizontalAimRectangle.Visibility = Visibility.Collapsed;
 
             // проверяем решение
-            CheckSolution(Field, LeftSideValues, TopSideValues);
+            //CheckSolution(Field, LeftSideValues, TopSideValues);
         }
         #endregion
 
@@ -454,19 +455,6 @@ namespace Nonograms.CustomControls
                 }
             }
             Field = field;
-        }
-
-        private int[,] lol(int[,] field)
-        {
-            int[,] lolArr = new int[field.GetLength(0), field.GetLength(1)];
-            for (int i = 0; i < field.GetLength(0); i++)
-            {
-                for (int j = 0; j < field.GetLength(1); j++)
-                {
-                    lolArr[i, j] = field[i, j];
-                }
-            }
-            return lolArr;
         }
 
         private void UpdateField(int[,] newField)
