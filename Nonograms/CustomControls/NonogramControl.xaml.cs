@@ -26,6 +26,7 @@ namespace Nonograms.CustomControls
         bool _pointerCaptured;
         Rectangle _outlineRectangle;
         Point _beginPoint, _endPoint;
+        List<CellControl> _cells;
         CheckModes _checkMode;
         #region CheckModesProperty
         public static readonly DependencyProperty CheckModesProperty = DependencyProperty.Register("CheckMode", typeof(CheckModes), typeof(NonogramControl), new PropertyMetadata(default(CheckModes)));
@@ -305,14 +306,16 @@ namespace Nonograms.CustomControls
         {
             // задаем начальные координаты контура
             _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 4, Fill = new SolidColorBrush(Colors.BlueViolet), Opacity = 0.5, IsHitTestVisible = false };
+            _cells = new List<CellControl>();
             CellControl currentCell = sender as CellControl;
+            _cells.Add(currentCell);
             int column = Grid.GetColumn(currentCell), row = Grid.GetRow(currentCell);
             _beginPoint = _endPoint = new Point(column, row);
             Grid.SetColumn(_outlineRectangle, column);
             Grid.SetRow(_outlineRectangle, row);
             FieldGrid.Children.Add(_outlineRectangle);
 
-
+            // инициализация прицела
             Grid.SetRow(HorizontalAimRectangle, row);
             Grid.SetColumn(VerticalAimRectangle, column);
             HorizontalAimRectangle.Visibility = Visibility.Visible;
@@ -338,12 +341,50 @@ namespace Nonograms.CustomControls
                 _endPoint = new Point(Grid.GetColumn(currentCell), Grid.GetRow(currentCell));
                 int rowSpan = Grid.GetRowSpan(_outlineRectangle), columnSpan = Grid.GetColumnSpan(_outlineRectangle);
 
+                // изменяем положение прицела
                 Grid.SetRow(HorizontalAimRectangle, (int)_endPoint.Y);
                 Grid.SetColumn(VerticalAimRectangle, (int)_endPoint.X);
 
+                //if ((int)Math.Abs(_beginPoint.X - _endPoint.X) > 0)
+                //{
+                //    Grid.SetRow(_outlineRectangle, (int)Math.Min(_beginPoint.Y, _endPoint.Y));
+                //    Grid.SetRowSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.Y - _endPoint.Y) + 1);
+                //    if (columnSpan > 1)
+                //    {
+                //        Grid.SetColumn(_outlineRectangle, (int)_beginPoint.X);
+                //        Grid.SetColumnSpan(_outlineRectangle, 1);
+                //    }
+                //    if (_cells.Contains(currentCell))
+                //    {
+                //        _cells.Remove(currentCell);
+                //    }
+                //    else
+                //    {
+                //        _cells.Add(currentCell);
+                //    }
+                //}
+                //else if ((int)Math.Abs(_beginPoint.Y - _endPoint.Y) > 0)
+                //{
+                //    Grid.SetColumn(_outlineRectangle, (int)Math.Min(_beginPoint.X, _endPoint.X));
+                //    Grid.SetColumnSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.X - _endPoint.X) + 1);
+                //    if (rowSpan > 1)
+                //    {
+                //        Grid.SetRow(_outlineRectangle, (int)_beginPoint.Y);
+                //        Grid.SetRowSpan(_outlineRectangle, 1);
+                //    }
+                //    if (_cells.Contains(currentCell))
+                //    {
+                //        _cells.Remove(currentCell);
+                //    }
+                //    else
+                //    {
+                //        _cells.Add(currentCell);
+                //    }
+                //}
+
                 if (rowSpan == 1 && columnSpan == 1)
                 {
-                    // чтобы избежать ситуации 2х2
+                    //чтобы избежать ситуации 2х2
                     if ((int)Math.Abs(_beginPoint.X - _endPoint.X) > 0)
                     {
                         Grid.SetColumn(_outlineRectangle, (int)Math.Min(_beginPoint.X, _endPoint.X));
@@ -354,37 +395,72 @@ namespace Nonograms.CustomControls
                         Grid.SetRow(_outlineRectangle, (int)Math.Min(_beginPoint.Y, _endPoint.Y));
                         Grid.SetRowSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.Y - _endPoint.Y) + 1);
                     }
+                    if (_cells.Contains(currentCell))
+                    {
+                        _cells.Remove(currentCell);
+                    }
+                    else
+                    {
+                        _cells.Add(currentCell);
+                    }
                 }
                 else if (columnSpan > 1)
                 {
-                    if ((int)Math.Abs(_beginPoint.X - _endPoint.X) >= (int)Math.Abs(_beginPoint.Y - _endPoint.Y))
+                    //if ((int)Math.Abs(_beginPoint.X - _endPoint.X) >= (int)Math.Abs(_beginPoint.Y - _endPoint.Y))
+                    //{
+                    //    Grid.SetColumn(_outlineRectangle, (int)Math.Min(_beginPoint.X, _endPoint.X));
+                    //    Grid.SetColumnSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.X - _endPoint.X) + 1);
+                    //}
+                    //чтобы изменить направление с горизонтального на вертикальное
+                    if ((int)Math.Abs(_beginPoint.X - _endPoint.X) == 0)
                     {
-                        Grid.SetColumn(_outlineRectangle, (int)Math.Min(_beginPoint.X, _endPoint.X));
-                        Grid.SetColumnSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.X - _endPoint.X) + 1);
-                    }
-                    // чтобы изменить направление с горизонтального на вертикальное
-                    else
-                    {
-                        Grid.SetRow(_outlineRectangle, (int)Math.Min(_beginPoint.Y, _endPoint.Y));
+                        Grid.SetRow(_outlineRectangle, (int)_beginPoint.Y);
                         Grid.SetRowSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.Y - _endPoint.Y) + 1);
                         Grid.SetColumn(_outlineRectangle, (int)_beginPoint.X);
                         Grid.SetColumnSpan(_outlineRectangle, 1);
                     }
-                }
-                else if (rowSpan > 1)
-                {
-                    if ((int)Math.Abs(_beginPoint.Y - _endPoint.Y) >= (int)Math.Abs(_beginPoint.X - _endPoint.X))
-                    {
-                        Grid.SetRow(_outlineRectangle, (int)Math.Min(_beginPoint.Y, _endPoint.Y));
-                        Grid.SetRowSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.Y - _endPoint.Y) + 1);
-                    }
-                    // чтобы изменить направление с вертикального на горизонтальное
                     else
                     {
                         Grid.SetColumn(_outlineRectangle, (int)Math.Min(_beginPoint.X, _endPoint.X));
                         Grid.SetColumnSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.X - _endPoint.X) + 1);
+                    }
+                    if (_cells.Contains(currentCell))
+                    {
+                        _cells.Remove(currentCell);
+                    }
+                    else
+                    {
+                        _cells.Add(currentCell);
+                    }
+                }
+                
+                else if (rowSpan > 1)
+                {
+                    //if ((int)Math.Abs(_beginPoint.Y - _endPoint.Y) >= (int)Math.Abs(_beginPoint.X - _endPoint.X))
+                    //{
+                    //    Grid.SetRow(_outlineRectangle, (int)Math.Min(_beginPoint.Y, _endPoint.Y));
+                    //    Grid.SetRowSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.Y - _endPoint.Y) + 1);
+                    //}
+                    //чтобы изменить направление с вертикального на горизонтальное
+                    if ((int)Math.Abs(_beginPoint.Y - _endPoint.Y) == 0)
+                    {
+                        Grid.SetColumn(_outlineRectangle, (int)_beginPoint.X);
+                        Grid.SetColumnSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.X - _endPoint.X) + 1);
                         Grid.SetRow(_outlineRectangle, (int)_beginPoint.Y);
                         Grid.SetRowSpan(_outlineRectangle, 1);
+                    }
+                    else
+                    {
+                        Grid.SetRow(_outlineRectangle, (int)Math.Min(_beginPoint.Y, _endPoint.Y));
+                        Grid.SetRowSpan(_outlineRectangle, (int)Math.Abs(_beginPoint.Y - _endPoint.Y) + 1);
+                    }
+                    if (_cells.Contains(currentCell))
+                    {
+                        _cells.Remove(currentCell);
+                    }
+                    else
+                    {
+                        _cells.Add(currentCell);
                     }
                 }
             }
@@ -426,7 +502,7 @@ namespace Nonograms.CustomControls
             HorizontalAimRectangle.Visibility = Visibility.Collapsed;
 
             // проверяем решение
-            //CheckSolution(Field, LeftSideValues, TopSideValues);
+            CheckSolution(Field, LeftSideValues, TopSideValues);
         }
         #endregion
 
@@ -435,14 +511,14 @@ namespace Nonograms.CustomControls
             int beginX = Grid.GetColumn(outline) - 1, beginY = Grid.GetRow(outline) - 1;
             int columns = Grid.GetColumnSpan(outline), rows = Grid.GetRowSpan(outline);
             int[,] field = (int[,])Field.Clone();
-            CellControl cell;
+            //CellControl cell;
             if (rows > columns)
             {
                 for (int i = beginY; i < beginY + rows; i++)
                 {
                     field[i, beginX] = (int)_checkMode;
-                    cell = FieldGrid.Children.Where(child => child.GetType() == typeof(CellControl) && ((FrameworkElement)child).Tag.ToString() == string.Format("[{0},{1}]", i, beginX)).Select(child => (CellControl)child).First();
-                    cell.State = (CellStates)_checkMode;
+                    //cell = FieldGrid.Children.Where(child => child.GetType() == typeof(CellControl) && ((FrameworkElement)child).Tag.ToString() == string.Format("[{0},{1}]", i, beginX)).Select(child => (CellControl)child).First();
+                    //cell.State = (CellStates)_checkMode;
                 }
             }
             else
@@ -450,9 +526,13 @@ namespace Nonograms.CustomControls
                 for (int j = beginX; j < beginX + columns; j++)
                 {
                     field[beginY, j] = (int)_checkMode;
-                    cell = FieldGrid.Children.Where(child => child.GetType() == typeof(CellControl) && ((FrameworkElement)child).Tag.ToString() == string.Format("[{0},{1}]", beginY, j)).Select(child => (CellControl)child).First();
-                    cell.State = (CellStates)_checkMode;
+                    //cell = FieldGrid.Children.Where(child => child.GetType() == typeof(CellControl) && ((FrameworkElement)child).Tag.ToString() == string.Format("[{0},{1}]", beginY, j)).Select(child => (CellControl)child).First();
+                    //cell.State = (CellStates)_checkMode;
                 }
+            }
+            foreach (CellControl cell in _cells)
+            {
+                cell.State = (CellStates)_checkMode;
             }
             Field = field;
         }
