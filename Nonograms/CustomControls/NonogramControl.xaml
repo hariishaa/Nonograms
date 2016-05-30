@@ -41,6 +41,7 @@
         </Style>
         <Style x:Key="LineBaseStyle" TargetType="Rectangle">
             <Setter Property="Stroke" Value="Gray" />
+            <Setter Property="IsHitTestVisible" Value="False"/>
         </Style>
         <Style x:Key="HorizontalLine" TargetType="Rectangle" BasedOn="{StaticResource LineBaseStyle}">
             <Setter Property="Height" Value="1"/>
@@ -76,7 +77,7 @@
         </Style>
     </UserControl.Resources>
     <Viewbox>
-        <Grid x:Name="FieldGrid" Style="{StaticResource FieldGrid}" Tapped="BaseFieldGrid_Tapped" PointerEntered="FieldGrid_PointerEntered" PointerExited="FieldGrid_PointerExited" PointerReleased="FieldGrid_PointerReleased">
+        <Grid x:Name="FieldGrid" Style="{StaticResource FieldGrid}" PointerEntered="FieldGrid_PointerEntered" PointerExited="FieldGrid_PointerExited" PointerReleased="FieldGrid_PointerReleased">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <!--<RowDefinition/>

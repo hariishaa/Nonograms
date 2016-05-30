@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -57,6 +58,7 @@ namespace Nonograms
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+                ////////rootFrame.Navigated += OnNavigated;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -65,6 +67,13 @@ namespace Nonograms
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                ////////SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+
+                ////////SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                ////////    rootFrame.CanGoBack ?
+                ////////    AppViewBackButtonVisibility.Visible :
+                ////////    AppViewBackButtonVisibility.Collapsed;
             }
 
             if (rootFrame.Content == null)
@@ -76,7 +85,34 @@ namespace Nonograms
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size { Width = 300, Height = 300 });
+            ////////var appView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+            ////////appView.SetPreferredMinSize(new Size(500, 390));
+            ////////appView.Title = "";
+            ////////var titleBar = appView.TitleBar;
+            ////////titleBar.BackgroundColor = Colors.Black;
+            ////////titleBar.ForegroundColor = Colors.Black;
+            ////////titleBar.ButtonBackgroundColor = Colors.Black;
+            ////////titleBar.ButtonForegroundColor = Colors.White;
         }
+
+        //////private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        //////{
+        //////    Frame rootFrame = Window.Current.Content as Frame;
+
+        //////    if (rootFrame.CanGoBack)
+        //////    {
+        //////        e.Handled = true;
+        //////        rootFrame.GoBack();
+        //////    }
+        //////}
+
+        //////private void OnNavigated(object sender, NavigationEventArgs e)
+        //////{
+        //////    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+        //////        ((Frame)sender).CanGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+        //////}
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails

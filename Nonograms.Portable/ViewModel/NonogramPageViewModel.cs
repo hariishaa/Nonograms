@@ -6,6 +6,7 @@ using Nonograms.Portable.Enums;
 using Nonograms.Portable.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,19 @@ namespace Nonograms.Portable.ViewModel
                 _field = value;
                 RaisePropertyChanged();
                 _history.Push(_field);
+            }
+        }
+
+        ObservableCollection<int[,]> _fieldHistory;
+        public ObservableCollection<int[,]> FieldHistory
+        {
+            get
+            {
+                return _fieldHistory;
+            }
+            set
+            {
+                _fieldHistory = value;
             }
         }
 
@@ -136,8 +150,11 @@ namespace Nonograms.Portable.ViewModel
             {
                 return _previousStepCommand ?? (_previousStepCommand = new RelayCommand(() =>
                 {
-
-                    Field = (int[,])_history.Pop().Clone();
+                    //Field = (int[,])_history.Pop().Clone();
+                    if (FieldHistory.Count > 1)
+                    {
+                        FieldHistory.Remove(FieldHistory.Last());
+                    }
                 }));
             }
         }
@@ -181,17 +198,26 @@ namespace Nonograms.Portable.ViewModel
             TopSideValues = _nonogramInfo.TopSideValues;
             TagType = TagTypes.Dot;
             CheckMode = CheckModes.Check;
-            _history = new Stack<int[,]>();
-            // loadHistory;
-            if (_history.Count == 0)
-            {
-                Field = new int[rows, columns];
-                //Field = new int[4, 4] { { 1, 0, 0, 0 }, { 0, 0, 0, 0 }, { 1, 0, 0, 0 }, { 0, 0, 0, 0 } };
-            }
-            else
-            {
-                // add code
-            }
+            FieldHistory = new ObservableCollection<int[,]>();
+            //FieldHistory.CollectionChanged += FieldHistory_CollectionChanged;
+            FieldHistory.Add(new int[rows, columns]);
+            //_history = new Stack<int[,]>();
+            //if (_history.Count == 0)
+            //{
+            //    Field = new int[rows, columns];
+            //    //Field = new int[4, 4] { { 1, 0, 0, 0 }, { 0, 0, 0, 0 }, { 1, 0, 0, 0 }, { 0, 0, 0, 0 } };
+            //}
+            //else
+            //{
+            //    // add code
+            //}
+        }
+
+        private void FieldHistory_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            var x = e.OldItems;
+            var y = e.NewItems;
+            var z = FieldHistory;
         }
     }
 }

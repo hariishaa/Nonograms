@@ -132,7 +132,7 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[22];
+            _typeNameTable = new string[24];
             _typeNameTable[0] = "Nonograms.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Nonograms.Portable.ViewModel.BaseViewModelLocator";
             _typeNameTable[2] = "Object";
@@ -151,12 +151,14 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             _typeNameTable[15] = "System.Array";
             _typeNameTable[16] = "Int32[]";
             _typeNameTable[17] = "Int32";
-            _typeNameTable[18] = "Int32[,]";
-            _typeNameTable[19] = "Boolean";
-            _typeNameTable[20] = "Nonograms.View.NonogramPage";
-            _typeNameTable[21] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[18] = "System.Collections.ObjectModel.ObservableCollection`1<Int32[,]>";
+            _typeNameTable[19] = "System.Collections.ObjectModel.Collection`1<Int32[,]>";
+            _typeNameTable[20] = "Int32[,]";
+            _typeNameTable[21] = "Boolean";
+            _typeNameTable[22] = "Nonograms.View.NonogramPage";
+            _typeNameTable[23] = "Windows.UI.Xaml.Controls.Page";
 
-            _typeTable = new global::System.Type[22];
+            _typeTable = new global::System.Type[24];
             _typeTable[0] = typeof(global::Nonograms.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::Nonograms.Portable.ViewModel.BaseViewModelLocator);
             _typeTable[2] = typeof(global::System.Object);
@@ -175,10 +177,12 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             _typeTable[15] = typeof(global::System.Array);
             _typeTable[16] = typeof(global::System.Int32[]);
             _typeTable[17] = typeof(global::System.Int32);
-            _typeTable[18] = typeof(global::System.Int32[,]);
-            _typeTable[19] = typeof(global::System.Boolean);
-            _typeTable[20] = typeof(global::Nonograms.View.NonogramPage);
-            _typeTable[21] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[18] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>);
+            _typeTable[19] = typeof(global::System.Collections.ObjectModel.Collection<global::System.Int32[,]>);
+            _typeTable[20] = typeof(global::System.Int32[,]);
+            _typeTable[21] = typeof(global::System.Boolean);
+            _typeTable[22] = typeof(global::Nonograms.View.NonogramPage);
+            _typeTable[23] = typeof(global::Windows.UI.Xaml.Controls.Page);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -219,7 +223,21 @@ namespace Nonograms.Nonograms_XamlTypeInfo
         private object Activate_5_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
         private object Activate_6_CellControl() { return new global::Nonograms.CustomControls.CellControl(); }
         private object Activate_12_NonogramControl() { return new global::Nonograms.CustomControls.NonogramControl(); }
-        private object Activate_20_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
+        private object Activate_18_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>(); }
+        private object Activate_19_Collection() { return new global::System.Collections.ObjectModel.Collection<global::System.Int32[,]>(); }
+        private object Activate_22_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
+        private void VectorAdd_18_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.Int32[,]>)instance;
+            var newItem = (global::System.Int32[,])item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_19_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.Int32[,]>)instance;
+            var newItem = (global::System.Int32[,])item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -311,7 +329,7 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 userType.AddMemberName("TagType");
                 userType.AddMemberName("LeftSideValues");
                 userType.AddMemberName("TopSideValues");
-                userType.AddMemberName("Field");
+                userType.AddMemberName("FieldHistory");
                 userType.AddMemberName("IsSolved");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -346,24 +364,37 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Int32[,]
-                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+            case 18:   //  System.Collections.ObjectModel.ObservableCollection`1<Int32[,]>
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Int32[,]>"));
+                userType.CollectionAdd = VectorAdd_18_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 19:   //  Boolean
+            case 19:   //  System.Collections.ObjectModel.Collection`1<Int32[,]>
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_19_Collection;
+                userType.CollectionAdd = VectorAdd_19_Collection;
+                xamlType = userType;
+                break;
+
+            case 20:   //  Int32[,]
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+                xamlType = userType;
+                break;
+
+            case 21:   //  Boolean
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  Nonograms.View.NonogramPage
+            case 22:   //  Nonograms.View.NonogramPage
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_NonogramPage;
+                userType.Activator = Activate_22_NonogramPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  Windows.UI.Xaml.Controls.Page
+            case 23:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -446,15 +477,15 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.TopSideValues = (global::System.Int32[][])Value;
         }
-        private object get_9_NonogramControl_Field(object instance)
+        private object get_9_NonogramControl_FieldHistory(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
-            return that.Field;
+            return that.FieldHistory;
         }
-        private void set_9_NonogramControl_Field(object instance, object Value)
+        private void set_9_NonogramControl_FieldHistory(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
-            that.Field = (global::System.Int32[,])Value;
+            that.FieldHistory = (global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>)Value;
         }
         private object get_10_NonogramControl_IsSolved(object instance)
         {
@@ -533,12 +564,12 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlMember.Getter = get_8_NonogramControl_TopSideValues;
                 xamlMember.Setter = set_8_NonogramControl_TopSideValues;
                 break;
-            case "Nonograms.CustomControls.NonogramControl.Field":
+            case "Nonograms.CustomControls.NonogramControl.FieldHistory":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
-                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Field", "Int32[,]");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "FieldHistory", "System.Collections.ObjectModel.ObservableCollection`1<Int32[,]>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_NonogramControl_Field;
-                xamlMember.Setter = set_9_NonogramControl_Field;
+                xamlMember.Getter = get_9_NonogramControl_FieldHistory;
+                xamlMember.Setter = set_9_NonogramControl_FieldHistory;
                 break;
             case "Nonograms.CustomControls.NonogramControl.IsSolved":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");

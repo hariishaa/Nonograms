@@ -9,25 +9,39 @@
     mc:Ignorable="d"
     DataContext="{Binding Path=NonogramPage, Source={StaticResource ViewModelLocator}}">
     <Grid x:Name="LayoutRoot" Background="CadetBlue">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <controls:NonogramControl LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" Field="{Binding Field, Mode=TwoWay}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}" Width="341.3" />
-        <Grid Grid.Row="1" Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <!--<Button Content="click" Click="Button_Click"/>-->
-            <Button Content="CheckMode" Command="{Binding CheckModeCommand}" Margin="20"/>
-            <Button Content="TagMode" Grid.Column="1" Command="{Binding TagTypeCommand}" Margin="20"/>
-            <Button Content="PreviousStep" Grid.Row="1" Command="{Binding PreviousStepCommand}" Margin="20"/>
-            <Button Content="Clear" Grid.Row="1" Grid.Column="1" Command="{Binding ClearCommand}" Margin="20"/>
-        </Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="BigView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="361"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LayoutRoot.Background" Value="Cyan"/>
+                        <Setter Target="TagModeButton.(RelativePanel.RightOf)" Value="Nonogram"/>
+                        <!--<Setter Target="TagModeButton.(RelativePanel.Below)" Value="CheckModeButton"/>-->
+                        <Setter Target="TagModeButton.(RelativePanel.AlignVerticalCenterWith)" Value="Nonogram"/>
+                        <!--<Setter Target="CheckModeButton.(RelativePanel.RightOf)" Value="Nonogram"/>-->
+                        <Setter Target="CheckModeButton.(RelativePanel.Above)" Value="TagModeButton"/>
+                        <!--<Setter Target="CheckModeButton.(RelativePanel.AlignVerticalCenterWith)" Value="Nonogram"/>-->
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="PhoneView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LayoutRoot.Background" Value="Blue"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <RelativePanel VerticalAlignment="Top" BorderBrush="Green" BorderThickness="7">
+            <controls:NonogramControl x:Name="Nonogram" LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}" FieldHistory="{Binding FieldHistory}" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            <Button x:Name="CheckModeButton" Content="CheckMode" Command="{Binding CheckModeCommand}" Margin="10" RelativePanel.Below="Nonogram"/>
+            <Button x:Name="TagModeButton" Content="TagMode" Command="{Binding TagTypeCommand}" Margin="10" RelativePanel.Below="Nonogram" RelativePanel.RightOf="CheckModeButton"/>
+            <Button x:Name="PreviousStepButton" Content="PreviousStep" Command="{Binding PreviousStepCommand}" Margin="10" RelativePanel.Below="Nonogram" RelativePanel.RightOf="TagModeButton"/>
+            <Button x:Name="ClearButton" Content="Clear" Command="{Binding ClearCommand}" Margin="10" RelativePanel.Below="Nonogram" RelativePanel.RightOf="PreviousStepButton"/>
+        </RelativePanel>
     </Grid>
 </Page>

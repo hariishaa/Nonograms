@@ -20,7 +20,7 @@ namespace Nonograms.Portable.Model
         private NonogramInfo ConvertFromJson()
         {
             var assembly = typeof(NonogramInfo).GetTypeInfo().Assembly;
-            var stream = assembly.GetManifestResourceStream("Nonograms.Portable.Data.Nonograms.json");
+            var stream = assembly.GetManifestResourceStream("Nonograms.Portable.Data.Nonogram15x15.json");
             using (var sr = new StreamReader(stream))
             {
                 var json = sr.ReadToEnd();

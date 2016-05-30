@@ -62,7 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Data\Nonograms.json" />
+    <EmbeddedResource Include="Data\Nonogram6x4.json" />
+    <EmbeddedResource Include="Data\Nonogram15x15.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
