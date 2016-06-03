@@ -187,9 +187,7 @@ namespace Nonograms.Portable.ViewModel
 
         public NonogramPageViewModel()
         {
-            NonogramsRepository repo = new NonogramsRepository();
-            _nonogramInfo = repo.GetNonogramInfo();
-            InitializeField(_nonogramInfo.RowsNumber, _nonogramInfo.ColumnsNumber);
+
         }
 
         private void InitializeField(int rows, int columns)
@@ -218,6 +216,12 @@ namespace Nonograms.Portable.ViewModel
             var x = e.OldItems;
             var y = e.NewItems;
             var z = FieldHistory;
+        }
+
+        public void LoadNonogram(NonogramInfo nonogramInfo)
+        {
+            _nonogramInfo = nonogramInfo;
+            InitializeField(_nonogramInfo.RowsNumber, _nonogramInfo.ColumnsNumber);
         }
     }
 }

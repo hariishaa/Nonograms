@@ -13,24 +13,16 @@ namespace Nonograms.ViewModel
 {
     public class ViewModelLocator : BaseViewModelLocator
     {
-        public const string NonogramPageKey = "NonogramPage";
+        //public const string NonogramPageKey = "NonogramPage";
 
         public ViewModelLocator() : base()
         {
             SimpleIoc.Default.Register<IDialogService, DialogService>();
 
-            if (ViewModelBase.IsInDesignModeStatic)
-            {
-                SimpleIoc.Default.Register<INavigationService, NavigationService>();
-                //SimpleIoc.Default.Register<IDataService, Design.DesignDataService>();
-            }
-            else
-            {
-                var navigationService = new NavigationService();
-                navigationService.Configure(NonogramPageKey, typeof(NonogramPage));
-                SimpleIoc.Default.Register<INavigationService>(() => navigationService);
-                //SimpleIoc.Default.Register<IDataService, DataService>();
-            }
+            var navigationService = new NavigationService();
+            navigationService.Configure(typeof(NonogramPageViewModel).FullName, typeof(NonogramPage));
+            SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+            //SimpleIoc.Default.Register<IDataService, DataService>();
         }
     }
 }

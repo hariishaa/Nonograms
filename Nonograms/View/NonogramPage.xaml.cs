@@ -31,6 +31,16 @@ namespace Nonograms.View
             this.InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // зачем???
+            base.OnNavigatedTo(e);
+
+            var vm = DataContext as Portable.ViewModel.NonogramPageViewModel;
+            vm.LoadNonogram((NonogramInfo)e.Parameter);
+        }
+    
+        //удалить
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var bounds = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;

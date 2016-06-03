@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>aa380938-d660-4436-80ae-079ce5d5d881</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>0088F423B461E0B24807F5C3F81ACD9D00821034737232C81C81CB5E70CDD226</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>1CB23BBA0C3E82FAEB44A3D911822560102FC67F7B71C451D4AD50E3B279EAFD</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>aa380938-d660-4436-80ae-079ce5d5d881_1.0.0.0_x64__wpa5a6ehtm3jt</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>aa380938-d660-4436-80ae-079ce5d5d881_wpa5a6ehtm3jt!App</RegisteredUserModeAppID>
     <RegisteredPackageID>aa380938-d660-4436-80ae-079ce5d5d881</RegisteredPackageID>
@@ -22,13 +22,21 @@
     <AppXManifest Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T23:34:02.624</Modified>
+      <Modified>2016-06-03T23:00:30.224</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.exe">
       <PackagePath>entrypoint\Nonograms.exe</PackagePath>
-      <Modified>2016-05-30T23:33:51.580</Modified>
+      <Modified>2016-06-03T23:00:29.323</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2014-12-10T15:08:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2014-12-10T15:08:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -460,7 +468,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Nonograms.Portable.dll">
       <PackagePath>Nonograms.Portable.dll</PackagePath>
-      <Modified>2016-05-30T16:38:15.103</Modified>
+      <Modified>2016-06-03T23:00:25.306</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -504,9 +512,17 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-10-10T18:09:42.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\волна.jpg">
+      <PackagePath>волна.jpg</PackagePath>
+      <Modified>2016-05-31T15:23:23.388</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\ирисы.jpg">
+      <PackagePath>ирисы.jpg</PackagePath>
+      <Modified>2016-05-31T15:37:38.161</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.xr.xml">
       <PackagePath>Nonograms.xr.xml</PackagePath>
-      <Modified>2016-05-30T20:37:05.775</Modified>
+      <Modified>2016-06-03T22:56:20.043</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -514,11 +530,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-30T23:34:00.879</Modified>
+      <Modified>2016-06-03T22:58:44.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Core\Nonograms.exe">
       <PackagePath>Nonograms.exe</PackagePath>
-      <Modified>2016-05-30T23:34:02.595</Modified>
+      <Modified>2016-06-03T23:00:30.206</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

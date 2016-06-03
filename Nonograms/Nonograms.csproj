@@ -102,6 +102,10 @@
       <DependentUpon>NonogramControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ItemClickEventArgsConverter.cs" />
+    <Compile Include="View\LevelsPage.xaml.cs">
+      <DependentUpon>LevelsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NonogramPage.xaml.cs">
       <DependentUpon>NonogramPage.xaml</DependentUpon>
     </Compile>
@@ -122,6 +126,8 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="волна.jpg" />
+    <Content Include="ирисы.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -136,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\LevelsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\NonogramPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -146,6 +156,11 @@
       <Project>{f4c1eb42-1caa-46d8-b8fe-80287b357582}</Project>
       <Name>Nonograms.Portable</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

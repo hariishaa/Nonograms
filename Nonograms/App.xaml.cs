@@ -7,6 +7,8 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -58,7 +60,10 @@ namespace Nonograms
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-                ////////rootFrame.Navigated += OnNavigated;
+                // для показа кнопки назад
+                rootFrame.Navigated += OnNavigated;
+                // для обработки нажатия кнопки назад
+                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -67,13 +72,12 @@ namespace Nonograms
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
-
-                ////////SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
-
-                ////////SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                ////////    rootFrame.CanGoBack ?
-                ////////    AppViewBackButtonVisibility.Visible :
-                ////////    AppViewBackButtonVisibility.Collapsed;
+                
+                // удалить
+                //SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                //    rootFrame.CanGoBack ?
+                //    AppViewBackButtonVisibility.Visible :
+                //    AppViewBackButtonVisibility.Collapsed;
             }
 
             if (rootFrame.Content == null)
@@ -81,38 +85,40 @@ namespace Nonograms
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(View.NonogramPage), e.Arguments);
+                rootFrame.Navigate(typeof(View.LevelsPage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
 
-            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size { Width = 300, Height = 300 });
-            ////////var appView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
-            ////////appView.SetPreferredMinSize(new Size(500, 390));
-            ////////appView.Title = "";
-            ////////var titleBar = appView.TitleBar;
-            ////////titleBar.BackgroundColor = Colors.Black;
-            ////////titleBar.ForegroundColor = Colors.Black;
-            ////////titleBar.ButtonBackgroundColor = Colors.Black;
-            ////////titleBar.ButtonForegroundColor = Colors.White;
+            // задание некоторых свойств для окна
+            var appView = ApplicationView.GetForCurrentView();
+            appView.SetPreferredMinSize(new Size(300, 300));
+            //appView.TryEnterFullScreenMode();
+            //appView.Title = "";
+            //var titleBar = appView.TitleBar;
+            //не работает
+            //titleBar.BackgroundColor = Colors.Transparent;
+            //titleBar.ForegroundColor = Colors.Black;
+            //titleBar.ButtonBackgroundColor = Colors.Black;
+            //titleBar.ButtonForegroundColor = Colors.White;
         }
 
-        //////private void OnBackRequested(object sender, BackRequestedEventArgs e)
-        //////{
-        //////    Frame rootFrame = Window.Current.Content as Frame;
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
 
-        //////    if (rootFrame.CanGoBack)
-        //////    {
-        //////        e.Handled = true;
-        //////        rootFrame.GoBack();
-        //////    }
-        //////}
+            if (rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
+        }
 
-        //////private void OnNavigated(object sender, NavigationEventArgs e)
-        //////{
-        //////    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-        //////        ((Frame)sender).CanGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
-        //////}
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                ((Frame)sender).CanGoBack ? AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
+        }
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails
