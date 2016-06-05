@@ -20,6 +20,7 @@ namespace Nonograms.ViewModel
             SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             var navigationService = new NavigationService();
+            navigationService.Configure(typeof(LevelsPageViewModel).FullName, typeof(LevelsPage));
             navigationService.Configure(typeof(NonogramPageViewModel).FullName, typeof(NonogramPage));
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
             //SimpleIoc.Default.Register<IDataService, DataService>();

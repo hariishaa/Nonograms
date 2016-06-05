@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Nonograms.View.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Nonograms.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Path=MainPage, Source={StaticResource ViewModelLocator}}">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="BurlyWood"/>
+            <Setter Property="Opacity" Value="0.85"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="12"/>
+            <Setter Property="FontFamily" Value="ms-appx:/Resources/Fonts/HanZi.ttf#Han Zi"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="{StaticResource BackgroundImage}">
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="BurlyWood" Opacity="0.9">
+            <StackPanel Margin="8">
+                <ToggleSwitch Header="Запускать во весь экран" OffContent="Выкл." OnContent="Вкл." FontFamily="ms-appx:/Resources/Fonts/HanZi.ttf#Han Zi" />
+                <ToggleSwitch Header="Помощь в игре" OffContent="Нет" OnContent="Да" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="21.333"/>
+                <ComboBox Header="Тип метки">
+                    <ComboBoxItem Content="Точка" IsSelected="True"/>
+                    <ComboBoxItem Content="Крестик"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Начать игру" Command="{Binding NavigateCommand}"/>
+            <Button Content="Обучение"/>
+            <Button Content="Настройки"/>
+            <Button Content="О приложении"/>
+        </StackPanel>
+    </Grid>
+</Page>
+

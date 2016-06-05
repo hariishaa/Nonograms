@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <vm:ViewModelLocator x:Key="ViewModelLocator"/>
             <v:ItemClickEventArgsConverter x:Key="ItemClickEventArgsConverter"/>
+            <ImageBrush x:Key="BackgroundImage" ImageSource="ms-appx:///волна.jpg"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

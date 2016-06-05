@@ -354,6 +354,12 @@
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\HanZi.ttf">
+      <PackagePath>Resources\Fonts\HanZi.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\PresentScript Normal.Ttf">
+      <PackagePath>Resources\Fonts\PresentScript Normal.Ttf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

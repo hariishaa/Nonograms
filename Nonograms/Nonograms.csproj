@@ -90,6 +90,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <Content Include="Resources\Fonts\HanZi.ttf" />
+    <Content Include="Resources\Fonts\PresentScript Normal.Ttf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -105,6 +107,9 @@
     <Compile Include="View\ItemClickEventArgsConverter.cs" />
     <Compile Include="View\LevelsPage.xaml.cs">
       <DependentUpon>LevelsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NonogramPage.xaml.cs">
       <DependentUpon>NonogramPage.xaml</DependentUpon>
@@ -143,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LevelsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

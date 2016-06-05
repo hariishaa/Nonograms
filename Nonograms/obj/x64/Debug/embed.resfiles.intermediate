@@ -2,4 +2,5 @@ App.xbf
 CustomControls\CellControl.xbf
 CustomControls\NonogramControl.xbf
 View\LevelsPage.xbf
+View\MainPage.xbf
 View\NonogramPage.xbf

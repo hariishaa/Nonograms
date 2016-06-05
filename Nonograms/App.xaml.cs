@@ -85,7 +85,7 @@ namespace Nonograms
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(View.LevelsPage), e.Arguments);
+                rootFrame.Navigate(typeof(View.MainPage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
@@ -93,7 +93,7 @@ namespace Nonograms
             // задание некоторых свойств для окна
             var appView = ApplicationView.GetForCurrentView();
             appView.SetPreferredMinSize(new Size(300, 300));
-            //appView.TryEnterFullScreenMode();
+            appView.TryEnterFullScreenMode();
             //appView.Title = "";
             //var titleBar = appView.TitleBar;
             //не работает

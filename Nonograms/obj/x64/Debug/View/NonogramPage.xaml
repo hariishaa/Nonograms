@@ -8,10 +8,7 @@
     xmlns:controls="using:Nonograms.CustomControls"
     mc:Ignorable="d"
     DataContext="{Binding Path=NonogramPage, Source={StaticResource ViewModelLocator}}">
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot">
-        <Grid.Background>
-            <ImageBrush ImageSource="ms-appx:///волна.jpg"/>
-        </Grid.Background>
+    <Grid x:ConnectionId='1' x:Name="LayoutRoot" Background="{StaticResource BackgroundImage}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:ConnectionId='2' x:Name="BigView">
@@ -26,7 +23,6 @@
                         <!--<Setter Target="CheckModeButton.(RelativePanel.RightOf)" Value="Nonogram"/>-->
                         <Setter Target="CheckModeButton.(RelativePanel.Above)" Value="TagModeButton"/>
                         <!--<Setter Target="CheckModeButton.(RelativePanel.AlignVerticalCenterWith)" Value="Nonogram"/>-->
-
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:ConnectionId='3' x:Name="PhoneView">
