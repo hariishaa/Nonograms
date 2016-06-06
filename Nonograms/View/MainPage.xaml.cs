@@ -26,5 +26,11 @@ namespace Nonograms.View
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenuStackPanel.Visibility = MainMenuStackPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            SettingsGrid.Visibility = SettingsGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+        }
     }
 }

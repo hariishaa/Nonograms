@@ -93,7 +93,7 @@ namespace Nonograms
             // задание некоторых свойств для окна
             var appView = ApplicationView.GetForCurrentView();
             appView.SetPreferredMinSize(new Size(300, 300));
-            appView.TryEnterFullScreenMode();
+            //appView.TryEnterFullScreenMode();
             //appView.Title = "";
             //var titleBar = appView.TitleBar;
             //не работает

@@ -132,53 +132,87 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[22];
+            _typeNameTable = new string[39];
             _typeNameTable[0] = "Nonograms.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Nonograms.Portable.ViewModel.BaseViewModelLocator";
             _typeNameTable[2] = "Object";
-            _typeNameTable[3] = "Nonograms.Portable.ViewModel.NonogramPageViewModel";
+            _typeNameTable[3] = "Nonograms.Portable.ViewModel.MainPageViewModel";
             _typeNameTable[4] = "GalaSoft.MvvmLight.ViewModelBase";
             _typeNameTable[5] = "GalaSoft.MvvmLight.ObservableObject";
-            _typeNameTable[6] = "Nonograms.CustomControls.CellControl";
-            _typeNameTable[7] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[8] = "Nonograms.Portable.Enums.CellStates";
-            _typeNameTable[9] = "System.Enum";
-            _typeNameTable[10] = "System.ValueType";
-            _typeNameTable[11] = "Nonograms.Portable.Enums.TagTypes";
-            _typeNameTable[12] = "Nonograms.CustomControls.NonogramControl";
-            _typeNameTable[13] = "Nonograms.Portable.Enums.CheckModes";
-            _typeNameTable[14] = "Int32[][]";
-            _typeNameTable[15] = "System.Array";
-            _typeNameTable[16] = "Int32[]";
-            _typeNameTable[17] = "Int32";
-            _typeNameTable[18] = "Int32[,]";
-            _typeNameTable[19] = "Boolean";
-            _typeNameTable[20] = "Nonograms.View.NonogramPage";
-            _typeNameTable[21] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[6] = "Nonograms.Portable.ViewModel.LevelsPageViewModel";
+            _typeNameTable[7] = "Nonograms.Portable.ViewModel.NonogramPageViewModel";
+            _typeNameTable[8] = "Nonograms.View.ItemClickEventArgsConverter";
+            _typeNameTable[9] = "Nonograms.CustomControls.CellControl";
+            _typeNameTable[10] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[11] = "Nonograms.Portable.Enums.CellStates";
+            _typeNameTable[12] = "System.Enum";
+            _typeNameTable[13] = "System.ValueType";
+            _typeNameTable[14] = "Nonograms.Portable.Enums.TagTypes";
+            _typeNameTable[15] = "Nonograms.CustomControls.NonogramControl";
+            _typeNameTable[16] = "Nonograms.Portable.Enums.CheckModes";
+            _typeNameTable[17] = "Int32[][]";
+            _typeNameTable[18] = "System.Array";
+            _typeNameTable[19] = "Int32[]";
+            _typeNameTable[20] = "Int32";
+            _typeNameTable[21] = "System.Collections.ObjectModel.ObservableCollection`1<Int32[,]>";
+            _typeNameTable[22] = "System.Collections.ObjectModel.Collection`1<Int32[,]>";
+            _typeNameTable[23] = "Int32[,]";
+            _typeNameTable[24] = "Boolean";
+            _typeNameTable[25] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[26] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[27] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[28] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[29] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[30] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[31] = "String";
+            _typeNameTable[32] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[33] = "System.Windows.Input.ICommand";
+            _typeNameTable[34] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[35] = "Nonograms.View.LevelsPage";
+            _typeNameTable[36] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[37] = "Nonograms.View.MainPage";
+            _typeNameTable[38] = "Nonograms.View.NonogramPage";
 
-            _typeTable = new global::System.Type[22];
+            _typeTable = new global::System.Type[39];
             _typeTable[0] = typeof(global::Nonograms.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::Nonograms.Portable.ViewModel.BaseViewModelLocator);
             _typeTable[2] = typeof(global::System.Object);
-            _typeTable[3] = typeof(global::Nonograms.Portable.ViewModel.NonogramPageViewModel);
+            _typeTable[3] = typeof(global::Nonograms.Portable.ViewModel.MainPageViewModel);
             _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
             _typeTable[5] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
-            _typeTable[6] = typeof(global::Nonograms.CustomControls.CellControl);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[8] = typeof(global::Nonograms.Portable.Enums.CellStates);
-            _typeTable[9] = typeof(global::System.Enum);
-            _typeTable[10] = typeof(global::System.ValueType);
-            _typeTable[11] = typeof(global::Nonograms.Portable.Enums.TagTypes);
-            _typeTable[12] = typeof(global::Nonograms.CustomControls.NonogramControl);
-            _typeTable[13] = typeof(global::Nonograms.Portable.Enums.CheckModes);
-            _typeTable[14] = typeof(global::System.Int32[][]);
-            _typeTable[15] = typeof(global::System.Array);
-            _typeTable[16] = typeof(global::System.Int32[]);
-            _typeTable[17] = typeof(global::System.Int32);
-            _typeTable[18] = typeof(global::System.Int32[,]);
-            _typeTable[19] = typeof(global::System.Boolean);
-            _typeTable[20] = typeof(global::Nonograms.View.NonogramPage);
-            _typeTable[21] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[6] = typeof(global::Nonograms.Portable.ViewModel.LevelsPageViewModel);
+            _typeTable[7] = typeof(global::Nonograms.Portable.ViewModel.NonogramPageViewModel);
+            _typeTable[8] = typeof(global::Nonograms.View.ItemClickEventArgsConverter);
+            _typeTable[9] = typeof(global::Nonograms.CustomControls.CellControl);
+            _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[11] = typeof(global::Nonograms.Portable.Enums.CellStates);
+            _typeTable[12] = typeof(global::System.Enum);
+            _typeTable[13] = typeof(global::System.ValueType);
+            _typeTable[14] = typeof(global::Nonograms.Portable.Enums.TagTypes);
+            _typeTable[15] = typeof(global::Nonograms.CustomControls.NonogramControl);
+            _typeTable[16] = typeof(global::Nonograms.Portable.Enums.CheckModes);
+            _typeTable[17] = typeof(global::System.Int32[][]);
+            _typeTable[18] = typeof(global::System.Array);
+            _typeTable[19] = typeof(global::System.Int32[]);
+            _typeTable[20] = typeof(global::System.Int32);
+            _typeTable[21] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>);
+            _typeTable[22] = typeof(global::System.Collections.ObjectModel.Collection<global::System.Int32[,]>);
+            _typeTable[23] = typeof(global::System.Int32[,]);
+            _typeTable[24] = typeof(global::System.Boolean);
+            _typeTable[25] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[26] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[27] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[28] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[29] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[30] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[31] = typeof(global::System.String);
+            _typeTable[32] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[33] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[34] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[35] = typeof(global::Nonograms.View.LevelsPage);
+            _typeTable[36] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[37] = typeof(global::Nonograms.View.MainPage);
+            _typeTable[38] = typeof(global::Nonograms.View.NonogramPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -215,11 +249,44 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
         private object Activate_0_ViewModelLocator() { return new global::Nonograms.ViewModel.ViewModelLocator(); }
         private object Activate_1_BaseViewModelLocator() { return new global::Nonograms.Portable.ViewModel.BaseViewModelLocator(); }
-        private object Activate_3_NonogramPageViewModel() { return new global::Nonograms.Portable.ViewModel.NonogramPageViewModel(); }
         private object Activate_5_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
-        private object Activate_6_CellControl() { return new global::Nonograms.CustomControls.CellControl(); }
-        private object Activate_12_NonogramControl() { return new global::Nonograms.CustomControls.NonogramControl(); }
-        private object Activate_20_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
+        private object Activate_7_NonogramPageViewModel() { return new global::Nonograms.Portable.ViewModel.NonogramPageViewModel(); }
+        private object Activate_8_ItemClickEventArgsConverter() { return new global::Nonograms.View.ItemClickEventArgsConverter(); }
+        private object Activate_9_CellControl() { return new global::Nonograms.CustomControls.CellControl(); }
+        private object Activate_15_NonogramControl() { return new global::Nonograms.CustomControls.NonogramControl(); }
+        private object Activate_21_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>(); }
+        private object Activate_22_Collection() { return new global::System.Collections.ObjectModel.Collection<global::System.Int32[,]>(); }
+        private object Activate_26_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_29_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_30_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_32_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_35_LevelsPage() { return new global::Nonograms.View.LevelsPage(); }
+        private object Activate_37_MainPage() { return new global::Nonograms.View.MainPage(); }
+        private object Activate_38_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
+        private void VectorAdd_21_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.Int32[,]>)instance;
+            var newItem = (global::System.Int32[,])item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_22_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.Int32[,]>)instance;
+            var newItem = (global::System.Int32[,])item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_26_BehaviorCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_30_ActionCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -241,6 +308,8 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             case 1:   //  Nonograms.Portable.ViewModel.BaseViewModelLocator
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_1_BaseViewModelLocator;
+                userType.AddMemberName("MainPage");
+                userType.AddMemberName("LevelsPage");
                 userType.AddMemberName("NonogramPage");
                 xamlType = userType;
                 break;
@@ -249,7 +318,7 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Nonograms.Portable.ViewModel.NonogramPageViewModel
+            case 3:   //  Nonograms.Portable.ViewModel.MainPageViewModel
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
@@ -266,20 +335,39 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 6:   //  Nonograms.CustomControls.CellControl
+            case 6:   //  Nonograms.Portable.ViewModel.LevelsPageViewModel
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Nonograms.Portable.ViewModel.NonogramPageViewModel
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 8:   //  Nonograms.View.ItemClickEventArgsConverter
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_8_ItemClickEventArgsConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Nonograms.CustomControls.CellControl
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_6_CellControl;
+                userType.Activator = Activate_9_CellControl;
                 userType.AddMemberName("State");
                 userType.AddMemberName("TagType");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Windows.UI.Xaml.Controls.UserControl
+            case 10:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  Nonograms.Portable.Enums.CellStates
+            case 11:   //  Nonograms.Portable.Enums.CellStates
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Tagged", global::Nonograms.Portable.Enums.CellStates.Tagged);
                 userType.AddEnumValue("Empty", global::Nonograms.Portable.Enums.CellStates.Empty);
@@ -287,184 +375,373 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  System.Enum
+            case 12:   //  System.Enum
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 10:   //  System.ValueType
+            case 13:   //  System.ValueType
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 11:   //  Nonograms.Portable.Enums.TagTypes
+            case 14:   //  Nonograms.Portable.Enums.TagTypes
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Dot", global::Nonograms.Portable.Enums.TagTypes.Dot);
                 userType.AddEnumValue("X", global::Nonograms.Portable.Enums.TagTypes.X);
                 xamlType = userType;
                 break;
 
-            case 12:   //  Nonograms.CustomControls.NonogramControl
+            case 15:   //  Nonograms.CustomControls.NonogramControl
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_12_NonogramControl;
+                userType.Activator = Activate_15_NonogramControl;
                 userType.AddMemberName("CheckMode");
                 userType.AddMemberName("TagType");
                 userType.AddMemberName("LeftSideValues");
                 userType.AddMemberName("TopSideValues");
-                userType.AddMemberName("Field");
+                userType.AddMemberName("FieldHistory");
                 userType.AddMemberName("IsSolved");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Nonograms.Portable.Enums.CheckModes
+            case 16:   //  Nonograms.Portable.Enums.CheckModes
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Tag", global::Nonograms.Portable.Enums.CheckModes.Tag);
                 userType.AddEnumValue("Check", global::Nonograms.Portable.Enums.CheckModes.Check);
                 xamlType = userType;
                 break;
 
-            case 14:   //  Int32[][]
+            case 17:   //  Int32[][]
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 15:   //  System.Array
+            case 18:   //  System.Array
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Length");
                 userType.AddMemberName("Rank");
                 xamlType = userType;
                 break;
 
-            case 16:   //  Int32[]
+            case 19:   //  Int32[]
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
                 xamlType = userType;
                 break;
 
-            case 17:   //  Int32
+            case 20:   //  Int32
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Int32[,]
-                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+            case 21:   //  System.Collections.ObjectModel.ObservableCollection`1<Int32[,]>
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Int32[,]>"));
+                userType.CollectionAdd = VectorAdd_21_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 19:   //  Boolean
+            case 22:   //  System.Collections.ObjectModel.Collection`1<Int32[,]>
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_22_Collection;
+                userType.CollectionAdd = VectorAdd_22_Collection;
+                xamlType = userType;
+                break;
+
+            case 23:   //  Int32[,]
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+                xamlType = userType;
+                break;
+
+            case 24:   //  Boolean
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  Nonograms.View.NonogramPage
+            case 25:   //  Microsoft.Xaml.Interactivity.Interaction
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Behaviors");
+                xamlType = userType;
+                break;
+
+            case 26:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_26_BehaviorCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 27:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 28:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 29:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_29_EventTriggerBehavior;
+                userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
+                userType.AddMemberName("Actions");
+                userType.AddMemberName("EventName");
+                userType.AddMemberName("SourceObject");
+                userType.AddMemberName("AssociatedObject");
+                xamlType = userType;
+                break;
+
+            case 30:   //  Microsoft.Xaml.Interactivity.ActionCollection
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_30_ActionCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 31:   //  String
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 32:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_32_InvokeCommandAction;
+                userType.AddMemberName("Command");
+                userType.AddMemberName("CommandParameter");
+                userType.AddMemberName("InputConverter");
+                userType.AddMemberName("InputConverterParameter");
+                userType.AddMemberName("InputConverterLanguage");
+                xamlType = userType;
+                break;
+
+            case 33:   //  System.Windows.Input.ICommand
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 34:   //  Windows.UI.Xaml.Data.IValueConverter
+                xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 35:   //  Nonograms.View.LevelsPage
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_NonogramPage;
+                userType.Activator = Activate_35_LevelsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  Windows.UI.Xaml.Controls.Page
+            case 36:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 37:   //  Nonograms.View.MainPage
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_37_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 38:   //  Nonograms.View.NonogramPage
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_38_NonogramPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;
         }
 
 
-        private object get_0_BaseViewModelLocator_NonogramPage(object instance)
+        private object get_0_BaseViewModelLocator_MainPage(object instance)
+        {
+            var that = (global::Nonograms.Portable.ViewModel.BaseViewModelLocator)instance;
+            return that.MainPage;
+        }
+        private object get_1_BaseViewModelLocator_LevelsPage(object instance)
+        {
+            var that = (global::Nonograms.Portable.ViewModel.BaseViewModelLocator)instance;
+            return that.LevelsPage;
+        }
+        private object get_2_BaseViewModelLocator_NonogramPage(object instance)
         {
             var that = (global::Nonograms.Portable.ViewModel.BaseViewModelLocator)instance;
             return that.NonogramPage;
         }
-        private object get_1_CellControl_State(object instance)
+        private object get_3_CellControl_State(object instance)
         {
             var that = (global::Nonograms.CustomControls.CellControl)instance;
             return that.State;
         }
-        private void set_1_CellControl_State(object instance, object Value)
+        private void set_3_CellControl_State(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.CellControl)instance;
             that.State = (global::Nonograms.Portable.Enums.CellStates)Value;
         }
-        private object get_2_CellControl_TagType(object instance)
+        private object get_4_CellControl_TagType(object instance)
         {
             var that = (global::Nonograms.CustomControls.CellControl)instance;
             return that.TagType;
         }
-        private void set_2_CellControl_TagType(object instance, object Value)
+        private void set_4_CellControl_TagType(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.CellControl)instance;
             that.TagType = (global::Nonograms.Portable.Enums.TagTypes)Value;
         }
-        private object get_3_NonogramControl_CheckMode(object instance)
+        private object get_5_NonogramControl_CheckMode(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             return that.CheckMode;
         }
-        private void set_3_NonogramControl_CheckMode(object instance, object Value)
+        private void set_5_NonogramControl_CheckMode(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.CheckMode = (global::Nonograms.Portable.Enums.CheckModes)Value;
         }
-        private object get_4_NonogramControl_TagType(object instance)
+        private object get_6_NonogramControl_TagType(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             return that.TagType;
         }
-        private void set_4_NonogramControl_TagType(object instance, object Value)
+        private void set_6_NonogramControl_TagType(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.TagType = (global::Nonograms.Portable.Enums.TagTypes)Value;
         }
-        private object get_5_NonogramControl_LeftSideValues(object instance)
+        private object get_7_NonogramControl_LeftSideValues(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             return that.LeftSideValues;
         }
-        private void set_5_NonogramControl_LeftSideValues(object instance, object Value)
+        private void set_7_NonogramControl_LeftSideValues(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.LeftSideValues = (global::System.Int32[][])Value;
         }
-        private object get_6_Array_Length(object instance)
+        private object get_8_Array_Length(object instance)
         {
             var that = (global::System.Array)instance;
             return that.Length;
         }
-        private object get_7_Array_Rank(object instance)
+        private object get_9_Array_Rank(object instance)
         {
             var that = (global::System.Array)instance;
             return that.Rank;
         }
-        private object get_8_NonogramControl_TopSideValues(object instance)
+        private object get_10_NonogramControl_TopSideValues(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             return that.TopSideValues;
         }
-        private void set_8_NonogramControl_TopSideValues(object instance, object Value)
+        private void set_10_NonogramControl_TopSideValues(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.TopSideValues = (global::System.Int32[][])Value;
         }
-        private object get_9_NonogramControl_Field(object instance)
+        private object get_11_NonogramControl_FieldHistory(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
-            return that.Field;
+            return that.FieldHistory;
         }
-        private void set_9_NonogramControl_Field(object instance, object Value)
+        private void set_11_NonogramControl_FieldHistory(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
-            that.Field = (global::System.Int32[,])Value;
+            that.FieldHistory = (global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>)Value;
         }
-        private object get_10_NonogramControl_IsSolved(object instance)
+        private object get_12_NonogramControl_IsSolved(object instance)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             return that.IsSolved;
         }
-        private void set_10_NonogramControl_IsSolved(object instance, object Value)
+        private void set_12_NonogramControl_IsSolved(object instance, object Value)
         {
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.IsSolved = (global::System.Boolean)Value;
+        }
+        private object get_13_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_13_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_14_EventTriggerBehavior_Actions(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.Actions;
+        }
+        private object get_15_EventTriggerBehavior_EventName(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.EventName;
+        }
+        private void set_15_EventTriggerBehavior_EventName(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.EventName = (global::System.String)Value;
+        }
+        private object get_16_EventTriggerBehavior_SourceObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.SourceObject;
+        }
+        private void set_16_EventTriggerBehavior_SourceObject(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.SourceObject = (global::System.Object)Value;
+        }
+        private object get_17_EventTriggerBehavior_AssociatedObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.AssociatedObject;
+        }
+        private object get_18_InvokeCommandAction_Command(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.Command;
+        }
+        private void set_18_InvokeCommandAction_Command(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.Command = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_19_InvokeCommandAction_CommandParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.CommandParameter;
+        }
+        private void set_19_InvokeCommandAction_CommandParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.CommandParameter = (global::System.Object)Value;
+        }
+        private object get_20_InvokeCommandAction_InputConverter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverter;
+        }
+        private void set_20_InvokeCommandAction_InputConverter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
+        }
+        private object get_21_InvokeCommandAction_InputConverterParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterParameter;
+        }
+        private void set_21_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterParameter = (global::System.Object)Value;
+        }
+        private object get_22_InvokeCommandAction_InputConverterLanguage(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterLanguage;
+        }
+        private void set_22_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterLanguage = (global::System.String)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -474,78 +751,160 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "Nonograms.Portable.ViewModel.BaseViewModelLocator.MainPage":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "MainPage", "Nonograms.Portable.ViewModel.MainPageViewModel");
+                xamlMember.Getter = get_0_BaseViewModelLocator_MainPage;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Nonograms.Portable.ViewModel.BaseViewModelLocator.LevelsPage":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "LevelsPage", "Nonograms.Portable.ViewModel.LevelsPageViewModel");
+                xamlMember.Getter = get_1_BaseViewModelLocator_LevelsPage;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Nonograms.Portable.ViewModel.BaseViewModelLocator.NonogramPage":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "NonogramPage", "Nonograms.Portable.ViewModel.NonogramPageViewModel");
-                xamlMember.Getter = get_0_BaseViewModelLocator_NonogramPage;
+                xamlMember.Getter = get_2_BaseViewModelLocator_NonogramPage;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Nonograms.CustomControls.CellControl.State":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.CellControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "State", "Nonograms.Portable.Enums.CellStates");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_CellControl_State;
-                xamlMember.Setter = set_1_CellControl_State;
+                xamlMember.Getter = get_3_CellControl_State;
+                xamlMember.Setter = set_3_CellControl_State;
                 break;
             case "Nonograms.CustomControls.CellControl.TagType":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.CellControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "TagType", "Nonograms.Portable.Enums.TagTypes");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_2_CellControl_TagType;
-                xamlMember.Setter = set_2_CellControl_TagType;
+                xamlMember.Getter = get_4_CellControl_TagType;
+                xamlMember.Setter = set_4_CellControl_TagType;
                 break;
             case "Nonograms.CustomControls.NonogramControl.CheckMode":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "CheckMode", "Nonograms.Portable.Enums.CheckModes");
-                xamlMember.Getter = get_3_NonogramControl_CheckMode;
-                xamlMember.Setter = set_3_NonogramControl_CheckMode;
+                xamlMember.Getter = get_5_NonogramControl_CheckMode;
+                xamlMember.Setter = set_5_NonogramControl_CheckMode;
                 break;
             case "Nonograms.CustomControls.NonogramControl.TagType":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "TagType", "Nonograms.Portable.Enums.TagTypes");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_4_NonogramControl_TagType;
-                xamlMember.Setter = set_4_NonogramControl_TagType;
+                xamlMember.Getter = get_6_NonogramControl_TagType;
+                xamlMember.Setter = set_6_NonogramControl_TagType;
                 break;
             case "Nonograms.CustomControls.NonogramControl.LeftSideValues":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "LeftSideValues", "Int32[][]");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_NonogramControl_LeftSideValues;
-                xamlMember.Setter = set_5_NonogramControl_LeftSideValues;
+                xamlMember.Getter = get_7_NonogramControl_LeftSideValues;
+                xamlMember.Setter = set_7_NonogramControl_LeftSideValues;
                 break;
             case "System.Array.Length":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("System.Array");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Length", "Int32");
-                xamlMember.Getter = get_6_Array_Length;
+                xamlMember.Getter = get_8_Array_Length;
                 xamlMember.SetIsReadOnly();
                 break;
             case "System.Array.Rank":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("System.Array");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Rank", "Int32");
-                xamlMember.Getter = get_7_Array_Rank;
+                xamlMember.Getter = get_9_Array_Rank;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Nonograms.CustomControls.NonogramControl.TopSideValues":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "TopSideValues", "Int32[][]");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_NonogramControl_TopSideValues;
-                xamlMember.Setter = set_8_NonogramControl_TopSideValues;
+                xamlMember.Getter = get_10_NonogramControl_TopSideValues;
+                xamlMember.Setter = set_10_NonogramControl_TopSideValues;
                 break;
-            case "Nonograms.CustomControls.NonogramControl.Field":
+            case "Nonograms.CustomControls.NonogramControl.FieldHistory":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
-                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Field", "Int32[,]");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "FieldHistory", "System.Collections.ObjectModel.ObservableCollection`1<Int32[,]>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_NonogramControl_Field;
-                xamlMember.Setter = set_9_NonogramControl_Field;
+                xamlMember.Getter = get_11_NonogramControl_FieldHistory;
+                xamlMember.Setter = set_11_NonogramControl_FieldHistory;
                 break;
             case "Nonograms.CustomControls.NonogramControl.IsSolved":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "IsSolved", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_NonogramControl_IsSolved;
-                xamlMember.Setter = set_10_NonogramControl_IsSolved;
+                xamlMember.Getter = get_12_NonogramControl_IsSolved;
+                xamlMember.Setter = set_12_NonogramControl_IsSolved;
+                break;
+            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_13_Interaction_Behaviors;
+                xamlMember.Setter = set_13_Interaction_Behaviors;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_14_EventTriggerBehavior_Actions;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "EventName", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_15_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_15_EventTriggerBehavior_EventName;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_16_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_16_EventTriggerBehavior_SourceObject;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+                xamlMember.Getter = get_17_EventTriggerBehavior_AssociatedObject;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_18_InvokeCommandAction_Command;
+                xamlMember.Setter = set_18_InvokeCommandAction_Command;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_19_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_19_InvokeCommandAction_CommandParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_20_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_20_InvokeCommandAction_InputConverter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_21_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_21_InvokeCommandAction_InputConverterParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_22_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_22_InvokeCommandAction_InputConverterLanguage;
                 break;
             }
             return xamlMember;

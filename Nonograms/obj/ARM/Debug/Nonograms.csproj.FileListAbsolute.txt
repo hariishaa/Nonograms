@@ -221,3 +221,15 @@ C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\A
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\FxResources.System.Private.DataContractSerialization.SR\priconfig.xml.intermediate
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\FxResources.System.Private.DataContractSerialization.SR.pri
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\FxResources.System.Private.DataContractSerialization.SR\qualifiers.txt
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\ARM\Debug\View\LevelsPage.xbf
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\ARM\Debug\View\MainPage.xbf
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\ARM\Debug\Microsoft.Xaml.Interactions.dll
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\ARM\Debug\Microsoft.Xaml.Interactivity.dll
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\LevelsPage.g.i.cs
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\LevelsPage.g.cs
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\MainPage.g.i.cs
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\MainPage.g.cs
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\LevelsPage.xaml
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\MainPage.xaml
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\LevelsPage.xbf
+C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\ARM\Debug\View\MainPage.xbf

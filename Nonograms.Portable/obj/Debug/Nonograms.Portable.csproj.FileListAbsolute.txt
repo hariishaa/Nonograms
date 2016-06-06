@@ -13,4 +13,3 @@ C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Porta
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\obj\Debug\Nonograms.Portable.pdb
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\obj\Debug\Nonograms.Portable.csprojResolveAssemblyReference.cache

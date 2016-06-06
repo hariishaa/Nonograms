@@ -4,10 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Nonograms"
     xmlns:vm="using:Nonograms.ViewModel"
+    xmlns:v="using:Nonograms.View"
     RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
             <vm:ViewModelLocator x:Key="ViewModelLocator"/>
+            <v:ItemClickEventArgsConverter x:Key="ItemClickEventArgsConverter"/>
+            <ImageBrush x:Key="BackgroundImage" ImageSource="ms-appx:///волна.jpg" Stretch="UniformToFill"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

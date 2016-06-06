@@ -9,7 +9,7 @@
     xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"
     DataContext="{Binding Path=LevelsPage, Source={StaticResource ViewModelLocator}}">
-    <Grid CacheMode="BitmapCache" Background="{StaticResource BackgroundImage}">
+    <Grid Background="{StaticResource BackgroundImage}">
         <GridView x:Name="NonogramsGridView" ItemsSource="{Binding AllNonograms}" Margin="10" IsItemClickEnabled="True">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="ItemClick">

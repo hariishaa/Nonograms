@@ -13,27 +13,33 @@
             <Setter Property="Opacity" Value="0.85"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="12"/>
-            <Setter Property="FontFamily" Value="ms-appx:/Resources/Fonts/HanZi.ttf#Han Zi"/>
-            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript"/>
+            <Setter Property="FontSize" Value="28"/>
         </Style>
     </Page.Resources>
     <Grid Background="{StaticResource BackgroundImage}">
-        <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="BurlyWood" Opacity="0.9">
-            <StackPanel Margin="8">
-                <ToggleSwitch Header="Запускать во весь экран" OffContent="Выкл." OnContent="Вкл." FontFamily="ms-appx:/Resources/Fonts/HanZi.ttf#Han Zi" />
-                <ToggleSwitch Header="Помощь в игре" OffContent="Нет" OnContent="Да" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="21.333"/>
+        <StackPanel x:ConnectionId='1' x:Name="MainMenuStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="НАЧАТЬ ИГРУ" Command="{Binding NavigateCommand}"/>
+            <Button Content="ОБУЧЕНИЕ"/>
+            <Button x:ConnectionId='4' Content="НАСТРОЙКИ"                     />
+            <Button Content="О ПРИЛОЖЕНИИ"/>
+        </StackPanel>
+        <Grid x:ConnectionId='2' x:Name="SettingsGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Background="BurlyWood" Opacity="0.85" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="НАСТРОЙКИ" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="28" Margin="20"/>
+            <StackPanel Grid.Row="1" Margin="20">
+                <ToggleSwitch Header="Запускать во весь экран" OffContent="Выкл." OnContent="Вкл." FontFamily="ms-appx:/Resources/Fonts/HanZi.ttf#Han Zi"/>
+                <ToggleSwitch Header="ПОМОЩЬ В ИГРЕ" OffContent="Нет" OnContent="Да" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="20"/>
                 <ComboBox Header="Тип метки">
                     <ComboBoxItem Content="Точка" IsSelected="True"/>
                     <ComboBoxItem Content="Крестик"/>
                 </ComboBox>
+                <Button x:ConnectionId='3' Content="ОК" Margin="0"                     />
             </StackPanel>
         </Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Начать игру" Command="{Binding NavigateCommand}"/>
-            <Button Content="Обучение"/>
-            <Button Content="Настройки"/>
-            <Button Content="О приложении"/>
-        </StackPanel>
     </Grid>
 </Page>
 
