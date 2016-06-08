@@ -20,7 +20,7 @@
     <Grid Background="{StaticResource BackgroundImage}">
         <StackPanel x:Name="MainMenuStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="НАЧАТЬ ИГРУ" Command="{Binding NavigateCommand}"/>
-            <Button Content="ОБУЧЕНИЕ"/>
+            <Button Content="ОБУЧЕНИЕ" Command="{Binding NavigateCommand2}"/>
             <Button Content="НАСТРОЙКИ" Click="Button_Click"/>
             <Button Content="О ПРИЛОЖЕНИИ"/>
         </StackPanel>

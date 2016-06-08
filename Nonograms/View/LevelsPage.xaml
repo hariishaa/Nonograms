@@ -22,6 +22,5 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <!--<Button Content="GO!" HorizontalAlignment="Center" Width="200" Height="100" Command="{Binding NavigateCommand}" CommandParameter="1"/>-->
     </Grid>
 </Page>

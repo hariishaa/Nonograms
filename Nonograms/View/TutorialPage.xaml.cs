@@ -20,25 +20,11 @@ namespace Nonograms.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class TutorialPage : Page
     {
-        public MainPage()
+        public TutorialPage()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-
-            //var vm = DataContext as Portable.ViewModel.MainPageViewModel;
-            //vm.LoadNonograms();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenuStackPanel.Visibility = MainMenuStackPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            SettingsGrid.Visibility = SettingsGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
         }
     }
 }

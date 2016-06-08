@@ -20,7 +20,7 @@
     <Grid Background="{StaticResource BackgroundImage}">
         <StackPanel x:ConnectionId='1' x:Name="MainMenuStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="НАЧАТЬ ИГРУ" Command="{Binding NavigateCommand}"/>
-            <Button Content="ОБУЧЕНИЕ"/>
+            <Button Content="ОБУЧЕНИЕ" Command="{Binding NavigateCommand2}"/>
             <Button x:ConnectionId='4' Content="НАСТРОЙКИ"                     />
             <Button Content="О ПРИЛОЖЕНИИ"/>
         </StackPanel>
@@ -29,15 +29,22 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="ToggleSwitch">
+                    <Setter Property="FontFamily" Value="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Margin" Value="0,4"/>
+                </Style>
+            </Grid.Resources>
             <TextBlock Text="НАСТРОЙКИ" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="28" Margin="20"/>
-            <StackPanel Grid.Row="1" Margin="20">
-                <ToggleSwitch Header="Запускать во весь экран" OffContent="Выкл." OnContent="Вкл." FontFamily="ms-appx:/Resources/Fonts/HanZi.ttf#Han Zi"/>
-                <ToggleSwitch Header="ПОМОЩЬ В ИГРЕ" OffContent="Нет" OnContent="Да" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="20"/>
-                <ComboBox Header="Тип метки">
-                    <ComboBoxItem Content="Точка" IsSelected="True"/>
-                    <ComboBoxItem Content="Крестик"/>
+            <StackPanel Grid.Row="1" Margin="20,0">
+                <ToggleSwitch Header="ЗАПУСКАТЬ ВО ВЕСЬ ЭКРАН" OffContent="ВЫКЛ." OnContent="ВКЛ." IsOn="True"/>
+                <ToggleSwitch Header="ПОМОЩЬ В ИГРЕ" OffContent="ВЫКЛ." OnContent="ВКЛ."/>
+                <ComboBox Header="ТИП МЕТКИ" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="16" Margin="0,4">
+                    <ComboBoxItem Content="ТОЧКА" IsSelected="True"/>
+                    <ComboBoxItem Content="КРЕСТИК"/>
                 </ComboBox>
-                <Button x:ConnectionId='3' Content="ОК" Margin="0"                     />
+                <Button x:ConnectionId='3' Content="ОК" Margin="8" Background="Transparent"                     />
             </StackPanel>
         </Grid>
     </Grid>

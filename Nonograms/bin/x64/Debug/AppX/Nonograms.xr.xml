@@ -9,6 +9,7 @@
     <RootPropertyPathName Name="NavigateCommand" />
     <RootPropertyPathName Name="SelectedItem" />
     <RootPropertyPathName Name="MainPage" />
+    <RootPropertyPathName Name="NavigateCommand2" />
     <RootPropertyPathName Name="NonogramPage" />
     <RootPropertyPathName Name="ClearCommand" />
     <RootPropertyPathName Name="PreviousStepCommand" />
@@ -20,6 +21,7 @@
     <RootPropertyPathName Name="CheckMode" />
     <RootPropertyPathName Name="IsSolved" />
     <RootPropertyPathName Name="FieldHistory" />
+    <RootPropertyPathName Name="TutorialPage" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -50,12 +52,12 @@
       <RootProperty Name="Style" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="CacheMode" />
       <RootProperty Name="Background" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Opacity" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Resources" />
       <RootEvent Name="PointerEntered" />
       <RootEvent Name="PointerExited" />
       <RootEvent Name="PointerReleased" />
@@ -191,6 +193,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Command" />
       <RootEvent Name="Click" />
     </RootType>
@@ -209,11 +212,13 @@
       <RootProperty Name="Header" />
       <RootProperty Name="OffContent" />
       <RootProperty Name="OnContent" />
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="FontSize" />
+      <RootProperty Name="IsOn" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Header" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
@@ -247,5 +252,6 @@
       <RootMethod Name="SetRightOf" />
     </RootType>
     <RootType FullName="Nonograms.View.NonogramPage" />
+    <RootType FullName="Nonograms.View.TutorialPage" />
   </Roots.RootTypes>
 </Roots>

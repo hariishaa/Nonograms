@@ -9,7 +9,7 @@
     xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"
     DataContext="{Binding Path=LevelsPage, Source={StaticResource ViewModelLocator}}">
-    <Grid CacheMode="BitmapCache" Background="{StaticResource BackgroundImage}">
+    <Grid Background="{StaticResource BackgroundImage}">
         <GridView x:ConnectionId='1' x:Name="NonogramsGridView" ItemsSource="{Binding AllNonograms}" Margin="10" IsItemClickEnabled="True">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="ItemClick">
@@ -22,7 +22,6 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <!--<Button Content="GO!" HorizontalAlignment="Center" Width="200" Height="100" Command="{Binding NavigateCommand}" CommandParameter="1"/>-->
     </Grid>
 </Page>
 

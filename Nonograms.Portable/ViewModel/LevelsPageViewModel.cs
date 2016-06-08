@@ -43,10 +43,10 @@ namespace Nonograms.Portable.ViewModel
             _navigationService = navigationService;
         }
 
-        public void LoadNonograms()
+        public async void LoadNonograms()
         {
             NonogramsRepository repo = new NonogramsRepository();
-            AllNonograms = new ObservableCollection<NonogramInfo>(repo.GetAllNonogramsInfo());
+            AllNonograms = new ObservableCollection<NonogramInfo>(await repo.GetAllNonogramsInfo());
         }
     }
 }

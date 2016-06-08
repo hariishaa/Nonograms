@@ -11,9 +11,9 @@ namespace Nonograms.Portable.Model
 {
     public class NonogramsRepository
     {
-        public IEnumerable<NonogramInfo> GetAllNonogramsInfo()
+        public async Task<IEnumerable<NonogramInfo>> GetAllNonogramsInfo()
         {
-            return ReadJson();
+            return await ReadJson();
         }
 
         //public NonogramInfo GetNonogramInfo(int id)
@@ -22,13 +22,13 @@ namespace Nonograms.Portable.Model
         //}
 
         // file handling using embedded resource
-        private IEnumerable<NonogramInfo> ReadJson()
+        private async Task<IEnumerable<NonogramInfo>> ReadJson()
         {
             var assembly = typeof(NonogramInfo).GetTypeInfo().Assembly;
             var stream = assembly.GetManifestResourceStream("Nonograms.Portable.Data.AllNonograms.json");
             using (var sr = new StreamReader(stream))
             {
-                var json = sr.ReadToEnd();
+                var json = await sr.ReadToEndAsync();
                 return JsonConvert.DeserializeObject<IEnumerable<NonogramInfo>>(json);
             }
         }

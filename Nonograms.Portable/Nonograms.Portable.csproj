@@ -42,6 +42,7 @@
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\NonogramPageViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelLocator.cs" />
+    <Compile Include="ViewModel\TutorialPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">

@@ -29,6 +29,13 @@ namespace Nonograms.View
         public NonogramPage()
         {
             this.InitializeComponent();
+            this.Loading += NonogramPage_Loading;
+        }
+
+        private void NonogramPage_Loading(FrameworkElement sender, object args)
+        {
+            //var vm = DataContext as Portable.ViewModel.NonogramPageViewModel;
+            //vm.LoadNonogram((NonogramInfo)e.Parameter);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
