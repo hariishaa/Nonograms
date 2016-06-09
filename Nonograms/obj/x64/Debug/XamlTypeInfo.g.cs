@@ -132,17 +132,17 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[41];
+            _typeNameTable = new string[43];
             _typeNameTable[0] = "Nonograms.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Nonograms.Portable.ViewModel.BaseViewModelLocator";
             _typeNameTable[2] = "Object";
-            _typeNameTable[3] = "Nonograms.Portable.ViewModel.MainPageViewModel";
+            _typeNameTable[3] = "Nonograms.Portable.ViewModel.BaseMainPageViewModel";
             _typeNameTable[4] = "GalaSoft.MvvmLight.ViewModelBase";
             _typeNameTable[5] = "GalaSoft.MvvmLight.ObservableObject";
             _typeNameTable[6] = "Nonograms.Portable.ViewModel.TutorialPageViewModel";
             _typeNameTable[7] = "Nonograms.Portable.ViewModel.LevelsPageViewModel";
             _typeNameTable[8] = "Nonograms.Portable.ViewModel.NonogramPageViewModel";
-            _typeNameTable[9] = "Nonograms.View.ItemClickEventArgsConverter";
+            _typeNameTable[9] = "Nonograms.View.Converters.ItemClickEventArgsConverter";
             _typeNameTable[10] = "Nonograms.CustomControls.CellControl";
             _typeNameTable[11] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[12] = "Nonograms.Portable.Enums.CellStates";
@@ -171,21 +171,23 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             _typeNameTable[35] = "Windows.UI.Xaml.Data.IValueConverter";
             _typeNameTable[36] = "Nonograms.View.LevelsPage";
             _typeNameTable[37] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[38] = "Nonograms.View.MainPage";
-            _typeNameTable[39] = "Nonograms.View.NonogramPage";
-            _typeNameTable[40] = "Nonograms.View.TutorialPage";
+            _typeNameTable[38] = "Nonograms.View.Converters.BoolToVisibilityConverter";
+            _typeNameTable[39] = "Nonograms.View.Converters.VisibilityToBoolConverter";
+            _typeNameTable[40] = "Nonograms.View.MainPage";
+            _typeNameTable[41] = "Nonograms.View.NonogramPage";
+            _typeNameTable[42] = "Nonograms.View.TutorialPage";
 
-            _typeTable = new global::System.Type[41];
+            _typeTable = new global::System.Type[43];
             _typeTable[0] = typeof(global::Nonograms.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::Nonograms.Portable.ViewModel.BaseViewModelLocator);
             _typeTable[2] = typeof(global::System.Object);
-            _typeTable[3] = typeof(global::Nonograms.Portable.ViewModel.MainPageViewModel);
+            _typeTable[3] = typeof(global::Nonograms.Portable.ViewModel.BaseMainPageViewModel);
             _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
             _typeTable[5] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
             _typeTable[6] = typeof(global::Nonograms.Portable.ViewModel.TutorialPageViewModel);
             _typeTable[7] = typeof(global::Nonograms.Portable.ViewModel.LevelsPageViewModel);
             _typeTable[8] = typeof(global::Nonograms.Portable.ViewModel.NonogramPageViewModel);
-            _typeTable[9] = typeof(global::Nonograms.View.ItemClickEventArgsConverter);
+            _typeTable[9] = typeof(global::Nonograms.View.Converters.ItemClickEventArgsConverter);
             _typeTable[10] = typeof(global::Nonograms.CustomControls.CellControl);
             _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[12] = typeof(global::Nonograms.Portable.Enums.CellStates);
@@ -214,9 +216,11 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             _typeTable[35] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
             _typeTable[36] = typeof(global::Nonograms.View.LevelsPage);
             _typeTable[37] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[38] = typeof(global::Nonograms.View.MainPage);
-            _typeTable[39] = typeof(global::Nonograms.View.NonogramPage);
-            _typeTable[40] = typeof(global::Nonograms.View.TutorialPage);
+            _typeTable[38] = typeof(global::Nonograms.View.Converters.BoolToVisibilityConverter);
+            _typeTable[39] = typeof(global::Nonograms.View.Converters.VisibilityToBoolConverter);
+            _typeTable[40] = typeof(global::Nonograms.View.MainPage);
+            _typeTable[41] = typeof(global::Nonograms.View.NonogramPage);
+            _typeTable[42] = typeof(global::Nonograms.View.TutorialPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -252,11 +256,10 @@ namespace Nonograms.Nonograms_XamlTypeInfo
         }
 
         private object Activate_0_ViewModelLocator() { return new global::Nonograms.ViewModel.ViewModelLocator(); }
-        private object Activate_1_BaseViewModelLocator() { return new global::Nonograms.Portable.ViewModel.BaseViewModelLocator(); }
         private object Activate_5_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
         private object Activate_6_TutorialPageViewModel() { return new global::Nonograms.Portable.ViewModel.TutorialPageViewModel(); }
         private object Activate_8_NonogramPageViewModel() { return new global::Nonograms.Portable.ViewModel.NonogramPageViewModel(); }
-        private object Activate_9_ItemClickEventArgsConverter() { return new global::Nonograms.View.ItemClickEventArgsConverter(); }
+        private object Activate_9_ItemClickEventArgsConverter() { return new global::Nonograms.View.Converters.ItemClickEventArgsConverter(); }
         private object Activate_10_CellControl() { return new global::Nonograms.CustomControls.CellControl(); }
         private object Activate_16_NonogramControl() { return new global::Nonograms.CustomControls.NonogramControl(); }
         private object Activate_22_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.Int32[,]>(); }
@@ -266,9 +269,11 @@ namespace Nonograms.Nonograms_XamlTypeInfo
         private object Activate_31_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
         private object Activate_33_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
         private object Activate_36_LevelsPage() { return new global::Nonograms.View.LevelsPage(); }
-        private object Activate_38_MainPage() { return new global::Nonograms.View.MainPage(); }
-        private object Activate_39_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
-        private object Activate_40_TutorialPage() { return new global::Nonograms.View.TutorialPage(); }
+        private object Activate_38_BoolToVisibilityConverter() { return new global::Nonograms.View.Converters.BoolToVisibilityConverter(); }
+        private object Activate_39_VisibilityToBoolConverter() { return new global::Nonograms.View.Converters.VisibilityToBoolConverter(); }
+        private object Activate_40_MainPage() { return new global::Nonograms.View.MainPage(); }
+        private object Activate_41_NonogramPage() { return new global::Nonograms.View.NonogramPage(); }
+        private object Activate_42_TutorialPage() { return new global::Nonograms.View.TutorialPage(); }
         private void VectorAdd_22_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Int32[,]>)instance;
@@ -307,14 +312,13 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             case 0:   //  Nonograms.ViewModel.ViewModelLocator
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator"));
                 userType.Activator = Activate_0_ViewModelLocator;
+                userType.AddMemberName("MainPage");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 1:   //  Nonograms.Portable.ViewModel.BaseViewModelLocator
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_1_BaseViewModelLocator;
-                userType.AddMemberName("MainPage");
                 userType.AddMemberName("TutorialPage");
                 userType.AddMemberName("LevelsPage");
                 userType.AddMemberName("NonogramPage");
@@ -325,7 +329,7 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Nonograms.Portable.ViewModel.MainPageViewModel
+            case 3:   //  Nonograms.Portable.ViewModel.BaseMainPageViewModel
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
@@ -360,7 +364,7 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  Nonograms.View.ItemClickEventArgsConverter
+            case 9:   //  Nonograms.View.Converters.ItemClickEventArgsConverter
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_9_ItemClickEventArgsConverter;
                 userType.SetIsLocalType();
@@ -545,23 +549,37 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 38:   //  Nonograms.View.MainPage
-                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_38_MainPage;
+            case 38:   //  Nonograms.View.Converters.BoolToVisibilityConverter
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_38_BoolToVisibilityConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 39:   //  Nonograms.View.NonogramPage
-                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_39_NonogramPage;
+            case 39:   //  Nonograms.View.Converters.VisibilityToBoolConverter
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_39_VisibilityToBoolConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 40:   //  Nonograms.View.TutorialPage
+            case 40:   //  Nonograms.View.MainPage
                 userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_40_TutorialPage;
+                userType.Activator = Activate_40_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 41:   //  Nonograms.View.NonogramPage
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_41_NonogramPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 42:   //  Nonograms.View.TutorialPage
+                userType = new global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_42_TutorialPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -570,9 +588,9 @@ namespace Nonograms.Nonograms_XamlTypeInfo
         }
 
 
-        private object get_0_BaseViewModelLocator_MainPage(object instance)
+        private object get_0_ViewModelLocator_MainPage(object instance)
         {
-            var that = (global::Nonograms.Portable.ViewModel.BaseViewModelLocator)instance;
+            var that = (global::Nonograms.ViewModel.ViewModelLocator)instance;
             return that.MainPage;
         }
         private object get_1_BaseViewModelLocator_TutorialPage(object instance)
@@ -776,10 +794,10 @@ namespace Nonograms.Nonograms_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "Nonograms.Portable.ViewModel.BaseViewModelLocator.MainPage":
-                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.Portable.ViewModel.BaseViewModelLocator");
-                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "MainPage", "Nonograms.Portable.ViewModel.MainPageViewModel");
-                xamlMember.Getter = get_0_BaseViewModelLocator_MainPage;
+            case "Nonograms.ViewModel.ViewModelLocator.MainPage":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.ViewModel.ViewModelLocator");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "MainPage", "Nonograms.Portable.ViewModel.BaseMainPageViewModel");
+                xamlMember.Getter = get_0_ViewModelLocator_MainPage;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Nonograms.Portable.ViewModel.BaseViewModelLocator.TutorialPage":

@@ -34,11 +34,5 @@ namespace Nonograms.View
             //var vm = DataContext as Portable.ViewModel.MainPageViewModel;
             //vm.LoadNonograms();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenuStackPanel.Visibility = MainMenuStackPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            SettingsGrid.Visibility = SettingsGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-        }
     }
 }

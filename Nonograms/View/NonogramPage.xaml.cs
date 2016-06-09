@@ -53,5 +53,15 @@ namespace Nonograms.View
             var bounds = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;
             var b = Window.Current.Bounds;
         }
+
+        private void Nonogram_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
+        {
+            e.
+        }
+
+        private void Nonogram_ManipulationStarting(object sender, ManipulationStartingRoutedEventArgs e)
+        {
+            e.
+        }
     }
 }

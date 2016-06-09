@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 
-namespace Nonograms.View
+namespace Nonograms.View.Converters
 {
     public sealed class ItemClickEventArgsConverter : IValueConverter
     {

@@ -10,10 +10,10 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>aa380938-d660-4436-80ae-079ce5d5d881</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>385ED42D0B9F7A37D8D1D225B7B64E81A10086BD2075EE2C2391A193C1C6CC99</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>aa380938-d660-4436-80ae-079ce5d5d881_1.0.0.0_x86__wpa5a6ehtm3jt</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>aa380938-d660-4436-80ae-079ce5d5d881_wpa5a6ehtm3jt!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>aa380938-d660-4436-80ae-079ce5d5d881</RegisteredPackageID>
+    <RegisteredManifestChecksum>CF5CD3CD1FB14949D78956BE3248586302ADE70C23D21CC5547ED9E4CFA162A1</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>aa380938-d660-4436-80ae-079ce5d5d882_1.0.0.0_x86__wpa5a6ehtm3jt</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>aa380938-d660-4436-80ae-079ce5d5d882_wpa5a6ehtm3jt!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>aa380938-d660-4436-80ae-079ce5d5d882</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Grigory</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
@@ -22,13 +22,21 @@
     <AppXManifest Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-27T23:34:24.374</Modified>
+      <Modified>2016-06-08T20:14:34.126</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x86\Debug\Nonograms.exe">
       <PackagePath>entrypoint\Nonograms.exe</PackagePath>
-      <Modified>2016-05-27T23:34:09.774</Modified>
+      <Modified>2016-06-08T20:14:28.027</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2014-12-10T15:08:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2014-12-10T15:08:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -105,6 +113,10 @@
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\MvvmLightLibs\5.3.0\lib\windows81\GalaSoft.MvvmLight.dll">
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
       <Modified>2016-05-11T13:13:50.582</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\runtime.any.System.Private.DataContractSerialization\4.1.0\lib\netcore50\System.Private.DataContractSerialization.dll">
+      <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
+      <Modified>2016-02-21T18:35:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -270,10 +282,6 @@
       <PackagePath>System.ObjectModel.dll</PackagePath>
       <Modified>2016-03-21T21:13:08.699</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Private.DataContractSerialization\4.0.0\lib\netcore50\System.Private.DataContractSerialization.dll">
-      <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
-      <Modified>2016-03-21T21:12:43.542</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Private.Networking\4.0.0\lib\netcore50\System.Private.Networking.dll">
       <PackagePath>System.Private.Networking.dll</PackagePath>
       <Modified>2016-03-21T21:12:41.421</Modified>
@@ -354,17 +362,17 @@
       <PackagePath>System.Runtime.Numerics.dll</PackagePath>
       <Modified>2016-03-21T21:13:15.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Json\4.0.0\lib\netcore50\System.Runtime.Serialization.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Json\4.0.1\lib\netcore50\System.Runtime.Serialization.Json.dll">
       <PackagePath>System.Runtime.Serialization.Json.dll</PackagePath>
-      <Modified>2016-03-21T21:12:43.511</Modified>
+      <Modified>2016-02-21T18:36:26.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Primitives\4.0.10\lib\dotnet\System.Runtime.Serialization.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Primitives\4.1.0\lib\netcore50\System.Runtime.Serialization.Primitives.dll">
       <PackagePath>System.Runtime.Serialization.Primitives.dll</PackagePath>
-      <Modified>2016-03-21T21:12:42.499</Modified>
+      <Modified>2016-02-21T18:36:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Xml\4.0.10\lib\netcore50\System.Runtime.Serialization.Xml.dll">
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Xml\4.1.0\lib\netcore50\System.Runtime.Serialization.Xml.dll">
       <PackagePath>System.Runtime.Serialization.Xml.dll</PackagePath>
-      <Modified>2016-03-21T21:12:43.511</Modified>
+      <Modified>2016-02-21T18:36:28.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.WindowsRuntime\4.0.10\lib\netcore50\System.Runtime.WindowsRuntime.dll">
       <PackagePath>System.Runtime.WindowsRuntime.dll</PackagePath>
@@ -460,53 +468,73 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Nonograms.Portable.dll">
       <PackagePath>Nonograms.Portable.dll</PackagePath>
-      <Modified>2016-05-26T22:53:08.717</Modified>
+      <Modified>2016-06-08T19:44:34.367</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2016-05-17T09:08:54.471</Modified>
+      <Modified>2016-06-06T20:48:54.765</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\HanZi.ttf">
+      <PackagePath>Resources\Fonts\HanZi.ttf</PackagePath>
+      <Modified>2016-06-06T20:48:35.262</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\PresentScript Normal.Ttf">
+      <PackagePath>Resources\Fonts\PresentScript Normal.Ttf</PackagePath>
+      <Modified>2016-06-06T20:48:35.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-05-12T11:28:20.779</Modified>
+      <Modified>2016-06-06T20:48:35.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.233</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.238</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T18:09:42.000</Modified>
+      <Modified>2016-06-06T20:48:35.240</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\волна.jpg">
+      <PackagePath>волна.jpg</PackagePath>
+      <Modified>2016-06-06T20:48:53.485</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\волна2.jpg">
+      <PackagePath>волна2.jpg</PackagePath>
+      <Modified>2016-06-06T20:48:53.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\ирисы.jpg">
+      <PackagePath>ирисы.jpg</PackagePath>
+      <Modified>2016-06-06T20:48:53.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x86\Debug\Nonograms.xr.xml">
       <PackagePath>Nonograms.xr.xml</PackagePath>
-      <Modified>2016-05-27T23:34:08.454</Modified>
+      <Modified>2016-06-08T20:14:27.699</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -514,11 +542,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-27T23:34:21.455</Modified>
+      <Modified>2016-06-08T20:14:32.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x86\Debug\Core\Nonograms.exe">
       <PackagePath>Nonograms.exe</PackagePath>
-      <Modified>2016-05-27T23:34:24.330</Modified>
+      <Modified>2016-06-08T20:14:33.097</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

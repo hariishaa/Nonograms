@@ -9,6 +9,11 @@
     <RootPropertyPathName Name="NavigateCommand" />
     <RootPropertyPathName Name="SelectedItem" />
     <RootPropertyPathName Name="MainPage" />
+    <RootPropertyPathName Name="IsSettingsOpened" />
+    <RootPropertyPathName Name="CloseSettingsCommand" />
+    <RootPropertyPathName Name="IsFullScreenModeEnabled" />
+    <RootPropertyPathName Name="OpenSettingsCommand" />
+    <RootPropertyPathName Name="Visibility" />
     <RootPropertyPathName Name="NavigateCommand2" />
     <RootPropertyPathName Name="NonogramPage" />
     <RootPropertyPathName Name="ClearCommand" />
@@ -30,7 +35,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ResourceDictionary" />
     <RootType FullName="Nonograms.ViewModel.ViewModelLocator" />
-    <RootType FullName="Nonograms.View.ItemClickEventArgsConverter" />
+    <RootType FullName="Nonograms.View.Converters.ItemClickEventArgsConverter" />
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="ImageSource" />
       <RootProperty Name="Stretch" />
@@ -165,6 +170,7 @@
       <RootProperty Name="Path" />
       <RootProperty Name="Source" />
       <RootProperty Name="ElementName" />
+      <RootProperty Name="Converter" />
       <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
@@ -190,12 +196,14 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Nonograms.View.LevelsPage" />
+    <RootType FullName="Nonograms.View.Converters.BoolToVisibilityConverter" />
+    <RootType FullName="Nonograms.View.Converters.VisibilityToBoolConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="Command" />
-      <RootEvent Name="Click" />
+      <RootProperty Name="CommandParameter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="Background" />
@@ -250,6 +258,12 @@
       <RootMethod Name="SetBelow" />
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="VerticalScrollBarVisibility" />
+      <RootProperty Name="HorizontalScrollBarVisibility" />
+      <RootProperty Name="ZoomMode" />
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Nonograms.View.NonogramPage" />
     <RootType FullName="Nonograms.View.TutorialPage" />

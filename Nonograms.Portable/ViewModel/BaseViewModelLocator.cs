@@ -10,20 +10,24 @@ using System.Threading.Tasks;
 
 namespace Nonograms.Portable.ViewModel
 {
-    public class BaseViewModelLocator
+    public abstract class BaseViewModelLocator
     {
+        // доделать
         public BaseViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<MainPageViewModel>();
             SimpleIoc.Default.Register<TutorialPageViewModel>();
             SimpleIoc.Default.Register<LevelsPageViewModel>();
             SimpleIoc.Default.Register<NonogramPageViewModel>();
+
+            RegisterViewModels();
         }
 
-        public MainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
+        public abstract BaseMainPageViewModel MainPage { get; }
         public TutorialPageViewModel TutorialPage => ServiceLocator.Current.GetInstance<TutorialPageViewModel>();
         public LevelsPageViewModel LevelsPage => ServiceLocator.Current.GetInstance<LevelsPageViewModel>();
         public NonogramPageViewModel NonogramPage => ServiceLocator.Current.GetInstance<NonogramPageViewModel>();
+
+        public abstract void RegisterViewModels();
     }
 }

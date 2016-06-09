@@ -11,12 +11,44 @@ using System.Threading.Tasks;
 
 namespace Nonograms.Portable.ViewModel
 {
-    public class MainPageViewModel : ViewModelBase
+    public abstract class BaseMainPageViewModel : ViewModelBase
     {
-        INavigationService _navigationService;
+        protected INavigationService _navigationService;
+
+        protected bool _isSettingsOpened;
+        public bool IsSettingsOpened
+        {
+            get
+            {
+                return _isSettingsOpened;
+            }
+            set
+            {
+                _isSettingsOpened = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        protected bool? _isFullScreenModeEnabled;
+        public bool? IsFullScreenModeEnabled
+        {
+            get
+            {
+                return _isFullScreenModeEnabled;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    value = true;
+                }
+                _isFullScreenModeEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
 
         // переименовать
-        RelayCommand _navigateCommand;
+        protected RelayCommand _navigateCommand;
         public RelayCommand NavigateCommand => _navigateCommand ?? (_navigateCommand = new RelayCommand(
             () => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName)
                    //p => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName)
@@ -25,11 +57,17 @@ namespace Nonograms.Portable.ViewModel
                    ));
 
         // переименовать
-        RelayCommand _navigateCommand2;
+        protected RelayCommand _navigateCommand2;
         public RelayCommand NavigateCommand2 => _navigateCommand2 ?? (_navigateCommand2 = new RelayCommand(
             () => _navigationService.NavigateTo(typeof(TutorialPageViewModel).FullName)));
 
-        public MainPageViewModel(INavigationService navigationService)
+        protected RelayCommand _openSettingsCommand;
+        public abstract RelayCommand OpenSettingsCommand { get; }
+
+        protected RelayCommand _closeSettingsCommand;
+        public abstract RelayCommand CloseSettingsCommand { get; }
+
+        public BaseMainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
         }
@@ -37,7 +75,7 @@ namespace Nonograms.Portable.ViewModel
 
 
 
-        ObservableCollection<NonogramInfo> _allNonograms;
+        protected ObservableCollection<NonogramInfo> _allNonograms;
         public ObservableCollection<NonogramInfo> AllNonograms
         {
             get

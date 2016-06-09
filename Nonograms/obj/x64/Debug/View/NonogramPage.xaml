@@ -36,7 +36,10 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <RelativePanel VerticalAlignment="Top" BorderThickness="7" Opacity="0.8">
-            <controls:NonogramControl x:ConnectionId='4' x:Name="Nonogram" LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}" FieldHistory="{Binding FieldHistory}" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            <ScrollViewer x:ConnectionId='4' x:Name="Nonogram" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" 
+                  ZoomMode="Enabled" RelativePanel.AlignHorizontalCenterWithPanel="True">
+            <controls:NonogramControl LeftSideValues="{Binding LeftSideValues}" TopSideValues="{Binding TopSideValues}" TagType="{Binding TagType}" CheckMode="{Binding CheckMode}" IsSolved="{Binding IsSolved, Mode=TwoWay}" FieldHistory="{Binding FieldHistory}"/>
+            </ScrollViewer>
             <Button x:ConnectionId='5' x:Name="CheckModeButton" Content="CheckMode" Command="{Binding CheckModeCommand}" Margin="10" RelativePanel.Below="Nonogram"/>
             <Button x:ConnectionId='6' x:Name="TagModeButton" Content="TagMode" Command="{Binding TagTypeCommand}" Margin="10" RelativePanel.Below="Nonogram" RelativePanel.RightOf="CheckModeButton"/>
             <Button x:ConnectionId='7' x:Name="PreviousStepButton" Content="PreviousStep" Command="{Binding PreviousStepCommand}" Margin="10" RelativePanel.Below="Nonogram" RelativePanel.RightOf="TagModeButton"/>

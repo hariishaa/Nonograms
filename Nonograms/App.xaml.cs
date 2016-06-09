@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -93,7 +94,6 @@ namespace Nonograms
             // задание некоторых свойств для окна
             var appView = ApplicationView.GetForCurrentView();
             appView.SetPreferredMinSize(new Size(300, 300));
-            //appView.TryEnterFullScreenMode();
             //appView.Title = "";
             //var titleBar = appView.TitleBar;
             //не работает
@@ -101,6 +101,12 @@ namespace Nonograms
             //titleBar.ForegroundColor = Colors.Black;
             //titleBar.ButtonBackgroundColor = Colors.Black;
             //titleBar.ButtonForegroundColor = Colors.White;
+            var settings = ApplicationData.Current.RoamingSettings;
+            var isFullScreenModeEnabled = (bool?)settings.Values["IsFullScreenModeEnabled"];
+            if (isFullScreenModeEnabled == null || isFullScreenModeEnabled == true)
+            {
+                appView.TryEnterFullScreenMode();
+            }
         }
 
         private void OnBackRequested(object sender, BackRequestedEventArgs e)

@@ -10,25 +10,25 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>aa380938-d660-4436-80ae-079ce5d5d881</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>1CB23BBA0C3E82FAEB44A3D911822560102FC67F7B71C451D4AD50E3B279EAFD</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>aa380938-d660-4436-80ae-079ce5d5d881_1.0.0.0_x64__wpa5a6ehtm3jt</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>aa380938-d660-4436-80ae-079ce5d5d881_wpa5a6ehtm3jt!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>aa380938-d660-4436-80ae-079ce5d5d881</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=Grigory</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredManifestChecksum>FD35E1C4C67CAE606E90429AEF66106577361DB54C1DDD3BC5FEF5CD6767F3A3</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>30408rulezzzz.146134F6D6BA7_1.1.0.0_x64__vzk2trxth6eqp</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>30408rulezzzz.146134F6D6BA7_vzk2trxth6eqp!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>30408rulezzzz.146134F6D6BA7</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=34C7B63B-BE53-4211-A63F-741D071F4F19</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.0.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-06-08T12:44:04.111</Modified>
+      <Modified>2016-06-08T22:49:03.342</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.exe">
       <PackagePath>entrypoint\Nonograms.exe</PackagePath>
-      <Modified>2016-06-08T12:44:03.239</Modified>
+      <Modified>2016-06-08T22:48:54.392</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -114,9 +114,9 @@
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
       <Modified>2016-05-11T13:13:50.582</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Newtonsoft.Json\8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
-      <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2016-03-28T09:00:16.624</Modified>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\runtime.any.System.Private.DataContractSerialization\4.1.0\lib\netcore50\System.Private.DataContractSerialization.dll">
+      <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
+      <Modified>2016-02-21T18:35:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -282,10 +282,6 @@
       <PackagePath>System.ObjectModel.dll</PackagePath>
       <Modified>2016-03-21T21:13:08.699</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Private.DataContractSerialization\4.0.0\lib\netcore50\System.Private.DataContractSerialization.dll">
-      <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
-      <Modified>2016-03-21T21:12:43.542</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Private.Networking\4.0.0\lib\netcore50\System.Private.Networking.dll">
       <PackagePath>System.Private.Networking.dll</PackagePath>
       <Modified>2016-03-21T21:12:41.421</Modified>
@@ -366,17 +362,17 @@
       <PackagePath>System.Runtime.Numerics.dll</PackagePath>
       <Modified>2016-03-21T21:13:15.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Json\4.0.0\lib\netcore50\System.Runtime.Serialization.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Json\4.0.1\lib\netcore50\System.Runtime.Serialization.Json.dll">
       <PackagePath>System.Runtime.Serialization.Json.dll</PackagePath>
-      <Modified>2016-03-21T21:12:43.511</Modified>
+      <Modified>2016-02-21T18:36:26.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Primitives\4.0.10\lib\dotnet\System.Runtime.Serialization.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Primitives\4.1.0\lib\netcore50\System.Runtime.Serialization.Primitives.dll">
       <PackagePath>System.Runtime.Serialization.Primitives.dll</PackagePath>
-      <Modified>2016-03-21T21:12:42.499</Modified>
+      <Modified>2016-02-21T18:36:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Xml\4.0.10\lib\netcore50\System.Runtime.Serialization.Xml.dll">
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.Serialization.Xml\4.1.0\lib\netcore50\System.Runtime.Serialization.Xml.dll">
       <PackagePath>System.Runtime.Serialization.Xml.dll</PackagePath>
-      <Modified>2016-03-21T21:12:43.511</Modified>
+      <Modified>2016-02-21T18:36:28.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Runtime.WindowsRuntime\4.0.10\lib\netcore50\System.Runtime.WindowsRuntime.dll">
       <PackagePath>System.Runtime.WindowsRuntime.dll</PackagePath>
@@ -472,7 +468,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Nonograms.Portable.dll">
       <PackagePath>Nonograms.Portable.dll</PackagePath>
-      <Modified>2016-06-08T10:54:27.993</Modified>
+      <Modified>2016-06-08T19:44:34.367</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2016-06-06T20:48:54.765</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\HanZi.ttf">
       <PackagePath>Resources\Fonts\HanZi.ttf</PackagePath>
@@ -534,7 +534,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.xr.xml">
       <PackagePath>Nonograms.xr.xml</PackagePath>
-      <Modified>2016-06-07T09:23:30.829</Modified>
+      <Modified>2016-06-08T22:48:53.868</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -542,11 +542,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-06-08T10:53:52.405</Modified>
+      <Modified>2016-06-08T22:49:02.661</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Core\Nonograms.exe">
       <PackagePath>Nonograms.exe</PackagePath>
-      <Modified>2016-06-08T12:44:04.098</Modified>
+      <Modified>2016-06-08T22:49:03.238</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

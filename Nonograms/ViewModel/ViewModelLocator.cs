@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
+using Microsoft.Practices.ServiceLocation;
 using Nonograms.Portable.ViewModel;
 using Nonograms.View;
 using System;
@@ -25,6 +26,14 @@ namespace Nonograms.ViewModel
             navigationService.Configure(typeof(NonogramPageViewModel).FullName, typeof(NonogramPage));
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
             //SimpleIoc.Default.Register<IDataService, DataService>();
+        }
+
+        public override BaseMainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
+
+        public override void RegisterViewModels()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<MainPageViewModel>();
         }
     }
 }

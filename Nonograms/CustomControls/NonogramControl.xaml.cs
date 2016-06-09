@@ -354,29 +354,32 @@ namespace Nonograms.CustomControls
         #region ControlEvents
         private void CellControl_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            // задаем начальные координаты контура
-            _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 4, Fill = new SolidColorBrush(Colors.BlueViolet), Opacity = 0.5, IsHitTestVisible = false };
-            CellControl currentCell = sender as CellControl;
-            int column = Grid.GetColumn(currentCell), row = Grid.GetRow(currentCell);
-            _beginPoint = _endPoint = new Point(column, row);
-            Grid.SetColumn(_outlineRectangle, column);
-            Grid.SetRow(_outlineRectangle, row);
-            FieldGrid.Children.Add(_outlineRectangle);
-
-            // инициализация прицела
-            Grid.SetRow(HorizontalAimRectangle, row);
-            Grid.SetColumn(VerticalAimRectangle, column);
-            HorizontalAimRectangle.Visibility = Visibility.Visible;
-            VerticalAimRectangle.Visibility = Visibility.Visible;
-
-            // закрашиваем или стираем квадраты
-            if (_field[row - 1, column - 1] == 0)
+            if (_outlineRectangle == null)
             {
-                _checkMode = CheckMode;
-            }
-            else
-            {
-                _checkMode = 0;
+                // задаем начальные координаты контура
+                _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 4, Fill = new SolidColorBrush(Colors.BlueViolet), Opacity = 0.5, IsHitTestVisible = false };
+                CellControl currentCell = sender as CellControl;
+                int column = Grid.GetColumn(currentCell), row = Grid.GetRow(currentCell);
+                _beginPoint = _endPoint = new Point(column, row);
+                Grid.SetColumn(_outlineRectangle, column);
+                Grid.SetRow(_outlineRectangle, row);
+                FieldGrid.Children.Add(_outlineRectangle);
+
+                // инициализация прицела
+                Grid.SetRow(HorizontalAimRectangle, row);
+                Grid.SetColumn(VerticalAimRectangle, column);
+                HorizontalAimRectangle.Visibility = Visibility.Visible;
+                VerticalAimRectangle.Visibility = Visibility.Visible;
+
+                // закрашиваем или стираем квадраты
+                if (_field[row - 1, column - 1] == 0)
+                {
+                    _checkMode = CheckMode;
+                }
+                else
+                {
+                    _checkMode = 0;
+                }
             }
         }
 
@@ -467,6 +470,7 @@ namespace Nonograms.CustomControls
             UpdateField(beginX, columns, beginY, rows, _checkMode);
             // стираем контур
             FieldGrid.Children.Remove(_outlineRectangle);
+            _outlineRectangle = null;
 
             VerticalAimRectangle.Visibility = Visibility.Collapsed;
             HorizontalAimRectangle.Visibility = Visibility.Collapsed;
