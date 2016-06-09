@@ -396,9 +396,6 @@
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\волна2.jpg">
       <PackagePath>волна2.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\ирисы.jpg">
-      <PackagePath>ирисы.jpg</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.xr.xml">
       <PackagePath>Nonograms.xr.xml</PackagePath>
     </AppxPackagedFile>

@@ -1,5 +1,6 @@
 ﻿using Nonograms.Portable;
 using Nonograms.Portable.Model;
+using Nonograms.Portable.Model.DTO;
 using Nonograms.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -34,10 +35,11 @@ namespace Nonograms.View
             Window.Current.VisibilityChanged += Current_VisibilityChanged;
         }
 
+        // !!!
         private void Current_VisibilityChanged(object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
         {
-            var vm = DataContext as Portable.ViewModel.BaseNonogramPageViewModel;
-            vm.SaveHistory();
+            //var vm = DataContext as Portable.ViewModel.BaseNonogramPageViewModel;
+            //vm.SaveHistory();
         }
 
         private void NonogramPage_Loading(FrameworkElement sender, object args)

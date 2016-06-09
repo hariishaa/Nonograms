@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using Nonograms.Portable.Model;
+using Nonograms.Portable.Model.DTO;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

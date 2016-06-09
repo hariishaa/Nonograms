@@ -143,7 +143,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="волна.jpg" />
     <Content Include="волна2.jpg" />
-    <Content Include="ирисы.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

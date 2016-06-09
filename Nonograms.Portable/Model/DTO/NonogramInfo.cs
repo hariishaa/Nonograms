@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nonograms.Portable.Model
+namespace Nonograms.Portable.Model.DTO
 {
     public class NonogramInfo
     {

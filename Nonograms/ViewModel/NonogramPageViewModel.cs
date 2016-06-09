@@ -16,8 +16,8 @@ namespace Nonograms.ViewModel
             try
             {
                 var filename = _nonogramInfo.Id.ToString() + ".json";
-                StorageFile file = ApplicationData.Current.LocalFolder.GetFileAsync(filename).GetResults();
-                string json  = FileIO.ReadTextAsync(file).GetResults();
+                StorageFile file = ApplicationData.Current.LocalFolder.GetFileAsync(filename).AsTask().Result;
+                string json  = FileIO.ReadTextAsync(file).AsTask().Result;
                 return JsonConvert.DeserializeObject<List<int[,]>>(json);
             }
             catch
