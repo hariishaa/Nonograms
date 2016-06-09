@@ -23,17 +23,19 @@ namespace Nonograms.ViewModel
             var navigationService = new NavigationService();
             navigationService.Configure(typeof(TutorialPageViewModel).FullName, typeof(TutorialPage));
             navigationService.Configure(typeof(LevelsPageViewModel).FullName, typeof(LevelsPage));
-            navigationService.Configure(typeof(NonogramPageViewModel).FullName, typeof(NonogramPage));
+            navigationService.Configure(typeof(BaseNonogramPageViewModel).FullName, typeof(NonogramPage));
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
             //SimpleIoc.Default.Register<IDataService, DataService>();
         }
 
         public override BaseMainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
+        public override BaseNonogramPageViewModel NonogramPage => ServiceLocator.Current.GetInstance<NonogramPageViewModel>();
 
         public override void RegisterViewModels()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainPageViewModel>();
+            SimpleIoc.Default.Register<NonogramPageViewModel>();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Nonograms.Portable;
 using Nonograms.Portable.Model;
+using Nonograms.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,13 @@ namespace Nonograms.View
         {
             this.InitializeComponent();
             this.Loading += NonogramPage_Loading;
+            Window.Current.VisibilityChanged += Current_VisibilityChanged;
+        }
+
+        private void Current_VisibilityChanged(object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
+        {
+            var vm = DataContext as Portable.ViewModel.BaseNonogramPageViewModel;
+            vm.SaveHistory();
         }
 
         private void NonogramPage_Loading(FrameworkElement sender, object args)
@@ -43,10 +51,18 @@ namespace Nonograms.View
             // зачем???
             base.OnNavigatedTo(e);
 
-            var vm = DataContext as Portable.ViewModel.NonogramPageViewModel;
+            var vm = DataContext as NonogramPageViewModel;
             vm.LoadNonogram((NonogramInfo)e.Parameter);
         }
-    
+
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            base.OnNavigatingFrom(e);
+
+            var vm = DataContext as NonogramPageViewModel;
+            vm.SaveHistory();
+        }
+
         //удалить
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -56,12 +72,10 @@ namespace Nonograms.View
 
         private void Nonogram_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
         {
-            e.
         }
 
         private void Nonogram_ManipulationStarting(object sender, ManipulationStartingRoutedEventArgs e)
         {
-            e.
         }
     }
 }

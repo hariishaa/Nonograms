@@ -160,6 +160,9 @@
       <RootProperty Name="CheckMode" />
       <RootProperty Name="IsSolved" />
       <RootProperty Name="FieldHistory" />
+      <RootProperty Name="ManipulationMode" />
+      <RootEvent Name="ManipulationStarted" />
+      <RootEvent Name="ManipulationStarting" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="DataContext" />
@@ -258,12 +261,6 @@
       <RootMethod Name="SetBelow" />
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="HorizontalScrollBarVisibility" />
-      <RootProperty Name="ZoomMode" />
-      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Nonograms.View.NonogramPage" />
     <RootType FullName="Nonograms.View.TutorialPage" />

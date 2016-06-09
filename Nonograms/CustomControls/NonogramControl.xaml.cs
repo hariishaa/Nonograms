@@ -103,20 +103,26 @@ namespace Nonograms.CustomControls
             if (e.NewValue != null)
             {
                 var collection = (ObservableCollection<int[,]>)e.NewValue;
-                collection.CollectionChanged += FieldHistory_CollectionChanged;
                 NonogramControl nc = d as NonogramControl;
-                nc.FieldHistory.CollectionChanged += nc.FieldHistory_CollectionChanged1;
-                nc._field = collection[0];
-                nc.BuildFieldGrid(collection[0].GetLength(0), collection[0].GetLength(1));
+                nc.FieldHistory.CollectionChanged += nc.FieldHistory_CollectionChanged;
+                nc._field = (int[,])collection[0].Clone(); // чтобы у _field и collection[0] были ссылки на разные массивы
+                int rows = collection[0].GetLength(0), columns = collection[0].GetLength(1);
+                nc.BuildFieldGrid(rows, columns);
+                if (collection.Count > 1)
+                {
+                    nc.UpdateField(collection.Last());
+                    nc.IsSolved = nc.CheckSolution(0, columns, 0, rows, nc._field, nc.LeftSideValues, nc._leftSideSolutions, nc.TopSideValues, nc._topSideSolutions);
+                }
             }
         }
-        private static void FieldHistory_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void FieldHistory_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            //if (e.NewItems == null)
-            //{
-            //    NonogramControl nc = d as NonogramControl;
-            //    nc.UpdateField(nc.FieldHistory.Last());
-            //}
+            if (e.NewItems == null)
+            {
+                UpdateField(FieldHistory.Last());
+                IsSolved = CheckSolution(0, _field.GetLength(1), 0, _field.GetLength
+                    (0), _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions);
+            }
         }
 
         public ObservableCollection<int[,]> FieldHistory
@@ -128,7 +134,6 @@ namespace Nonograms.CustomControls
             set
             {
                 SetValue(FieldHistoryProperty, value);
-                //ConvertFieldToBindable(Field);
             }
         }
         #endregion
@@ -137,8 +142,6 @@ namespace Nonograms.CustomControls
         //public static readonly DependencyProperty FieldProperty = DependencyProperty.Register("Field", typeof(int[,]), typeof(NonogramControl), new PropertyMetadata(default(int[,]), OnFieldPropertyChanged));
         //private static void OnFieldPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         //{
-        //    //BindableField = ConvertFieldToBindable(Field);
-
         //    NonogramControl nc = d as NonogramControl;
         //    int[,] oldField = ((int[,])e.OldValue);
         //    int[,] newField = ((int[,])e.NewValue);
@@ -167,36 +170,8 @@ namespace Nonograms.CustomControls
         //    set
         //    {
         //        SetValue(FieldProperty, value);
-        //        //ConvertFieldToBindable(Field);
         //    }
         //}
-        ////private static readonly DependencyProperty BindableFieldProperty = DependencyProperty.Register("BindableField", typeof(int[][]), typeof(NonogramControl), new PropertyMetadata(default(int[][])));
-        ////private int[][] BindableField
-        ////{
-        ////    get
-        ////    {
-        ////        return (int[][])GetValue(BindableFieldProperty);
-        ////    }
-        ////    set
-        ////    {
-        ////        SetValue(BindableFieldProperty, value);
-        ////    }
-        ////}
-        ////private int[][] ConvertFieldToBindable(int[,] field)
-        ////{
-        ////    int rows = field.GetLength(0), columns = field.GetLength(1);
-        ////    int[][] bindableField = new int[rows][];
-        ////    for (int i = 0; i < rows; i++)
-        ////    {
-        ////        bindableField[i] = new int[columns];
-        ////        for (int j = 0; j < columns; j++)
-        ////        {
-        ////            bindableField[i][j] = field[i, j];
-        ////        }
-        ////    }
-        ////    return bindableField;
-        ////}
-
         //#endregion
         #region IsSolvedProperty
         public static readonly DependencyProperty IsSolvedProperty = DependencyProperty.Register("IsSolved", typeof(Boolean), typeof(NonogramControl), new PropertyMetadata(default(Boolean)));
@@ -217,15 +192,6 @@ namespace Nonograms.CustomControls
         {
             this.InitializeComponent();
             //FieldHistory.CollectionChanged += FieldHistory_CollectionChanged1;
-        }
-
-        private void FieldHistory_CollectionChanged1(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            var x = FieldHistory;
-            if (e.NewItems == null)
-            {
-                UpdateField(FieldHistory.Last());
-            }
         }
 
         #region BuildMethods
@@ -301,10 +267,6 @@ namespace Nonograms.CustomControls
         }
         private void BuildFieldGrid(int rows, int columns)
         {
-            //// удаляем старое поле
-            //FieldGrid.Children.Clear();
-            //FieldGrid.RowDefinitions.Clear();
-            //FieldGrid.ColumnDefinitions.Clear();
             // строим новое поле
             for (int i = 0; i < rows; i++)
             {
@@ -344,11 +306,6 @@ namespace Nonograms.CustomControls
                 Grid.SetColumn(verticalLine, j);
                 FieldGrid.Children.Add(verticalLine);
             }
-            // строим "прицел"
-            //Rectangle AimRectangle = new Rectangle { Name = "HorizontalAimRectangle", Style = (Style)Resources["HorizontalAimRectangle"] };
-            //FieldGrid.Children.Add(AimRectangle);
-            //AimRectangle = new Rectangle { Name = "VerticalAimRectangle", Style = (Style)Resources["VerticalAimRectangle"] };
-            //FieldGrid.Children.Add(AimRectangle);
         }
         #endregion
         #region ControlEvents
@@ -464,26 +421,28 @@ namespace Nonograms.CustomControls
 
         private void FieldGrid_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            int beginX = Grid.GetColumn(_outlineRectangle) - 1, beginY = Grid.GetRow(_outlineRectangle) - 1;
-            int columns = Grid.GetColumnSpan(_outlineRectangle), rows = Grid.GetRowSpan(_outlineRectangle);
-            // обновляем ui
-            UpdateField(beginX, columns, beginY, rows, _checkMode);
-            // стираем контур
-            FieldGrid.Children.Remove(_outlineRectangle);
-            _outlineRectangle = null;
+            if (_outlineRectangle != null)
+            {
+                int beginX = Grid.GetColumn(_outlineRectangle) - 1, beginY = Grid.GetRow(_outlineRectangle) - 1;
+                int columns = Grid.GetColumnSpan(_outlineRectangle), rows = Grid.GetRowSpan(_outlineRectangle);
+                // обновляем ui
+                UpdateField(beginX, columns, beginY, rows, _checkMode);
+                // стираем контур
+                FieldGrid.Children.Remove(_outlineRectangle);
+                _outlineRectangle = null;
 
-            VerticalAimRectangle.Visibility = Visibility.Collapsed;
-            HorizontalAimRectangle.Visibility = Visibility.Collapsed;
+                VerticalAimRectangle.Visibility = Visibility.Collapsed;
+                HorizontalAimRectangle.Visibility = Visibility.Collapsed;
 
-            // проверяем решение
-            IsSolved = CheckSolution(beginX, columns, beginY, rows, _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions);
+                // проверяем решение
+                IsSolved = CheckSolution(beginX, columns, beginY, rows, _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions);
+            }
         }
         #endregion
 
         private void UpdateField(int beginX, int columns, int beginY, int rows, CheckModes checkMode)
         {
             List<CellControl> allCells = FieldGrid.Children.OfType<CellControl>().ToList();
-            //int[,] field = (int[,])Field.Clone();
             int fieldHeight = _field.GetLength(1);
             if (rows > columns)
             {
@@ -502,7 +461,7 @@ namespace Nonograms.CustomControls
                 }
             }
             //Field = field;
-            FieldHistory.Add(_field);
+            FieldHistory.Add((int[,])_field.Clone()); // чтобы ни один элемент FH не ссылался на _field
         }
 
         private void UpdateField(int[,] newField)
@@ -512,13 +471,14 @@ namespace Nonograms.CustomControls
             {
                 for (int j = 0; j < newField.GetLength(1); j++)
                 {
-                    allCells[i + j].State = (CellStates)newField[i, j];
+                    allCells[i * newField.GetLength(1) + j].State = (CellStates)newField[i, j];
                 }
             }
+            _field = (int[,])newField.Clone(); // чтобы _field не ссылался на newField
         }
 
         #region CheckSolutionMethods
-        public bool CheckSolution(int beginX, int columns, int beginY, int rows, int[,] field, int[][] leftSideValues, bool[] leftSideSolutions, int[][] topSideValues, bool[] topSideSolutions)
+        bool CheckSolution(int beginX, int columns, int beginY, int rows, int[,] field, int[][] leftSideValues, bool[] leftSideSolutions, int[][] topSideValues, bool[] topSideSolutions)
         {
             bool isRight; //правильность заполнения линии
             int tempSum; //временная переменная для подсчёта подряд идущих закрашенных клеток
@@ -629,110 +589,7 @@ namespace Nonograms.CustomControls
                 }
             }
             return true;
-            //if (CheckLeftSideSolution(beginX, rows, leftSideValues) & CheckTopSideSolution(beginY, rows, topSideValues))
-            //{
-            //    IsSolved = true;
-            //}
         }
-
-        //private bool CheckTopSideSolution(int beginY, int rows, int[][] topSideValues)
-        //{
-        //    bool isRight = true;
-        //    int tempSum;
-        //    // текущие числа в j-й колонке
-        //    List<int> columnSolution = new List<int>();
-        //    for (int j = 0; j < field.GetLength(1); j++)
-        //    {
-        //        // заполнение columnSolution
-        //        columnSolution.Clear();
-        //        tempSum = 0;
-        //        for (int i = 0; i < field.GetLength(0); i++)
-        //        {
-        //            if (field[i, j] <= 0)
-        //            {
-        //                if (tempSum > 0)
-        //                {
-        //                    columnSolution.Add(tempSum);
-        //                    tempSum = 0;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                tempSum++;
-        //            }
-        //        }
-        //        if (tempSum > 0)
-        //        {
-        //            columnSolution.Add(tempSum);
-        //        }
-        //        // сравнение columnSolution с условием j-го столбца и выделение чисел
-        //        var textBlocksInColumn = TopSideGrid.Children.Cast<TextBlock>().Where(child => Grid.GetColumn(child) == j);
-        //        SolidColorBrush foreground;
-        //        if (!columnSolution.SequenceEqual(TopSideValues[j]))
-        //        {
-        //            isRight = false;
-        //            foreground = new SolidColorBrush(Colors.Black);
-        //        }
-        //        else
-        //        {
-        //            foreground = new SolidColorBrush(Colors.Red);
-        //        }
-        //        foreach (TextBlock tb in textBlocksInColumn)
-        //        {
-        //            tb.Foreground = foreground;
-        //        }
-        //    }
-        //    return isRight;
-        //}
-
-        //private bool CheckLeftSideSolution(int beginY, int rows, int[][] leftSideValues)
-        //{
-        //    bool isRight = true;
-        //    int tempSum;
-        //    // текущие числа в i-м ряду
-        //    List<int> rowSolution = new List<int>();
-        //    for (int i = 0; i < field.GetLength(0); i++)
-        //    {
-        //        rowSolution.Clear();
-        //        tempSum = 0;
-        //        for (int j = 0; j < field.GetLength(1); j++)
-        //        {
-        //            if (field[i, j] <= 0)
-        //            {
-        //                if (tempSum > 0)
-        //                {
-        //                    rowSolution.Add(tempSum);
-        //                    tempSum = 0;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                tempSum++;
-        //            }
-        //        }
-        //        if (tempSum > 0)
-        //        {
-        //            rowSolution.Add(tempSum);
-        //        }
-        //        // сравнение columnSolution с условием j-го столбца и выделение чисел
-        //        var textBlocksInRow = TopSideGrid.Children.Cast<TextBlock>().Where(child => Grid.GetColumn(child) == i);
-        //        SolidColorBrush foreground;
-        //        if (!rowSolution.SequenceEqual(LeftSideValues[i]))
-        //        {
-        //            isRight = false;
-        //            foreground = new SolidColorBrush(Colors.Black);
-        //        }
-        //        else
-        //        {
-        //            foreground = new SolidColorBrush(Colors.Red);
-        //        }
-        //        foreach (TextBlock tb in textBlocksInRow)
-        //        {
-        //            tb.Foreground = foreground;
-        //        }
-        //    }
-        //    return isRight;
-        //}
         #endregion
     }
 }

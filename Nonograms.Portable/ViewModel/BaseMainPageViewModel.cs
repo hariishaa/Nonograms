@@ -13,9 +13,9 @@ namespace Nonograms.Portable.ViewModel
 {
     public abstract class BaseMainPageViewModel : ViewModelBase
     {
-        protected INavigationService _navigationService;
+        INavigationService _navigationService;
 
-        protected bool _isSettingsOpened;
+        bool _isSettingsOpened;
         public bool IsSettingsOpened
         {
             get
@@ -29,7 +29,7 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
-        protected bool? _isFullScreenModeEnabled;
+        bool? _isFullScreenModeEnabled;
         public bool? IsFullScreenModeEnabled
         {
             get
@@ -48,7 +48,7 @@ namespace Nonograms.Portable.ViewModel
         }
 
         // переименовать
-        protected RelayCommand _navigateCommand;
+        RelayCommand _navigateCommand;
         public RelayCommand NavigateCommand => _navigateCommand ?? (_navigateCommand = new RelayCommand(
             () => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName)
                    //p => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName)
@@ -57,7 +57,7 @@ namespace Nonograms.Portable.ViewModel
                    ));
 
         // переименовать
-        protected RelayCommand _navigateCommand2;
+        RelayCommand _navigateCommand2;
         public RelayCommand NavigateCommand2 => _navigateCommand2 ?? (_navigateCommand2 = new RelayCommand(
             () => _navigationService.NavigateTo(typeof(TutorialPageViewModel).FullName)));
 
@@ -75,7 +75,7 @@ namespace Nonograms.Portable.ViewModel
 
 
 
-        protected ObservableCollection<NonogramInfo> _allNonograms;
+        ObservableCollection<NonogramInfo> _allNonograms;
         public ObservableCollection<NonogramInfo> AllNonograms
         {
             get

@@ -32,7 +32,7 @@ namespace Nonograms.Portable.ViewModel
 
         RelayCommand<NonogramInfo> _navigateCommand;
         public RelayCommand<NonogramInfo> NavigateCommand => _navigateCommand ?? (_navigateCommand = new RelayCommand<NonogramInfo>(
-                    p => _navigationService.NavigateTo(typeof(NonogramPageViewModel).FullName, p)
+                    p => _navigationService.NavigateTo(typeof(BaseNonogramPageViewModel).FullName, p)
                     //,
                    // p => !string.IsNullOrEmpty(p)
                    ));

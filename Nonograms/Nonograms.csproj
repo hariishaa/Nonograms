@@ -107,6 +107,7 @@
       <DependentUpon>NonogramControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\NonogramPageViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="View\Converters\ItemClickEventArgsConverter.cs" />

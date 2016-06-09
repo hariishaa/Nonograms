@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Nonograms.Portable.ViewModel
 {
-    public class NonogramPageViewModel : ViewModelBase
+    public abstract class BaseNonogramPageViewModel : ViewModelBase
     {
         bool _isSolved;
         public bool IsSolved
@@ -30,6 +30,7 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
+        // удалить???
         int[,] _field;
         public int[,] Field
         {
@@ -41,7 +42,6 @@ namespace Nonograms.Portable.ViewModel
             {
                 _field = value;
                 RaisePropertyChanged();
-                _history.Push(_field);
             }
         }
 
@@ -55,6 +55,7 @@ namespace Nonograms.Portable.ViewModel
             set
             {
                 _fieldHistory = value;
+                //RaisePropertyChanged();
             }
         }
 
@@ -116,8 +117,7 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
-        Stack<int[,]> _history;
-        NonogramInfo _nonogramInfo;
+        protected NonogramInfo _nonogramInfo;
 
         RelayCommand _checkModeCommand;
         public RelayCommand CheckModeCommand
@@ -159,6 +159,7 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
+        // ????
         RelayCommand _clearCommand;
         public RelayCommand ClearCommand
         {
@@ -185,43 +186,39 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
-        public NonogramPageViewModel()
+        private void InitializeField(NonogramInfo nonogramInfo)
         {
-
-        }
-
-        private void InitializeField(int rows, int columns)
-        {
-            LeftSideValues = _nonogramInfo.LeftSideValues;
-            TopSideValues = _nonogramInfo.TopSideValues;
+            LeftSideValues = nonogramInfo.LeftSideValues;
+            TopSideValues = nonogramInfo.TopSideValues;
             TagType = TagTypes.Dot;
             CheckMode = CheckModes.Check;
-            FieldHistory = new ObservableCollection<int[,]>();
+            var history = LoadHistory();
+            if (history == null)
+            {
+                FieldHistory = new ObservableCollection<int[,]>();
+                FieldHistory.Add(new int[nonogramInfo.RowsNumber, nonogramInfo.ColumnsNumber]);
+            }
+            else
+            {
+                FieldHistory = new ObservableCollection<int[,]>(history);
+            }
             //FieldHistory.CollectionChanged += FieldHistory_CollectionChanged;
-            FieldHistory.Add(new int[rows, columns]);
-            //_history = new Stack<int[,]>();
-            //if (_history.Count == 0)
-            //{
-            //    Field = new int[rows, columns];
-            //    //Field = new int[4, 4] { { 1, 0, 0, 0 }, { 0, 0, 0, 0 }, { 1, 0, 0, 0 }, { 0, 0, 0, 0 } };
-            //}
-            //else
-            //{
-            //    // add code
-            //}
         }
 
-        private void FieldHistory_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            var x = e.OldItems;
-            var y = e.NewItems;
-            var z = FieldHistory;
-        }
+        //private void FieldHistory_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        //{
+        //    var x = e.OldItems;
+        //    var y = e.NewItems;
+        //    var z = FieldHistory;
+        //}
 
         public void LoadNonogram(NonogramInfo nonogramInfo)
         {
             _nonogramInfo = nonogramInfo;
-            InitializeField(_nonogramInfo.RowsNumber, _nonogramInfo.ColumnsNumber);
+            InitializeField(nonogramInfo);
         }
+
+        protected abstract List<int[,]> LoadHistory();
+        public abstract void SaveHistory();
     }
 }

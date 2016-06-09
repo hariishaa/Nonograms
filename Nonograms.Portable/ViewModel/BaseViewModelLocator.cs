@@ -18,7 +18,6 @@ namespace Nonograms.Portable.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<TutorialPageViewModel>();
             SimpleIoc.Default.Register<LevelsPageViewModel>();
-            SimpleIoc.Default.Register<NonogramPageViewModel>();
 
             RegisterViewModels();
         }
@@ -26,7 +25,7 @@ namespace Nonograms.Portable.ViewModel
         public abstract BaseMainPageViewModel MainPage { get; }
         public TutorialPageViewModel TutorialPage => ServiceLocator.Current.GetInstance<TutorialPageViewModel>();
         public LevelsPageViewModel LevelsPage => ServiceLocator.Current.GetInstance<LevelsPageViewModel>();
-        public NonogramPageViewModel NonogramPage => ServiceLocator.Current.GetInstance<NonogramPageViewModel>();
+        public abstract BaseNonogramPageViewModel NonogramPage { get; }
 
         public abstract void RegisterViewModels();
     }

@@ -125,7 +125,6 @@ C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.Portable.dll
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Nonograms.Portable.pdb
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\x64\Debug\Newtonsoft.Json.xml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\Nonograms.csprojResolveAssemblyReference.cache
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\App.g.i.cs
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\App.g.cs
