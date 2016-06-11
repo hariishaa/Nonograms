@@ -31,6 +31,24 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
+        bool? _areTipsEnabled;
+        public bool? AreTipsEnabled
+        {
+            get
+            {
+                return _areTipsEnabled;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    value = true;
+                }
+                _areTipsEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
+
         // удалить???
         int[,] _field;
         public int[,] Field
@@ -189,6 +207,7 @@ namespace Nonograms.Portable.ViewModel
 
         private void InitializeField(NonogramInfo nonogramInfo)
         {
+            LoadSettings();
             LeftSideValues = nonogramInfo.LeftSideValues;
             TopSideValues = nonogramInfo.TopSideValues;
             TagType = TagTypes.Dot;
@@ -219,6 +238,7 @@ namespace Nonograms.Portable.ViewModel
             InitializeField(nonogramInfo);
         }
 
+        protected abstract void LoadSettings();
         protected abstract List<int[,]> LoadHistory();
         public abstract void SaveHistory();
     }

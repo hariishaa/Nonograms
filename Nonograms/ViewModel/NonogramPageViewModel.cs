@@ -11,10 +11,17 @@ namespace Nonograms.ViewModel
 {
     public class NonogramPageViewModel : BaseNonogramPageViewModel
     {
+        protected override void LoadSettings()
+        {
+            var settings = ApplicationData.Current.RoamingSettings;
+            AreTipsEnabled = (bool?)settings.Values["AreTipsEnabled"];
+        }
+
         protected override List<int[,]> LoadHistory()
         {
             try
             {
+                // шляпа
                 var filename = _nonogramInfo.Id.ToString() + ".json";
                 StorageFile file = ApplicationData.Current.LocalFolder.GetFileAsync(filename).AsTask().Result;
                 string json  = FileIO.ReadTextAsync(file).AsTask().Result;

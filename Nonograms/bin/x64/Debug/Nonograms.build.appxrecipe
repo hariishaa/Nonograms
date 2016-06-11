@@ -30,8 +30,56 @@
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.Core\7.0.0-rc1-final\lib\netcore50\EntityFramework.Core.dll">
+      <PackagePath>EntityFramework.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.Relational\7.0.0-rc1-final\lib\netcore50\EntityFramework.Relational.dll">
+      <PackagePath>EntityFramework.Relational.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.SQLite\7.0.0-rc1-final\lib\netcore50\EntityFramework.Sqlite.dll">
+      <PackagePath>EntityFramework.Sqlite.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Ix-Async\1.2.5\lib\portable-windows8+net45+wp8\System.Interactive.Async.dll">
+      <PackagePath>System.Interactive.Async.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Data.Sqlite\1.0.0-rc1-final\lib\netcore50\Microsoft.Data.Sqlite.dll">
+      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Caching.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Caching.Memory\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Caching.Memory.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Memory.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Configuration\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Configuration.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Configuration.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Configuration.Binder\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Configuration.Binder.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Binder.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.DependencyInjection.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Logging\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Logging.dll">
+      <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Logging.Abstractions\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Logging.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.OptionsModel\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.OptionsModel.dll">
+      <PackagePath>Microsoft.Extensions.OptionsModel.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Extensions.Primitives\1.0.0-rc1-final\lib\netcore50\Microsoft.Extensions.Primitives.dll">
+      <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.NETCore.Portable.Compatibility\1.0.0\lib\netcore50\System.ComponentModel.DataAnnotations.dll">
       <PackagePath>System.ComponentModel.DataAnnotations.dll</PackagePath>
@@ -87,6 +135,9 @@
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Newtonsoft.Json\8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Remotion.Linq\2.0.1\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll">
+      <PackagePath>Remotion.Linq.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\runtime.any.System.Private.DataContractSerialization\4.1.0\lib\netcore50\System.Private.DataContractSerialization.dll">
       <PackagePath>System.Private.DataContractSerialization.dll</PackagePath>
     </AppxPackagedFile>
@@ -117,6 +168,12 @@
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.ComponentModel.EventBasedAsync\4.0.10\lib\dotnet\System.ComponentModel.EventBasedAsync.dll">
       <PackagePath>System.ComponentModel.EventBasedAsync.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.ComponentModel.Primitives\4.0.0\lib\dotnet\System.ComponentModel.Primitives.dll">
+      <PackagePath>System.ComponentModel.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.ComponentModel.TypeConverter\4.0.0\lib\dotnet\System.ComponentModel.TypeConverter.dll">
+      <PackagePath>System.ComponentModel.TypeConverter.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Data.Common\4.0.0\lib\dotnet\System.Data.Common.dll">
       <PackagePath>System.Data.Common.dll</PackagePath>
     </AppxPackagedFile>
@@ -125,6 +182,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Diagnostics.Debug\4.0.10\lib\netcore50\System.Diagnostics.Debug.dll">
       <PackagePath>System.Diagnostics.Debug.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0-beta-23516\lib\dotnet5.2\System.Diagnostics.DiagnosticSource.dll">
+      <PackagePath>System.Diagnostics.DiagnosticSource.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Diagnostics.StackTrace\4.0.0\lib\netcore50\System.Diagnostics.StackTrace.dll">
       <PackagePath>System.Diagnostics.StackTrace.dll</PackagePath>
@@ -351,17 +411,32 @@
     <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\Microsoft.Data.Sqlite\1.0.0-rc1-final\build\netcore50\win10-x64\native\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms.Portable\bin\Debug\Nonograms.Portable.dll">
       <PackagePath>Nonograms.Portable.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.Commands\7.0.0-rc1-final\lib\net451\EntityFramework.Commands.dll">
+      <PackagePath>EntityFramework.Commands.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.Relational.Design\7.0.0-rc1-final\lib\net451\EntityFramework.Relational.Design.dll">
+      <PackagePath>EntityFramework.Relational.Design.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.Commands\7.0.0-rc1-final\lib\net451\EntityFramework.Commands.xml">
+      <PackagePath>EntityFramework.Commands.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\.nuget\packages\EntityFramework.Relational.Design\7.0.0-rc1-final\lib\net451\EntityFramework.Relational.Design.xml">
+      <PackagePath>EntityFramework.Relational.Design.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\HanZi.ttf">
       <PackagePath>Resources\Fonts\HanZi.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Resources\Fonts\PresentScript Normal.Ttf">
       <PackagePath>Resources\Fonts\PresentScript Normal.Ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

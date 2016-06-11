@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Nonograms.Model.Database;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,6 +35,16 @@ namespace Nonograms.View
 
             //var vm = DataContext as Portable.ViewModel.MainPageViewModel;
             //vm.LoadNonograms();
+
+            // не работает!!!
+            using (var db = new DatabaseContext())
+            {
+                var x = db.Database.EnsureCreated();
+                
+                //db.Database.Migrate();
+                //db.NonogramsInfo.Add(new NonogramInfo { Name = "bob", NonogramId = 1, StateId = 1 });
+                //db.SaveChanges();
+            }
         }
     }
 }

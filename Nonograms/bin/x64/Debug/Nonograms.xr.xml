@@ -11,6 +11,7 @@
     <RootPropertyPathName Name="MainPage" />
     <RootPropertyPathName Name="IsSettingsOpened" />
     <RootPropertyPathName Name="CloseSettingsCommand" />
+    <RootPropertyPathName Name="AreTipsEnabled" />
     <RootPropertyPathName Name="IsFullScreenModeEnabled" />
     <RootPropertyPathName Name="OpenSettingsCommand" />
     <RootPropertyPathName Name="Visibility" />

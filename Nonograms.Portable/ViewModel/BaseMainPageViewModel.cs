@@ -48,6 +48,24 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
+        bool? _areTipsEnabled;
+        public bool? AreTipsEnabled
+        {
+            get
+            {
+                return _areTipsEnabled;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    value = true;
+                }
+                _areTipsEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
+
         // переименовать
         RelayCommand _navigateCommand;
         public RelayCommand NavigateCommand => _navigateCommand ?? (_navigateCommand = new RelayCommand(

@@ -111,7 +111,7 @@ namespace Nonograms.CustomControls
                 if (collection.Count > 1)
                 {
                     nc.UpdateField(collection.Last());
-                    nc.IsSolved = nc.CheckSolution(0, columns, 0, rows, nc._field, nc.LeftSideValues, nc._leftSideSolutions, nc.TopSideValues, nc._topSideSolutions);
+                    nc.IsSolved = nc.CheckSolution(0, columns, 0, rows, nc._field, nc.LeftSideValues, nc._leftSideSolutions, nc.TopSideValues, nc._topSideSolutions, nc.EnableTips);
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace Nonograms.CustomControls
             {
                 UpdateField(FieldHistory.Last());
                 IsSolved = CheckSolution(0, _field.GetLength(1), 0, _field.GetLength
-                    (0), _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions);
+                    (0), _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions, EnableTips);
             }
         }
 
@@ -184,6 +184,20 @@ namespace Nonograms.CustomControls
             set
             {
                 SetValue(IsSolvedProperty, value);
+            }
+        }
+        #endregion
+        #region EnableTipsProeprty
+        public static readonly DependencyProperty EnableTipsProperty = DependencyProperty.Register("EnableTips", typeof(Boolean), typeof(NonogramControl), new PropertyMetadata(default(Boolean)));
+        public bool EnableTips
+        {
+            get
+            {
+                return (bool)GetValue(EnableTipsProperty);
+            }
+            set
+            {
+                SetValue(EnableTipsProperty, value);
             }
         }
         #endregion
@@ -435,7 +449,7 @@ namespace Nonograms.CustomControls
                 HorizontalAimRectangle.Visibility = Visibility.Collapsed;
 
                 // проверяем решение
-                IsSolved = CheckSolution(beginX, columns, beginY, rows, _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions);
+                IsSolved = CheckSolution(beginX, columns, beginY, rows, _field, LeftSideValues, _leftSideSolutions, TopSideValues, _topSideSolutions, EnableTips);
             }
         }
         #endregion
@@ -478,14 +492,14 @@ namespace Nonograms.CustomControls
         }
 
         #region CheckSolutionMethods
-        bool CheckSolution(int beginX, int columns, int beginY, int rows, int[,] field, int[][] leftSideValues, bool[] leftSideSolutions, int[][] topSideValues, bool[] topSideSolutions)
+        bool CheckSolution(int beginX, int columns, int beginY, int rows, int[,] field, int[][] leftSideValues, bool[] leftSideSolutions, int[][] topSideValues, bool[] topSideSolutions, bool areTipsEnabled)
         {
             bool isRight; //правильность заполнения линии
             int tempSum; //временная переменная для подсчёта подряд идущих закрашенных клеток
             List<int> lineSolution = new List<int>(); //текущие числа в строке/колонке
             SolidColorBrush foreground; //цвет текста, который нужно будет установить
             SolidColorBrush unFilledForeground = new SolidColorBrush(Colors.Black); //цвет текста у незаполненной линии
-            SolidColorBrush filledForeground = new SolidColorBrush(Colors.Gray); //цвет текста у заполненной линии
+            SolidColorBrush filledForeground = areTipsEnabled ? new SolidColorBrush(Colors.Gray) : unFilledForeground; //цвет текста у заполненной линии
             //для столбцов
             for (int j = beginX; j < beginX + columns; j++)
             {

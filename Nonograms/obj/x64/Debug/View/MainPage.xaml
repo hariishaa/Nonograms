@@ -42,7 +42,7 @@
             <TextBlock Text="НАСТРОЙКИ" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="28" Margin="20"/>
             <StackPanel Grid.Row="1" Margin="20,0">
                 <ToggleSwitch Header="ЗАПУСКАТЬ ВО ВЕСЬ ЭКРАН" OffContent="ВЫКЛ." OnContent="ВКЛ." IsOn="{Binding IsFullScreenModeEnabled, Mode=TwoWay}"/>
-                <ToggleSwitch Header="ПОМОЩЬ В ИГРЕ" OffContent="ВЫКЛ." OnContent="ВКЛ."/>
+                <ToggleSwitch Header="ПОМОЩЬ В ИГРЕ" OffContent="ВЫКЛ." OnContent="ВКЛ." IsOn="{Binding AreTipsEnabled, Mode=TwoWay}"/>
                 <ComboBox Header="ТИП МЕТКИ" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="16" Margin="0,4">
                     <ComboBoxItem Content="ТОЧКА" IsSelected="True"/>
                     <ComboBoxItem Content="КРЕСТИК"/>

@@ -417,6 +417,7 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 userType.AddMemberName("TopSideValues");
                 userType.AddMemberName("FieldHistory");
                 userType.AddMemberName("IsSolved");
+                userType.AddMemberName("EnableTips");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -697,90 +698,100 @@ namespace Nonograms.Nonograms_XamlTypeInfo
             var that = (global::Nonograms.CustomControls.NonogramControl)instance;
             that.IsSolved = (global::System.Boolean)Value;
         }
-        private object get_14_Interaction_Behaviors(object instance)
+        private object get_14_NonogramControl_EnableTips(object instance)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            return that.EnableTips;
+        }
+        private void set_14_NonogramControl_EnableTips(object instance, object Value)
+        {
+            var that = (global::Nonograms.CustomControls.NonogramControl)instance;
+            that.EnableTips = (global::System.Boolean)Value;
+        }
+        private object get_15_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_14_Interaction_Behaviors(object instance, object Value)
+        private void set_15_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_15_EventTriggerBehavior_Actions(object instance)
+        private object get_16_EventTriggerBehavior_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.Actions;
         }
-        private object get_16_EventTriggerBehavior_EventName(object instance)
+        private object get_17_EventTriggerBehavior_EventName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
-        private void set_16_EventTriggerBehavior_EventName(object instance, object Value)
+        private void set_17_EventTriggerBehavior_EventName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_17_EventTriggerBehavior_SourceObject(object instance)
+        private object get_18_EventTriggerBehavior_SourceObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
-        private void set_17_EventTriggerBehavior_SourceObject(object instance, object Value)
+        private void set_18_EventTriggerBehavior_SourceObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_18_EventTriggerBehavior_AssociatedObject(object instance)
+        private object get_19_EventTriggerBehavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.AssociatedObject;
         }
-        private object get_19_InvokeCommandAction_Command(object instance)
+        private object get_20_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_19_InvokeCommandAction_Command(object instance, object Value)
+        private void set_20_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_20_InvokeCommandAction_CommandParameter(object instance)
+        private object get_21_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_20_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_21_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
         }
-        private object get_21_InvokeCommandAction_InputConverter(object instance)
+        private object get_22_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_21_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_22_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_22_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_23_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_22_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_23_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_23_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_24_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_23_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_24_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
@@ -884,75 +895,82 @@ namespace Nonograms.Nonograms_XamlTypeInfo
                 xamlMember.Getter = get_13_NonogramControl_IsSolved;
                 xamlMember.Setter = set_13_NonogramControl_IsSolved;
                 break;
+            case "Nonograms.CustomControls.NonogramControl.EnableTips":
+                userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Nonograms.CustomControls.NonogramControl");
+                xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "EnableTips", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_14_NonogramControl_EnableTips;
+                xamlMember.Setter = set_14_NonogramControl_EnableTips;
+                break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_14_Interaction_Behaviors;
-                xamlMember.Setter = set_14_Interaction_Behaviors;
+                xamlMember.Getter = get_15_Interaction_Behaviors;
+                xamlMember.Setter = set_15_Interaction_Behaviors;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_15_EventTriggerBehavior_Actions;
+                xamlMember.Getter = get_16_EventTriggerBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_16_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_17_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_17_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_17_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_18_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_18_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_18_EventTriggerBehavior_AssociatedObject;
+                xamlMember.Getter = get_19_EventTriggerBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_InvokeCommandAction_Command;
-                xamlMember.Setter = set_19_InvokeCommandAction_Command;
+                xamlMember.Getter = get_20_InvokeCommandAction_Command;
+                xamlMember.Setter = set_20_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_20_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_21_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_21_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_21_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_22_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_22_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_22_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_23_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_23_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::Nonograms.Nonograms_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Nonograms.Nonograms_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_23_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_24_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_24_InvokeCommandAction_InputConverterLanguage;
                 break;
             }
             return xamlMember;
