@@ -18,10 +18,10 @@
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
         <Style x:Key="CornerGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <Setter Property="Background" Value="LightCoral"/>
+            <Setter Property="Background" Value="BurlyWood"/>
         </Style>
         <Style x:Key="SideGrid" TargetType="Grid" BasedOn="{StaticResource GridBaseStyle}">
-            <Setter Property="Background" Value="#FF080E48"/>
+            <Setter Property="Background" Value="#FF85ACB5"/>
         </Style>
         <Style x:Key="LeftSideGrid" TargetType="Grid" BasedOn="{StaticResource SideGrid}">
             <Setter Property="Grid.Row" Value="1"/>
@@ -62,8 +62,8 @@
             <Setter Property="StrokeThickness" Value="4"/>
         </Style>
         <Style x:Key="AimRectangle" TargetType="Rectangle">
-            <Setter Property="Fill" Value="Orange"/>
-            <Setter Property="Opacity" Value="0.4"/>
+            <Setter Property="Fill" Value="BurlyWood"/>
+            <Setter Property="Opacity" Value="0.7"/>
             <Setter Property="Visibility" Value="Collapsed"/>
             <Setter Property="IsHitTestVisible" Value="False"/>
         </Style>

@@ -65,19 +65,22 @@ namespace Nonograms.View
             vm.SaveHistory();
         }
 
-        //удалить
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var bounds = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;
-            var b = Window.Current.Bounds;
-        }
-
         private void Nonogram_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
         {
         }
 
         private void Nonogram_ManipulationStarting(object sender, ManipulationStartingRoutedEventArgs e)
         {
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //var x= this.ActualHeight;
+            //var y = RP.ActualHeight;
+            //var z = Nonogram.ActualHeight;
+            //var u = nono.ActualHeight;
+            //Nonogram.HorizontalScrollBarVisibility = ScrollBarVisibility.Visible;
+            //Nonogram.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
         }
     }
 }

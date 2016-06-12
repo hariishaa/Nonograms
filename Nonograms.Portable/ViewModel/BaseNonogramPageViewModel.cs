@@ -200,7 +200,7 @@ namespace Nonograms.Portable.ViewModel
                 {
                     var dialog = ServiceLocator.Current.GetInstance<IDialogService>();
                     //await dialog.ShowMessage("You won!", "Victory!!!", "Got it!", () => ClearCommand.Execute(null));
-                    await dialog.ShowMessage("You won!", "Victory!!!");
+                    await dialog.ShowMessage("Вы правильно решили кроссворд!", "Победа!");
                 }, p => p));
             }
         }

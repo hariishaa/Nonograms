@@ -23,7 +23,7 @@ namespace Nonograms.ViewModel
             {
                 // шляпа
                 var filename = _nonogramInfo.Id.ToString() + ".json";
-                StorageFile file = ApplicationData.Current.LocalFolder.GetFileAsync(filename).AsTask().Result;
+                StorageFile file = ApplicationData.Current.RoamingFolder.GetFileAsync(filename).AsTask().Result;
                 string json  = FileIO.ReadTextAsync(file).AsTask().Result;
                 return JsonConvert.DeserializeObject<List<int[,]>>(json);
             }
@@ -37,7 +37,7 @@ namespace Nonograms.ViewModel
         {
             var filename = _nonogramInfo.Id.ToString() + ".json";
             string json = JsonConvert.SerializeObject(FieldHistory);
-            StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+            StorageFile file = await ApplicationData.Current.RoamingFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
             await FileIO.WriteTextAsync(file, json);
         }
     }

@@ -206,6 +206,10 @@ namespace Nonograms.CustomControls
         {
             this.InitializeComponent();
             //FieldHistory.CollectionChanged += FieldHistory_CollectionChanged1;
+            // убрать
+            var settings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+            EnableTips = settings.Values["AreTipsEnabled"] != null ? (bool)settings.Values["AreTipsEnabled"] : true;
+            TagType = settings.Values["TagType"] != null ? (TagTypes)settings.Values["TagType"] : TagTypes.Dot;
         }
 
         #region BuildMethods
@@ -328,7 +332,8 @@ namespace Nonograms.CustomControls
             if (_outlineRectangle == null)
             {
                 // задаем начальные координаты контура
-                _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 4, Fill = new SolidColorBrush(Colors.BlueViolet), Opacity = 0.5, IsHitTestVisible = false };
+                _outlineRectangle = new Rectangle { Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 12, Fill = new SolidColorBrush(Colors.Transparent), IsHitTestVisible = false };
+                Canvas.SetZIndex(_outlineRectangle, 3);
                 CellControl currentCell = sender as CellControl;
                 int column = Grid.GetColumn(currentCell), row = Grid.GetRow(currentCell);
                 _beginPoint = _endPoint = new Point(column, row);

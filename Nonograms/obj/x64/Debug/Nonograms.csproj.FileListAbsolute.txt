@@ -138,8 +138,6 @@ C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\MainPage.g.cs
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\NonogramPage.g.i.cs
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\NonogramPage.g.cs
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\TutorialPage.g.i.cs
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\TutorialPage.g.cs
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\XamlTypeInfo.g.cs
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\App.xaml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\CustomControls\CellControl.xaml
@@ -147,14 +145,12 @@ C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\LevelsPage.xaml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\MainPage.xaml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\NonogramPage.xaml
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\TutorialPage.xaml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\App.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\CustomControls\CellControl.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\CustomControls\NonogramControl.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\LevelsPage.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\MainPage.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\NonogramPage.xbf
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\View\TutorialPage.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\XamlSaveStateFile.xml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\Nonograms.exe
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\obj\x64\Debug\Nonograms.pdb
@@ -261,7 +257,6 @@ C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\D
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\View\LevelsPage.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\View\MainPage.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\View\NonogramPage.xbf
-C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\View\TutorialPage.xbf
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\Nonograms.xr.xml
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\Nonograms.exe
 C:\Users\Grigory\Documents\Visual Studio 2015\Projects\Nonograms\Nonograms\bin\Debug\Nonograms.pdb

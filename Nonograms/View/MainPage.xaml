@@ -23,11 +23,12 @@
     <Grid Background="{StaticResource BackgroundImage}">
         <StackPanel x:Name="MainMenuStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="НАЧАТЬ ИГРУ" Command="{Binding NavigateCommand}"/>
-            <Button Content="ОБУЧЕНИЕ" Command="{Binding NavigateCommand2}"/>
+            <!--<Button Content="ОБУЧЕНИЕ" Command="{Binding NavigateCommand2}"/>-->
             <Button Content="НАСТРОЙКИ" Command="{Binding OpenSettingsCommand}" CommandParameter="{Binding Visibility, ElementName=SettingsGrid, Converter={StaticResource VisibilityToBoolConverter}}"/>
-            <Button Content="О ПРИЛОЖЕНИИ"/>
+            <Button Content="ОБ ИГРЕ" Click="Button_Click"/>
         </StackPanel>
         <Grid x:Name="SettingsGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Background="BurlyWood" Opacity="0.85" Visibility="{Binding IsSettingsOpened, Converter={StaticResource BoolToVisibilityConverter}}">
+            <!--Visibility="{Binding IsSettingsOpened, Converter={StaticResource BoolToVisibilityConverter}}"-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition/>
@@ -43,11 +44,33 @@
             <StackPanel Grid.Row="1" Margin="20,0">
                 <ToggleSwitch Header="ЗАПУСКАТЬ ВО ВЕСЬ ЭКРАН" OffContent="ВЫКЛ." OnContent="ВКЛ." IsOn="{Binding IsFullScreenModeEnabled, Mode=TwoWay}"/>
                 <ToggleSwitch Header="ПОМОЩЬ В ИГРЕ" OffContent="ВЫКЛ." OnContent="ВКЛ." IsOn="{Binding AreTipsEnabled, Mode=TwoWay}"/>
-                <ComboBox Header="ТИП МЕТКИ" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="16" Margin="0,4">
-                    <ComboBoxItem Content="ТОЧКА" IsSelected="True"/>
+                <ComboBox x:Name="combo" Header="ТИП МЕТКИ" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="16" Margin="0,4">
+                    <ComboBoxItem Content="ТОЧКА"/>
                     <ComboBoxItem Content="КРЕСТИК"/>
                 </ComboBox>
-                <Button Content="ОК" Margin="8" Background="Transparent" Command="{Binding CloseSettingsCommand}"/>
+                <Button Content="ОК" Margin="8" Background="Transparent" Command="{Binding CloseSettingsCommand}" Click="Button_Click_1"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="AboutGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Background="BurlyWood" Opacity="0.85" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="FontFamily" Value="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Margin" Value="4"/>
+                </Style>
+            </Grid.Resources>
+            <TextBlock Text="ОБ ИГРЕ" FontSize="28" Margin="20"/>
+            <StackPanel Grid.Row="1" Margin="20,0">
+                <TextBlock Text="Версия 1.0.0"/>
+                <TextBlock Text="По всем вопросам и замечаниям:"/>
+                <TextBlock Text="rulezzzz08@outlook.com" Margin="0,0,0,4"/>
+                <Button Content="ОК" Margin="8" Background="Transparent" Click="Button_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

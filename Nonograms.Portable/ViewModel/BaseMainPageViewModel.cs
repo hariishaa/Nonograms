@@ -30,6 +30,20 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
+        bool _isAboutOpened;
+        public bool IsAboutOpened
+        {
+            get
+            {
+                return _isAboutOpened;
+            }
+            set
+            {
+                _isAboutOpened = value;
+                RaisePropertyChanged();
+            }
+        }
+
         bool? _isFullScreenModeEnabled;
         public bool? IsFullScreenModeEnabled
         {
@@ -67,24 +81,24 @@ namespace Nonograms.Portable.ViewModel
         }
 
         // переименовать
-        RelayCommand _navigateCommand;
-        public RelayCommand NavigateCommand => _navigateCommand ?? (_navigateCommand = new RelayCommand(
-            () => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName)
-                   //p => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName)
-                   //,
-                   // p => !string.IsNullOrEmpty(p)
-                   ));
+        RelayCommand<ObservableCollection<NonogramInfo>> _navigateCommand;
+        public RelayCommand<ObservableCollection<NonogramInfo>> NavigateCommand => _navigateCommand ?? (_navigateCommand = new RelayCommand<ObservableCollection<NonogramInfo>>(
+            (p) => _navigationService.NavigateTo(typeof(LevelsPageViewModel).FullName, p)));
 
         // переименовать
-        RelayCommand _navigateCommand2;
-        public RelayCommand NavigateCommand2 => _navigateCommand2 ?? (_navigateCommand2 = new RelayCommand(
-            () => _navigationService.NavigateTo(typeof(TutorialPageViewModel).FullName)));
+        //RelayCommand _navigateCommand2;
+        //public RelayCommand NavigateCommand2 => _navigateCommand2 ?? (_navigateCommand2 = new RelayCommand(
+        //    () => _navigationService.NavigateTo(typeof(TutorialPageViewModel).FullName)));
 
         protected RelayCommand _openSettingsCommand;
         public abstract RelayCommand OpenSettingsCommand { get; }
 
         protected RelayCommand _closeSettingsCommand;
         public abstract RelayCommand CloseSettingsCommand { get; }
+
+        protected RelayCommand _openCloseAboutCommand;
+        public RelayCommand OpenCloseAboutCommand => _openCloseAboutCommand ?? (_openCloseAboutCommand =
+            new RelayCommand(() => IsSettingsOpened = !IsSettingsOpened));
 
         public BaseMainPageViewModel(INavigationService navigationService)
         {
@@ -108,10 +122,10 @@ namespace Nonograms.Portable.ViewModel
             }
         }
 
-        public void LoadNonograms()
+        public async void LoadNonograms()
         {
-            //NonogramsRepository repo = new NonogramsRepository();
-            //AllNonograms = new ObservableCollection<NonogramInfo>(repo.GetAllNonogramsInfo());
+            NonogramsRepository repo = new NonogramsRepository();
+            AllNonograms = new ObservableCollection<NonogramInfo>(await repo.GetAllNonogramsInfo());
         }
     }
 }

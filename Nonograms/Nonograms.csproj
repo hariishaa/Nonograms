@@ -106,8 +106,6 @@
     <Compile Include="CustomControls\NonogramControl.xaml.cs">
       <DependentUpon>NonogramControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Database\DatabaseContext.cs" />
-    <Compile Include="Model\Database\NonogramInfo.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\NonogramPageViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -123,9 +121,6 @@
       <DependentUpon>NonogramPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\TutorialPage.xaml.cs">
-      <DependentUpon>TutorialPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Converters\VisibilityToBoolConverter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +139,6 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="волна.jpg" />
-    <Content Include="волна2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -170,10 +164,6 @@
     <Page Include="View\NonogramPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\TutorialPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

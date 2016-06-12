@@ -10,7 +10,7 @@
     mc:Ignorable="d"
     DataContext="{Binding Path=LevelsPage, Source={StaticResource ViewModelLocator}}">
     <Grid Background="{StaticResource BackgroundImage}">
-        <GridView x:Name="NonogramsGridView" ItemsSource="{Binding AllNonograms}" Margin="10" IsItemClickEnabled="True">
+        <GridView x:Name="NonogramsGridView" ItemsSource="{Binding AllNonograms}" Margin="10" IsItemClickEnabled="True" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="500">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="ItemClick">
                     <Core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="{Binding SelectedItem, ElementName=NonogramsGridView}" InputConverter="{StaticResource ItemClickEventArgsConverter}"/>
@@ -18,7 +18,9 @@
             </Interactivity:Interaction.Behaviors>
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Rectangle Width="100" Height="60" Margin="5" Fill="LightCoral"/>
+                    <Border Width="150" Height="90" Margin="5" Background="BurlyWood" Opacity="0.9">
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="ms-appx:/Resources/Fonts/PresentScript Normal.Ttf#PresentScript" FontSize="20" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+                    </Border>
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>

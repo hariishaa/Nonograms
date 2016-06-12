@@ -16,14 +16,14 @@ namespace Nonograms.Portable.ViewModel
         public BaseViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<TutorialPageViewModel>();
+            //SimpleIoc.Default.Register<TutorialPageViewModel>();
             SimpleIoc.Default.Register<LevelsPageViewModel>();
 
             RegisterViewModels();
         }
 
         public abstract BaseMainPageViewModel MainPage { get; }
-        public TutorialPageViewModel TutorialPage => ServiceLocator.Current.GetInstance<TutorialPageViewModel>();
+        //public TutorialPageViewModel TutorialPage => ServiceLocator.Current.GetInstance<TutorialPageViewModel>();
         public LevelsPageViewModel LevelsPage => ServiceLocator.Current.GetInstance<LevelsPageViewModel>();
         public abstract BaseNonogramPageViewModel NonogramPage { get; }
 

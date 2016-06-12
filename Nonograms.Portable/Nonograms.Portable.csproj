@@ -35,7 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Enums\Enums.cs" />
-    <Compile Include="Model\Database\NonogramInfo.cs" />
     <Compile Include="Model\DTO\NonogramInfo.cs" />
     <Compile Include="Model\NonogramsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -43,7 +42,6 @@
     <Compile Include="ViewModel\BaseMainPageViewModel.cs" />
     <Compile Include="ViewModel\BaseNonogramPageViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelLocator.cs" />
-    <Compile Include="ViewModel\TutorialPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
@@ -64,8 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Data\Nonogram6x4.json" />
-    <EmbeddedResource Include="Data\Nonogram15x15.json" />
     <EmbeddedResource Include="Data\AllNonograms.json" />
     <None Include="packages.config" />
   </ItemGroup>
